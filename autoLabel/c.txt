@@ -1,11 +1,24 @@
-adl is a silly boy
+*adl is a silly boy*
 
 all people are growing
- 
+   
 but he is stil same as before
 
-*再见了　一成不变的人生*
+*再见了 一成不变的人生*
 *sadasd*
-as
+
+*http://www.hao123.com*
+
+1607@qq.com
+
+-asdas
+sadasda
+a
+
+-as
 asd
 
+我是标题,因为我是一行
+
+我是普通的内容
+因为我不是一行,但程序会把我变成一行

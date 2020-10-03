@@ -1,5 +1,18 @@
 {
-  "python.linting.enabled": true,
+  "python.linter": "pyLint",
   "python.pythonPath": "/usr/bin/python3.6"
-  // "editor.formatOnSave":true
+
+	// "python.linting.pylintEnabled":true
+	// "python.linting.enabled":true
+	// "python.linting.banditEnabled": false
+	// "python.linting.pylintPath":"/home/adl/.local/bin/pylint"
+	// "editor.formatOnSave":true
+	// "python.linting.pylintArgs": [
+	// 		"--rcfile",
+	// 		"${workspaceFolder}/backend/.pylintrc"
+	// ]
+	// "python.linting.pylintArgs": [
+	// 	"--disable=E1101",
+	// 	"--disable=W,C"
+	// ]
 }
