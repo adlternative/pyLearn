@@ -1,6 +1,10 @@
 {
   "python.linter": "pyLint",
-  "python.pythonPath": "/usr/bin/python3.6"
+  "python.pythonPath": "/usr/bin/python3.6",
+  "files.associations": {
+    "stdexcept": "cpp",
+    "functional": "cpp"
+  }
 
 	// "python.linting.pylintEnabled":true
 	// "python.linting.enabled":true
