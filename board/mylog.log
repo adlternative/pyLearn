@@ -1,0 +1,80 @@
+INFO:root:zxj
+INFO:root:闲聊
+INFO:root:this's is a warm summer
+INFO:root:3
+INFO:root:zxj
+INFO:root:闲聊
+INFO:root:this's is a warm summer
+INFO:root:3
+INFO:root:("\n    insert into\n    messages(reply_to,sender,subject,text)\n    values(%s,'%s','%s','%s')\n    ", (3, 'zxj', '闲聊', "this's is a warm summer"))
+INFO:root:zxj
+INFO:root:闲聊
+INFO:root:this's is a warm summer
+INFO:root:3
+INFO:root:("\n    insert into\n    messages(reply_to,sender,subject,text)values(%s,'%s','%s','%s')\n    ", (3, 'zxj', '闲聊', "this's is a warm summer"))
+INFO:root:zxj
+INFO:root:闲聊
+INFO:root:this s is a warm summer
+INFO:root:3
+INFO:root:("\n    insert into\n    messages(reply_to,sender,subject,text)values(%s,'%s','%s','%s')\n    ", (3, 'zxj', '闲聊', 'this s is a warm summer'))
+INFO:root:zxj
+INFO:root:闲聊
+INFO:root:this s is a warm summer
+INFO:root:3
+INFO:root:("\n    insert into\n    messages(reply_to,sender,subject,text)values(%s,'%s','%s','%s')\n    ", (3, 'zxj', '闲聊', 'this s is a warm summer'))
+INFO:root:zxj
+INFO:root:闲聊
+INFO:root:this s is a warm summer
+INFO:root:3
+INFO:root:("\n    insert into\n    messages(reply_to,sender,subject,text)values(%s,'%s','%s','%s')\n    ", (3, 'zxj', '闲聊', 'this s is a warm summer'))
+INFO:root:zxj
+INFO:root:闲聊
+INFO:root:this s is a warm summer
+INFO:root:3
+INFO:root:("\n    insert into\n    messages(reply_to,sender,subject,text)values(%s,'%s','%s','%s')\n    ", (3, 'zxj', '闲聊', 'this s is a warm summer'))
+You have an error in your SQL syntax;
+ check the manual that corresponds to your MySQL server version for the right syntax to use near
+  'zxj'',''闂茶亰'',''this s is a warm summer'')'INFO:root:zxj
+INFO:root:闲聊
+INFO:root:this s is a warm summer
+INFO:root:3
+INFO:root:("\n    insert into\n    messages(reply_to,sender,subject,text)values(%s,'%s','%s','%s')\n    ", ('3', 'zxj', '闲聊', 'this s is a warm summer'))
+INFO:root:zxj
+INFO:root:闲聊
+INFO:root:this s is a warm summer
+INFO:root:3
+INFO:root:("\n    insert into\n    messages(reply_to,sender,subject,text)values(%s,'%s','%s','%s')\n    ", ('3', 'zxj', '闲聊', 'this s is a warm summer'))
+INFO:root:zxj
+INFO:root:闲聊
+INFO:root:this s is a warm summer
+INFO:root:3
+INFO:root:("\n    insert into\n    messages(reply_to,sender,subject,text)values('%s','%s','%s','%s')\n    ", ('3', 'zxj', '闲聊', 'this s is a warm summer'))
+INFO:root:zxj
+INFO:root:闲聊
+INFO:root:this s is a warm summer
+INFO:root:3
+INFO:root:('\n    insert into\n    messages(reply_to,sender,subject,text)values(%s,%s,%s,%s)\n    ', ('3', 'zxj', '闲聊', 'this s is a warm summer'))
+INFO:root:adl
+INFO:root:Reply: 闲聊
+INFO:root:this's cool
+INFO:root:4
+INFO:root:('\n    insert into\n    messages(reply_to,sender,subject,text)values(%s,%s,%s,%s)\n    ', ('4', 'adl', 'Reply: 闲聊', "this's cool"))
+INFO:root:圣诞老人
+INFO:root:Reply: 闲聊
+INFO:root:送礼物来了
+INFO:root:2
+INFO:root:('\n    insert into\n    messages(reply_to,sender,subject,text)values(%s,%s,%s,%s)\n    ', ('2', '圣诞老人', 'Reply: 闲聊', '送礼物来了'))
+INFO:root:kekeke
+INFO:root:Reply: 闲聊
+INFO:root:开心就好
+INFO:root:6
+INFO:root:('\n    insert into\n    messages(reply_to,sender,subject,text)values(%s,%s,%s,%s)\n    ', ('6', 'kekeke', 'Reply: 闲聊', '开心就好'))
+INFO:root:111
+INFO:root:Reply: 闲聊
+INFO:root:sjdakl
+INFO:root:2
+INFO:root:('\n    insert into\n    messages(reply_to,sender,subject,text)values(%s,%s,%s,%s)\n    ', ('2', '111', 'Reply: 闲聊', 'sjdakl'))
+INFO:root:adllda
+INFO:root:这是一个无聊的话题吧我觉得
+INFO:root:nothing
+INFO:root:None

@@ -1,0 +1,376 @@
+引言
+今天给大家介绍一种常见的压缩算法——LZW压缩算法。
+LZW算法的基本原理为：通过构建一个字典，在该字典中用不同的编码去表示不同字符串，从而达到节省空间的目的。
+例如：我有一个字符串"abcdabcdabcd"，共占12字节，如果我有一个字典，里面用1来代表"abc"，那么只需令编码表(我们称之为key[])中存放三个1即可，倘若我们同样使用char类型，原来的字符串就由12字节压缩至3字节。
+下面我将为大家介绍压缩和解压缩的具体过程。
+
+压缩
+压缩是一个一边推导字典，一边记录key[]的过程。
+一开始字典只有基础编码，也就是压缩包中有可能出现的字符，为了方便起见，我们规定其范围为A~Z，值从1~26。
+此外，介绍一下命名的含义：
+i: 当前检索的字符
+next: 下一个需要检索的字符
+key[]:获得的编码表，也就是压缩后的文件
+压缩过程：
+
+查询字典至当前字符串(称之为current)中无匹配项
+将current插入字典(此处是一个不断更新字典的过程，便于下次再出现current时，能够对其快速编码)
+设current有n位，取n-1位对应字典中编码，插入key[]
+继续检索至字符串结束
+例如，对于字符串"TOTOB"：
+
+i对应T，next对应O，此时字典中有T，继续查询字典中是否有TO，未查询到，则把T对应编码写入key[]中，TO插入字典；
+i对应O，next对应T，此时字典中有O，继续查询字典中是否有OB，未查询到，则把O对应编码写入key[]中，OB插入字典；
+i对应T，next对应O，此时字典中有O，继续查询字典中是否有TO，查询到则继续查询是否有TOB，未查询到，把TO对应编码写入key[]中，TOB插入字典；
+由于TO已存入key[]中，本次i直接对应B，next无对应，此时字典中有B，把B对应编码写入key[]中，结束压缩。
+解压缩
+好了，现在我有这个字典(Dictionary)和编码(key[])，那么是不是每次我都要存储字典来供查找呢？
+LZW算法的神奇之处在于：解压缩方不需要字典也能够对其进行解压，能够利用已知编码和基础编码一边翻译，一边逆推导出字典。
+同样介绍命名含义：
+prev: 当前检索字符的前一字符串
+output: 当前输出
+推导:
+现在我们只有key[]，如何推导字典呢？
+不难发现，字典由每一次的prev加上output的第一个字母构成。
+还是拿"TOTOB"举例子，插入字典的字符串为字典中能找到的最长字符串加上一个后面的字符，当我们插入TOB时，已有的是TO(即prev)，后一字符为B(output的第一位)
+解压缩过程：
+
+将上一次的输出output作为prev
+读出并打印当前output
+将当前output的第一个字母和prev连接并插入字典
+代码
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+typedef struct//定义字典结构
+{
+    char **sequence;//实际指向字符串的二级指针
+    int *code;      //给字符串编号
+    int size;       //当前长度
+    int max_size;   //最大长度
+}Dictionary;
+int key[1000];//压缩后的编码
+int count = 0;//对应下标
+
+void insert_key(int code)//向key中插入编码
+{
+    key[count++] = code;
+}
+void insert_sequence(Dictionary *dict, char *str)//向字典中插入字符串str
+{
+    int i = dict->size;
+    dict->sequence[i] = (char*)malloc(sizeof(char) * strlen(str) + 1);
+    dict->code[i] = i;
+    dict->size++;
+    strcpy(dict->sequence[i], str);
+}
+void init_dictionary(Dictionary *dict, int max_size)//初始化字典
+{
+    dict->max_size = max_size;
+    dict->size = 0;
+    dict->sequence = (char**)malloc(sizeof(char*) * max_size);
+    dict->code = (int*)malloc(sizeof(int) * max_size);
+    //插入哑值(任意)
+    insert_sequence(dict, (char*)"#");
+    //插入A到D字母(只有)
+    char letter[2] = "A";
+    for (int i = 0; i < 26; i++)
+    {
+        insert_sequence(dict, letter);
+        letter[0]++;
+    }
+}
+
+
+//已知字符串，查询字符串是否存在，存在返回编码(压缩用)
+int get_code(Dictionary *dict, char *str)
+{
+    for (int i = 0; i < dict->size; i++)
+    {
+        if (strcmp(dict->sequence[i], str) == 0)
+        {
+            return dict->code[i];
+        }
+    }
+    return -1;
+}
+
+
+//已知编码，获取字符串(解压用)
+char *get_sequence(Dictionary *dict, int code)
+{
+    return dict->sequence[code];
+}
+//打印字典
+void print_dictionary(Dictionary *dict)
+{
+    printf("====================\n");
+    printf(" Code       Sequence\n");
+    printf("====================\n");
+    for (int i = 0; i < dict->size; i++)
+    {
+        printf("%5d%7c%s\n", i, ' ', dict->sequence[i]);
+    }
+    printf("====================\n");
+}
+
+void print_key()
+{
+    for (int i = 0; i < count; i++)
+    {
+        printf("%d ", key[i]);
+    }
+    putchar('\n');
+}
+void lzw_encode(char *text, Dictionary *dict)//压缩编码
+{
+    char current[1000];
+    char next;
+    int i = 0;
+    while (i < strlen(text))
+    {
+        //先把第i个字符存入(对于后续循环，该处也有一个清空current的作用)
+        sprintf(current, "%c", text[i]);
+        next = text[i+1];
+        //反复查询并添加current，直到current为最新，退出循环
+        while (get_code(dict, current) != -1)
+        {
+            //  i   current     next
+            //  T         T      O  
+            //  O        TO      B
+            //  B       TOB      C
+            sprintf(current, "%s%c", current, next);
+            i++;
+            next = text[i+1];
+        }
+        //编码并存入数组key
+        //
+        //无效sequence无需插入
+        if (i < strlen(text))
+            insert_sequence(dict, current);
+        current[strlen(current) - 1] = '\0';
+        insert_key(get_code(dict, current));
+    }
+}
+
+
+//解压编码
+void lzw_decode(Dictionary *dict)
+{
+    int code;
+    char prev[1000];
+    char *output;
+    output = get_sequence(dict, key[0]);
+    //第一项无前一项，单独输出
+    printf("%s", output);
+    for (int i = 1; i < count; i++)
+    {
+        code = key[i];
+        strcpy(prev, output);
+        output = get_sequence(dict, code);
+        printf("%s", output);
+        //此处把prev作为一个临时字符串(反正上面strcpy时会更新)
+        sprintf(prev, "%s%c", prev, output[0]);
+        insert_sequence(dict, prev);
+    }
+}
+
+int main(int argc, char *argv[])
+{
+    Dictionary dict;
+    //char text[] = "TOTOB";
+    char text[] = "TOBEORNOTTOBEORTOBEORNOT";
+    init_dictionary(&dict, 100);
+    lzw_encode(text, &dict);
+    print_dictionary(&dict);
+    printf("Text : \n%s\n", text);
+    printf("Code : \n");
+    print_key();
+    //重新初始化用于解码
+    init_dictionary(&dict, 100);
+    printf("Decode : \n");
+    lzw_decode(&dict);
+    return 0;
+}
+
+1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78
+79
+80
+81
+82
+83
+84
+85
+86
+87
+88
+89
+90
+91
+92
+93
+94
+95
+96
+97
+98
+99
+100
+101
+102
+103
+104
+105
+106
+107
+108
+109
+110
+111
+112
+113
+114
+115
+116
+117
+118
+119
+120
+121
+122
+123
+124
+125
+126
+127
+128
+129
+130
+131
+132
+133
+134
+135
+136
+137
+138
+139
+140
+141
+142
+143
+144
+145
+146
+147
+148
+149
+150
+151
+152
+153
+参考
+LZW压缩算法1
+
+LZW压缩算法2
+
+
+
+//定义字典结构
+typedef struct
+{
+    char **sequence;//实际指向字符串的二级指针
+    int *code;      //给字符串编号
+    int size;       //当前长度
+    int max_size;   //最大长度
+}Dictionary;
+//压缩后的编码
+int key[1000];
+//对应下标
+int count = 0;
+
+
+压缩是一个一边推导字典，一边记录key[]的过程。
+一开始字典只有基础编码，也就是压缩包中有可能出现的字符，为了方便起见，我们规定其范围为A~Z，值从1~26。
+此外，介绍一下命名的含义：
+i: 当前检索的字符
+next: 下一个需要检索的字符
+key[]:获得的编码表，也就是压缩后的文件
+

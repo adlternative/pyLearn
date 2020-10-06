@@ -1,0 +1,25 @@
+import numpy as np
+import matplotlib.pyplot as plt
+# x = np.array([1.0, 2.0, 3.0])
+# y = np.array([2.0, 4.0, 6.0])
+# print(x*y, type(x), sep='\n')
+A = np.array([[1, 2], [3, 4]])
+B = np.array([[5, 6], [7, 8]])
+# print(A.shape,A.dtype)
+# print(A)
+# print(B)
+C=np.array([[10,20]])
+print(A*B)
+print(A*C)
+print(C*A)
+
+x=np.arange(0, 6,0.1)
+y=np.sin(x)
+print(x)
+print(y)
+plt.plot(x,y)
+plt.show()
+
+# print(chr(128565))
+# print(chr(128332))
+# print(ord('😵'))
