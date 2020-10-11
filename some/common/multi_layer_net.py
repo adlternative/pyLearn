@@ -56,11 +56,13 @@ class MultiLayerNet:
             指定'relu'或'he'的情况下设定“He的初始值”
             指定'sigmoid'或'xavier'的情况下设定“Xavier的初始值”
         """
+                        #[784]+[100,100,....]+[10]
         all_size_list = [self.input_size] + self.hidden_size_list + [self.output_size]
+                          #七层
         for idx in range(1, len(all_size_list)):
             scale = weight_init_std
             if str(weight_init_std).lower() in ('relu', 'he'):
-                scale = np.sqrt(2.0 / all_size_list[idx - 1])  # 使用ReLU的情况下推荐的初始值
+                scale = np.sqrt(2.0 / all_size_list[idx - 1])  # 使用ReLU的情况下推荐的初始值　he
             elif str(weight_init_std).lower() in ('sigmoid', 'xavier'):
                 scale = np.sqrt(1.0 / all_size_list[idx - 1])  # 使用sigmoid的情况下推荐的初始值
 

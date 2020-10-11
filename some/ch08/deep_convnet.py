@@ -27,7 +27,7 @@ class DeepConvNet:
         # 初始化权重===========
         # 各层的神经元平均与前一层的几个神经元有连接（TODO:自动计算）
         pre_node_nums = np.array([1*3*3, 16*3*3, 16*3*3, 32*3*3, 32*3*3, 64*3*3, 64*4*4, hidden_size])
-        wight_init_scales = np.sqrt(2.0 / pre_node_nums)  # 使用ReLU的情况下推荐的初始值
+        wight_init_scales = np.sqrt(2.0 / pre_node_nums)  # 使用ReLU的情况下推荐的初始值,he
         
         self.params = {}
         pre_channel_num = input_dim[0]

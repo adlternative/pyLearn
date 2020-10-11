@@ -9,7 +9,7 @@ from common.gradient import numerical_gradient
 class MultiLayerNetExtend:
     """扩展版的全连接的多层神经网络
     
-    具有Weiht Decay、Dropout、Batch Normalization的功能
+    具有Weight Decay、Dropout、Batch Normalization的功能
 
     Parameters
     ----------
@@ -26,7 +26,7 @@ class MultiLayerNetExtend:
     use_batchNorm: 是否使用Batch Normalization
     """
     def __init__(self, input_size, hidden_size_list, output_size,
-                 activation='relu', weight_init_std='relu', weight_decay_lambda=0, 
+                 activation='relu', weight_init_std='relu', weight_decay_lambda=0,
                  use_dropout = False, dropout_ration = 0.5, use_batchnorm=False):
         self.input_size = input_size
         self.output_size = output_size

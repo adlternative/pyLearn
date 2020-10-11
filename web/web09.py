@@ -1,6 +1,6 @@
 from urllib.request import urlopen
 from bs4 import BeautifulSoup
-text = urlopen("https://blog.csdn.net/qq_33564134/article/details/108653553").read().decode()
+text = urlopen("https://blog.csdn.net/adlatereturn/article/details/108046579").read().decode()
 # with open('f.txt','w') as fd:
 # 	fd.write(str(text))
 # print(text)

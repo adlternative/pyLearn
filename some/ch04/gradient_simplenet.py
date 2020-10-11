@@ -9,7 +9,14 @@ from common.gradient import numerical_gradient
 class simpleNet:
     def __init__(self):
         self.W = np.random.randn(2,3)
+#[[ 0.47355232
+# 0.9977393
+# 0.84668094],
+# [ 0.85557411
+# 0.03563661
+# 0.69422093]])
 
+    #x*W = y  dot 点乘
     def predict(self, x):
         return np.dot(x, self.W)
 

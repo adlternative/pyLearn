@@ -23,7 +23,18 @@ class SimpleConvNet:
         指定'relu'或'he'的情况下设定“He的初始值”
         指定'sigmoid'或'xavier'的情况下设定“Xavier的初始值”
     """
-    def __init__(self, input_dim=(1, 28, 28), 
+    #input_size =28
+    #filtersize= 5
+    #filterpad = 0
+    #conv_output_size=23/1+1=24
+    #pool_output_size =30*12*12
+
+    #input_size =7
+    #filtersize= 5
+    #filterpad = 0
+    #conv_output_size=3
+    #pool_output_size =1*1*1
+    def __init__(self, input_dim=(1, 28, 28),
                  conv_param={'filter_num':30, 'filter_size':5, 'pad':0, 'stride':1},
                  hidden_size=100, output_size=10, weight_init_std=0.01):
         filter_num = conv_param['filter_num']
@@ -32,8 +43,10 @@ class SimpleConvNet:
         filter_stride = conv_param['stride']
         input_size = input_dim[1]
         conv_output_size = (input_size - filter_size + 2*filter_pad) / filter_stride + 1
+        print(filter_num)
+        print(conv_output_size)#3
         pool_output_size = int(filter_num * (conv_output_size/2) * (conv_output_size/2))
-
+        print(pool_output_size)#2
         # 初始化权重
         self.params = {}
         self.params['W1'] = weight_init_std * \
@@ -158,3 +171,15 @@ class SimpleConvNet:
         for i, key in enumerate(['Conv1', 'Affine1', 'Affine2']):
             self.layers[key].W = self.params['W' + str(i+1)]
             self.layers[key].b = self.params['b' + str(i+1)]
+
+if __name__ == '__main__':
+  # network = SimpleConvNet(input_dim=(1,28,28),
+  #                       conv_param = {'filter_num': 30, 'filter_size': 5, 'pad': 0, 'stride': 1},
+  #                       hidden_size=100, output_size=10, weight_init_std=0.01)
+                        
+  # network = SimpleConvNet(input_dim=(1,7,7),
+  #                     conv_param = {'filter_num': 1, 'filter_size': 5, 'pad': 0, 'stride': 1},
+  #                     hidden_size=100, output_size=10, weight_init_std=0.01)
+  network = SimpleConvNet(input_dim=(1,4,4),
+                      conv_param = {'filter_num': 1, 'filter_size': 2, 'pad': 0, 'stride': 1},
+                      hidden_size=100, output_size=10, weight_init_std=0.01)

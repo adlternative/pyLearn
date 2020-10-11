@@ -41,7 +41,7 @@ class Affine:
     def __init__(self, W, b):
         self.W =W
         self.b = b
-        
+
         self.x = None
         self.original_x_shape = None
         # 权重和偏置参数的导数
@@ -62,7 +62,6 @@ class Affine:
         dx = np.dot(dout, self.W.T)
         self.dW = np.dot(self.x.T, dout)
         self.db = np.sum(dout, axis=0)
-        
         dx = dx.reshape(*self.original_x_shape)  # 还原输入数据的形状（对应张量）
         return dx
 
@@ -201,9 +200,9 @@ class Convolution:
         self.b = b
         self.stride = stride
         self.pad = pad
-        
+
         # 中间数据（backward时使用）
-        self.x = None   
+        self.x = None
         self.col = None
         self.col_W = None
         
@@ -212,7 +211,9 @@ class Convolution:
         self.db = None
 
     def forward(self, x):
+        #fn   3  5  5
         FN, C, FH, FW = self.W.shape
+        #10,3,7,7
         N, C, H, W = x.shape
         out_h = 1 + int((H + 2*self.pad - FH) / self.stride)
         out_w = 1 + int((W + 2*self.pad - FW) / self.stride)
