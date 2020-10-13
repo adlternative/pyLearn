@@ -1,0 +1,36 @@
+<h1 class="title-article" id="articleContentId">[TensorFlow] 运行报错：W tensorflowstream_executorplatformdefaultdso_loader.cc59]</h1><article class="baidu_pl">
+<div class="article_content clearfix" id="article_content">
+<link href="https://csdnimg.cn/release/blogv2/dist/mdeditor/css/editerView/ck_htmledit_views-a405391f94.css" rel="stylesheet"/>
+<div class="markdown_views prism-tomorrow-night" id="content_views">
+<svg style="display: none;" xmlns="http://www.w3.org/2000/svg">
+<path d="M5,0 0,2.5 5,5z" id="raphael-marker-block" stroke-linecap="round" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);"></path>
+</svg>
+<h1><a id="TensorFlow_W_tensorflowstream_executorplatformdefaultdso_loadercc59_0"></a>[TensorFlow] 运行报错：W tensorflow/stream_executor/platform/default/dso_loader.cc:59]</h1>
+<h3><a id="_2"></a>问题描述</h3>
+<p>使用官网的命令下载TensorFlow没有出现问题</p>
+<pre><code class="prism language-bash">pip <span class="token function">install</span> tensorflow
+</code></pre>
+<p>但是运行时出现报错信息：</p>
+<pre><code>2020-09-20 21:31:45.455714: W tensorflow/stream_executor/platform/default/dso_loader.cc:59] Could not load dynamic library 'libcudart.so.10.1'; dlerror: libcudart.so.10.1: cannot open shared object file: No such file or directory
+2020-09-20 21:31:45.455738: I tensorflow/stream_executor/cuda/cudart_stub.cc:29] Ignore above cudart dlerror if you do not have a GPU set up on your machine.
+</code></pre>
+<h3><a id="_17"></a>问题分析</h3>
+<p>看报错信息也能看出来时GPU的问题。</p>
+<p>查阅资料后时GPU的版本与TensorFlow的版本不一致。</p>
+<p>对应关系参见：https://tensorflow.google.cn/install/source#gpu</p>
+<table><thead><tr><th>版本</th><th>Python 版本</th><th>编译器</th><th>构建工具</th><th>cuDNN</th><th>CUDA</th></tr></thead><tbody><tr><td>tensorflow-2.1.0</td><td>2.7、3.5-3.7</td><td>GCC 7.3.1</td><td>Bazel 0.27.1</td><td>7.6</td><td>10.1</td></tr><tr><td>tensorflow-2.0.0</td><td>2.7、3.3-3.7</td><td>GCC 7.3.1</td><td>Bazel 0.26.1</td><td>7.4</td><td>10.0</td></tr><tr><td>tensorflow_gpu-1.14.0</td><td>2.7、3.3-3.7</td><td>GCC 4.8</td><td>Bazel 0.24.1</td><td>7.4</td><td>10.0</td></tr><tr><td>tensorflow_gpu-1.13.1</td><td>2.7、3.3-3.7</td><td>GCC 4.8</td><td>Bazel 0.19.2</td><td>7.4</td><td>10.0</td></tr><tr><td>tensorflow_gpu-1.12.0</td><td>2.7、3.3-3.6</td><td>GCC 4.8</td><td>Bazel 0.15.0</td><td>7</td><td>9</td></tr><tr><td>tensorflow_gpu-1.11.0</td><td>2.7、3.3-3.6</td><td>GCC 4.8</td><td>Bazel 0.15.0</td><td>7</td><td>9</td></tr><tr><td>tensorflow_gpu-1.10.0</td><td>2.7、3.3-3.6</td><td>GCC 4.8</td><td>Bazel 0.15.0</td><td>7</td><td>9</td></tr><tr><td>tensorflow_gpu-1.9.0</td><td>2.7、3.3-3.6</td><td>GCC 4.8</td><td>Bazel 0.11.0</td><td>7</td><td>9</td></tr><tr><td>tensorflow_gpu-1.8.0</td><td>2.7、3.3-3.6</td><td>GCC 4.8</td><td>Bazel 0.10.0</td><td>7</td><td>9</td></tr><tr><td>tensorflow_gpu-1.7.0</td><td>2.7、3.3-3.6</td><td>GCC 4.8</td><td>Bazel 0.9.0</td><td>7</td><td>9</td></tr><tr><td>tensorflow_gpu-1.6.0</td><td>2.7、3.3-3.6</td><td>GCC 4.8</td><td>Bazel 0.9.0</td><td>7</td><td>9</td></tr><tr><td>tensorflow_gpu-1.5.0</td><td>2.7、3.3-3.6</td><td>GCC 4.8</td><td>Bazel 0.8.0</td><td>7</td><td>9</td></tr><tr><td>tensorflow_gpu-1.4.0</td><td>2.7、3.3-3.6</td><td>GCC 4.8</td><td>Bazel 0.5.4</td><td>6</td><td>8</td></tr><tr><td>tensorflow_gpu-1.3.0</td><td>2.7、3.3-3.6</td><td>GCC 4.8</td><td>Bazel 0.4.5</td><td>6</td><td>8</td></tr><tr><td>tensorflow_gpu-1.2.0</td><td>2.7、3.3-3.6</td><td>GCC 4.8</td><td>Bazel 0.4.5</td><td>5.1</td><td>8</td></tr><tr><td>tensorflow_gpu-1.1.0</td><td>2.7、3.3-3.6</td><td>GCC 4.8</td><td>Bazel 0.4.2</td><td>5.1</td><td>8</td></tr><tr><td>tensorflow_gpu-1.0.0</td><td>2.7、3.3-3.6</td><td>GCC 4.8</td><td>Bazel 0.4.2</td><td>5.1</td><td>8</td></tr></tbody></table>
+<p>我用的是<strong>CUDA 10.0</strong>，对应TensorFlow版本应为 <strong>tensorflow-2.0.0</strong></p>
+<h3><a id="_47"></a>解决方案</h3>
+<p>下载对应的TensorFlow版本</p>
+<pre><code class="prism language-bash">pip <span class="token function">install</span> tensorflow<span class="token operator">==</span>2.0.0 -i https://pypi.tuna.tsinghua.edu.cn/simple
+</code></pre>
+<p>下载后正常！</p>
+<p><img alt="在这里插入图片描述" src="https://img-blog.csdnimg.cn/20200921090156262.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQxNjgzMDY1,size_16,color_FFFFFF,t_70#pic_center"/></p>
+</div>
+<link href="https://csdnimg.cn/release/blogv2/dist/mdeditor/css/editerView/markdown_views-10218d227c.css" rel="stylesheet"/>
+<link href="https://csdnimg.cn/release/blogv2/dist/mdeditor/css/style-57471a2b6e.css" rel="stylesheet"/>
+</div>
+</article><div class='name 'username='Harry嗷'>博主:Harry嗷</div><br>
+<div class ='time' >时间:2020-09-21 09:02:11</div ><br>
+<div class ='original' >原创</div ><br>
+<a href='https://blog.csdn.net/qq_41683065/article/details/108702408'>原文链接</a><br>

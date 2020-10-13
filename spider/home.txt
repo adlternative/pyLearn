@@ -1,0 +1,1224 @@
+
+<!DOCTYPE html>
+
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8"/>
+<link href="https://blog.csdn.net/weixin_43574962" rel="canonical"/>
+<meta content="text/html; charset=utf-8" http-equiv="content-type"/>
+<meta content="webkit" name="renderer">
+<meta content="webkit" name="force-rendering">
+<meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible"/>
+<meta content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport"/>
+<meta content='{"pid": "blog", "spm":"1001.2014"}' name="report"/>
+<meta content="always" name="referrer"/>
+<meta content="no-siteapp" http-equiv="Cache-Control"><link href="#" media="handheld" rel="alternate"/>
+<meta content="5a59773ab8077d4a62bf469ab966a63b_1497598848" name="shenma-site-verification"/>
+<meta content="pc" name="applicable-device"/>
+<link href="https://csdnimg.cn/public/favicon.ico" rel="SHORTCUT ICON"/>
+<title>RandyLambert的博客_Randy__Lambert_CSDN博客-C语言相关,ACM算法讲解,Linux操作系统相关领域博主</title>
+<meta content="Randy__Lambert擅长C语言相关,ACM算法讲解,Linux操作系统相关,等方面的知识,Randy__Lambert关注C/C++,Linux领域." name="description"/>
+<script src="//g.csdnimg.cn/tingyun/1.8.3/blog.js" type="text/javascript"></script>
+<link href="https://csdnimg.cn/release/blogv2/dist/pc/css/list_enter-3f12955697.min.css" rel="stylesheet" type="text/css"/>
+<link href="https://csdnimg.cn/release/blogv2/dist/pc/themesSkin/skin-thespecialists/skin-thespecialists-085bbd0414.min.css" rel="stylesheet" type="text/css"/>
+<script src="https://csdnimg.cn/public/common/libs/jquery/jquery-1.9.1.min.js" type="text/javascript"></script>
+<script type="text/javascript">
+        var isCorporate = false;//注释删除enterprise
+        var username =  "weixin_43574962";
+        var skinImg = "white";
+        var blog_address = "https://blog.csdn.net/weixin_43574962";
+        var currentUserName = "";
+        var isOwner = false;
+        var loginUrl = "http://passport.csdn.net/account/login?from=https://blog.csdn.net/weixin_43574962";
+        var blogUrl = "https://blog.csdn.net/";
+        var avatar = "https://profile.csdnimg.cn/6/6/4/3_weixin_43574962";
+        var articleTitle = "RandyLambert的博客";
+        var articleDesc = "Randy__Lambert擅长C语言相关,ACM算法讲解,Linux操作系统相关,等方面的知识,Randy__Lambert关注C/C++,Linux领域.";
+        var articleTitles = "RandyLambert的博客_Randy__Lambert_CSDN博客-C语言相关,ACM算法讲解,Linux操作系统相关领域博主";
+        var nickName = "Randy__Lambert";
+        var articleDetailUrl = "";
+        var skinStatus = "White";
+        var blogStaticHost = "https://csdnimg.cn/release/blogv2/"
+    </script>
+<script src="https://g.csdnimg.cn/??fixed-sidebar/1.1.6/fixed-sidebar.js,report/1.5.8/report.js" type="text/javascript"></script>
+<link href="https://csdnimg.cn/public/sandalstrap/1.4/css/sandalstrap.min.css" rel="stylesheet" type="text/css"/>
+<style>
+        .MathJax, .MathJax_Message, .MathJax_Preview{
+            display: none
+        }
+    </style>
+<script src="https://dup.baidustatic.com/js/ds.js"></script>
+</meta></meta></meta></head>
+<body class="nodata " style="">
+<script src="https://g.csdnimg.cn/common/csdn-toolbar/csdn-toolbar.js" type="text/javascript"></script>
+<script>
+    (function(){
+        var bp = document.createElement('script');
+        var curProtocol = window.location.protocol.split(':')[0];
+        if (curProtocol === 'https') {
+            bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+        }
+        else {
+            bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+        }
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(bp, s);
+    })();
+    </script>
+<link href="https://g.csdnimg.cn/lib/cropper/3.1.6/cropper.css" rel="stylesheet"/>
+<script src="https://g.csdnimg.cn/lib/cropper/3.1.6/cropper.js"></script>
+<script crossorigin="" src="https://g.csdnimg.cn/user-login/2.2.8/user-login.js" type="text/javascript"></script>
+<script>
+	$("#msgToastText").hide()
+</script>
+<div class="skin-boxshadow"></div>
+<div id="userSkin">
+<div class="user-skin-box">
+<p class="user-skin-title">
+<span>自定义博客皮肤<span class="vip-get">VIP专享<span></span>
+<span class="close-bt bt-back"><svg class="icon" height="12" p-id="10924" t="1567152543821" version="1.1" viewbox="0 0 1024 1024" width="12" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><defs><style type="text/css"></style></defs><path d="M512 438.378667L806.506667 143.893333a52.032 52.032 0 1 1 73.6 73.621334L585.621333 512l294.485334 294.485333a52.074667 52.074667 0 0 1-73.6 73.642667L512 585.621333 217.514667 880.128a52.053333 52.053333 0 1 1-73.621334-73.642667L438.378667 512 143.893333 217.514667a52.053333 52.053333 0 1 1 73.621334-73.621334L512 438.378667z" fill="" p-id="10925"></path></svg></span>
+</span></span></p>
+<div class="user-skin-item">
+<div class="user-skin-left"><span>*</span>博客头图：</div>
+<div class="user-skin-right">
+<input class="upload-skin-img" id="uploadHeaderimg" style="display:none" type="file" value=""/>
+<label class="upload-img" for="uploadHeaderimg">
+<div class="icon-box">
+<img alt="" class="upload-icon" src="https://csdnimg.cn/release/blogv2/dist/pc/img/upLoadImage.png"/>
+<img alt="" class="success-upload-icon" src="https://csdnimg.cn/release/blogv2/dist/pc/img/upLoadImageWhite.png" style="display:none"/>
+<p class="tip-massage">点击选择上传的图片</p>
+</div>
+</label>
+<p class="user-skin-tip">格式为PNG、JPG，宽度*高度大于1920*100像素，不超过2MB，主视觉建议放在右侧，请参照线上博客头图</p>
+<p class="user-skin-color">请上传大于1920*100像素的图片！</p>
+</div>
+</div>
+<div class="user-skin-item">
+<div class="user-skin-left"><span></span>博客底图：</div>
+<div class="user-skin-right">
+<input class="upload-skin-img" id="uploadBgimg" style="display:none" type="file" value=""/>
+<label class="upload-img" for="uploadBgimg">
+<div class="icon-box">
+<img alt="" class="upload-icon" src="https://csdnimg.cn/release/blogv2/dist/pc/img/upLoadImage.png"/>
+<img alt="" class="success-upload-icon" src="https://csdnimg.cn/release/blogv2/dist/pc/img/upLoadImageWhite.png" style="display:none"/>
+<p class="tip-massage">点击选择上传的图片</p>
+</div>
+</label>
+<p class="user-skin-tip">图片格式为PNG、JPG，不超过1MB，可上下左右平铺至整个背景</p>
+</div>
+</div>
+<div class="user-skin-item">
+<div class="user-skin-left"><span></span>栏目图：</div>
+<div class="user-skin-right">
+<input class="upload-skin-img" id="uploadColumnimg" style="display:none" type="file" value=""/>
+<label class="upload-img" for="uploadColumnimg">
+<div class="icon-box">
+<img alt="" class="upload-icon" src="https://csdnimg.cn/release/blogv2/dist/pc/img/upLoadImage.png"/>
+<img alt="" class="success-upload-icon" src="https://csdnimg.cn/release/blogv2/dist/pc/img/upLoadImageWhite.png" style="display:none"/>
+<p class="tip-massage">点击选择上传的图片</p>
+</div>
+</label>
+<p class="user-skin-tip">图片格式为PNG、JPG，图片宽度*高度为300*38像素，不超过0.5MB</p>
+</div>
+</div>
+<div class="user-skin-item user-skin-item-input">
+<div class="user-skin-left"><span></span>主标题颜色：</div>
+<div class="user-skin-right">
+<input class="skin-input" id="topicColor" placeholder="#ffffff" type="text"/>
+<p class="user-skin-tip">RGB颜色，例如：#AFAFAF</p>
+</div>
+</div>
+<div class="user-skin-item user-skin-item-input">
+<div class="user-skin-left"><span></span>Hover：</div>
+<div class="user-skin-right">
+<input class="skin-input" id="topicHoverColor" placeholder="#ffffff" type="text"/>
+<p class="user-skin-tip">RGB颜色，例如：#AFAFAF</p>
+</div>
+</div>
+<div class="user-skin-item user-skin-item-input">
+<div class="user-skin-left"><span></span>副标题颜色：</div>
+<div class="user-skin-right">
+<input class="skin-input" id="subTopicColor" placeholder="#b8b8b8" type="text"/>
+<p class="user-skin-tip">RGB颜色，例如：#AFAFAF</p>
+</div>
+</div>
+<div class="user-skin-bt">
+<a class="user-skin-preview bt" href="javascript:;">预览</a>
+<a class="user-skin-cancel bt bt-back" href="javascript:;">取消</a>
+<a class="user-skin-refer bt" href="javascript:;">提交</a>
+</div>
+</div>
+</div>
+<div id="cropBox">
+<div class="crop-box">
+<p class="crop-box-title">
+<span>自定义博客皮肤</span>
+<span class="close-bt bt-back"><svg class="icon" height="12" p-id="10924" t="1567152543821" version="1.1" viewbox="0 0 1024 1024" width="12" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><defs><style type="text/css"></style></defs><path d="M512 438.378667L806.506667 143.893333a52.032 52.032 0 1 1 73.6 73.621334L585.621333 512l294.485334 294.485333a52.074667 52.074667 0 0 1-73.6 73.642667L512 585.621333 217.514667 880.128a52.053333 52.053333 0 1 1-73.621334-73.642667L438.378667 512 143.893333 217.514667a52.053333 52.053333 0 1 1 73.621334-73.621334L512 438.378667z" fill="" p-id="10925"></path></svg></span>
+</p>
+<div class="crop-img-before">
+<img alt="" id="cropImg" src=""/>
+</div>
+<div class="crop-zoom">
+<a class="bt-reduce" href="javascript:;">-</a><a class="bt-add" href="javascript:;">+</a>
+</div>
+<div class="crop-img-after">
+<div class="final-img"></div>
+</div>
+<div class="crop-bt">
+<a class="bt-prev bt-back" href="javascript:;">上一步</a><a class="bt-next" href="javascript:;">保存</a>
+</div>
+</div>
+</div>
+<header>
+<div class="container d-flex clearfix">
+<div class="header-content-box " style=" padding:0;">
+<div class="title-box">
+<h1 class="title-blog ">
+<a href="https://blog.csdn.net/weixin_43574962" style="">RandyLambert的博客</a>
+</h1>
+<p class="description " style=""></p>
+</div>
+<div class="opt-box d-flex justify-content-end">
+<a class="btn btn-sm" data-report-click='{"mod"popu_832","spm":"1001.2101.3001.4238","dest":"http://passport.csdn.net/account/login?from=https://blog.csdn.net/weixin_43574962"}' href="http://passport.csdn.net/account/login?from=https://blog.csdn.net/weixin_43574962" id="meUser"><img alt="" src="https://csdnimg.cn/release/blogv2/dist/pc/img/useSkinWhite.png"/>我也要用</a>
+</div>
+</div>
+</div>
+</header>
+<div class="container clearfix pt0" id="mainBox">
+<main>
+<div class="container-header">
+<ul class="container-header-ul" id="container-header-ul">
+<li class="active margin" data-type="34" id="container-header-blog"><span>博客(34)</span></li>
+<li class="container-header-ul-li" data-type="0"></li>
+<li class="container-header-ul-li" data-type="0"></li>
+<li class="container-header-ul-li" data-type="0"></li>
+</ul>
+</div>
+<div class="articleMeList-integration" id="articleMeList-blog" style="display:block;">
+<div class="filter-box d-flex align-items-center">
+<form action="" id="seeOriginal">
+<label class="chk-box" for="chkOriginal">
+<input id="chkOriginal" name="t" onchange="this.checked ? document.getElementById('seeOriginal').submit() : location.href = 'https://blog.csdn.net/weixin_43574962'" type="checkbox" value="1"/>
+        只看原创
+      </label>
+</form>
+<dl class="filter-sort-box d-flex align-items-center">
+<dt>排序：</dt>
+<dd><a class="btn-filter-sort active" data-report-query="" href="https://blog.csdn.net/weixin_43574962" target="_self">按最后发布时间</a></dd>
+<dd><a class="btn-filter-sort " data-report-query="orderby=ViewCount" href="https://blog.csdn.net/weixin_43574962" target="_self">按访问量</a></dd>
+<dd><a class="btn btn-sm rss" href="https://blog.csdn.net/weixin_43574962/rss/list">
+<img alt="" class="rss-img" src="https://csdnimg.cn/release/blogv2/dist/pc/img/rss.png"/>RSS订阅</a>
+</dd>
+</dl>
+</div>
+<div class="article-list">
+<div class="article-item-box csdn-tracking-statistics" data-articleid="104861569">
+<img alt="" class="settop" src="https://csdnimg.cn/release/blogv2/dist/pc/img/listFixedTop.png"/>
+<h4 class="">
+<a href="https://blog.csdn.net/weixin_43574962/article/details/104861569" target="_blank">
+<span class="article-type type-1 float-none">原创</span>
+          多线程服务器编程之muduo中base库与net库详细注释
+        </a>
+</h4>
+<p class="content">
+        muduo学习寒假写的，这个是github链接，之前一直写的比较乱，今天终于抽出时间整理了一下。前言：寒假在学习muduo的时候，将muduo中net库和base库源码进行了注释，基本所有的重要代码都进行了详细注释，比较重要的类比如Eventloop类，Channel类部分函数每行都进行了注释，还改进了几个小功能，比如Exception类增加了处理函数名的功能，在使用时看起来更加方便...
+      </p>
+<div class="info-box d-flex align-content-center">
+<p>
+<span class="date">2020-03-14 15:48:37</span>
+<span class="read-num"><img alt="" src="https://csdnimg.cn/release/blogv2/dist/pc/img/readCountWhite.png"/>97</span>
+</p>
+</div>
+</div>
+<div class="article-item-box csdn-tracking-statistics" data-articleid="89975767">
+<img alt="" class="settop" src="https://csdnimg.cn/release/blogv2/dist/pc/img/listFixedTop.png"/>
+<h4 class="">
+<a href="https://blog.csdn.net/weixin_43574962/article/details/89975767" target="_blank">
+<span class="article-type type-1 float-none">原创</span>
+          我的ACM代码库
+        </a>
+</h4>
+<p class="content">
+        以后加我的二分写法int search(int array[], int n, int v){int left, right, middle;left = 0, right = n - 1;while (left &amp;lt;= right){    middle = (left + right) / 2;    if (array[middle] &amp;gt; v)    {  ...
+      </p>
+<div class="info-box d-flex align-content-center">
+<p>
+<span class="date">2019-10-20 18:01:09</span>
+<span class="read-num"><img alt="" src="https://csdnimg.cn/release/blogv2/dist/pc/img/readCountWhite.png"/>209</span>
+<span class="read-num"><img alt="" src="https://csdnimg.cn/release/blogv2/dist/pc/img/commentCountWhite.png"/>3</span>
+</p>
+</div>
+</div>
+<div class="article-item-box csdn-tracking-statistics" data-articleid="108319088">
+<h4 class="">
+<a href="https://blog.csdn.net/weixin_43574962/article/details/108319088" target="_blank">
+<span class="article-type type-2 float-none">转载</span>
+          使用scp上传文件到服务器或从服务器下载文件(支持跨越跳板机)
+        </a>
+</h4>
+<p class="content">
+        转载 原文链接 原贴写的很好，我转载懒得排版了scp是什么？使用man scp可以看到scp的解释『scp — secure copy (remote file copy program)』，scp是一个安全拷贝工具，支持远程拷贝，它支持本地拷贝到本地(当然这个一般不会用它，直接用cp就行)、本地拷贝到远程(上传)、远程拷贝到本地(下载)、远程拷贝到远程。scp是使用ssh通道来传输的，所以，linux服务器都是自带scp的，scp传输文件要输入密码的问题，可以通过设置ssh免密码登录即可解决。实
+      </p>
+<div class="info-box d-flex align-content-center">
+<p>
+<span class="date">2020-08-31 14:06:57</span>
+<span class="read-num"><img alt="" src="https://csdnimg.cn/release/blogv2/dist/pc/img/readCountWhite.png"/>156</span>
+</p>
+</div>
+</div>
+<div class="article-item-box csdn-tracking-statistics" data-articleid="107834273">
+<h4 class="">
+<a href="https://blog.csdn.net/weixin_43574962/article/details/107834273" target="_blank">
+<span class="article-type type-1 float-none">原创</span>
+          deepin v20安装git导致设置被删除（DDE被卸载）解决方案
+        </a>
+</h4>
+<p class="content">
+        前两天deepin崩了，然后重装了一个deepin v20，今天在下git的时候有搜到了一篇教程问题运行了下面这个命令，结果他在下载的时候没有任何警告和提示的卸载了我的DDE，设置什么的都没了，直接连其他终端也打不开了。sudo apt install git-all解决方案根据被卸载的包一个一个的下回来主要是dbus-user-session和dde两个。sudo apt-get install dbus-user-sessionsudo apt-get install dde.
+      </p>
+<div class="info-box d-flex align-content-center">
+<p>
+<span class="date">2020-08-06 11:07:04</span>
+<span class="read-num"><img alt="" src="https://csdnimg.cn/release/blogv2/dist/pc/img/readCountWhite.png"/>117</span>
+</p>
+</div>
+</div>
+<div class="article-item-box csdn-tracking-statistics" data-articleid="104142375">
+<h4 class="">
+<a href="https://blog.csdn.net/weixin_43574962/article/details/104142375" target="_blank">
+<span class="article-type type-2 float-none">转载</span>
+          C/C++谷歌风格编程指南
+        </a>
+</h4>
+<p class="content">
+        读书笔记 |Google C++编程风格指南C++代码规范,督促自己写规范的代码。主要参考Google 的C++ 风格指南，总结一下，便于规范自己的代码。1. 总体规则总体上函数命名，变量命名， 文件命名 要有描述性， 少用缩写. 尽可能使用描述性的命名，让代码易于理解更重要.不要用只 有项目开发者自己能理解的缩写，也不要通过砍掉几个字母来缩写单词。并且使用合适的缩进，添加必要的空格,让...
+      </p>
+<div class="info-box d-flex align-content-center">
+<p>
+<span class="date">2020-02-02 11:13:44</span>
+<span class="read-num"><img alt="" src="https://csdnimg.cn/release/blogv2/dist/pc/img/readCountWhite.png"/>97</span>
+</p>
+</div>
+</div>
+<div class="article-item-box csdn-tracking-statistics" data-articleid="104108641">
+<h4 class="">
+<a href="https://blog.csdn.net/weixin_43574962/article/details/104108641" target="_blank">
+<span class="article-type type-1 float-none">原创</span>
+          手把手教你写makefile
+        </a>
+</h4>
+<p class="content">
+        前言：对，我就是标题党，我也不太会写makefile，本篇只是入个门，只能教你写一些简单的makefile。为什么要学makefilemake工具可以看成是一个智能的批处理工具，它本身并没有编译和链接的功能，而是用类似于批处理的方式—通过调用makefile文件中用户指定的命令来进行编译和链接的，所以在你写项目是，只需要编写一次，之后你编译的时候只用make一下就行了。makefile命名...
+      </p>
+<div class="info-box d-flex align-content-center">
+<p>
+<span class="date">2020-01-29 20:57:23</span>
+<span class="read-num"><img alt="" src="https://csdnimg.cn/release/blogv2/dist/pc/img/readCountWhite.png"/>158</span>
+</p>
+</div>
+</div>
+<div class="article-item-box csdn-tracking-statistics" data-articleid="104098571">
+<h4 class="">
+<a href="https://blog.csdn.net/weixin_43574962/article/details/104098571" target="_blank">
+<span class="article-type type-1 float-none">原创</span>
+          网络编程利器nc和telnet命令的简单使用
+        </a>
+</h4>
+<p class="content">
+        两个命令的介绍telnet命令telnet可以实现的功能：1.连接服务器端口，并进行通信2.登录远程telnet服务器，使用命令行对其进行控制nc命令nc可以实现的功能：1.监听服务器端口，并与客户端通信（最多只能接收一个客户端)2.对指定服务器进行端口扫描3.作为客户端连接到远程服务器进行通信.两个命令的下载在使用之前，很多Linux发行版本没有集成这个命令，我的机器是...
+      </p>
+<div class="info-box d-flex align-content-center">
+<p>
+<span class="date">2020-01-28 14:32:20</span>
+<span class="read-num"><img alt="" src="https://csdnimg.cn/release/blogv2/dist/pc/img/readCountWhite.png"/>164</span>
+</p>
+</div>
+</div>
+<div class="article-item-box csdn-tracking-statistics" data-articleid="104012163">
+<h4 class="">
+<a href="https://blog.csdn.net/weixin_43574962/article/details/104012163" target="_blank">
+<span class="article-type type-1 float-none">原创</span>
+          高性能线程池C语言版(简单实现动态扩容和销毁)
+        </a>
+</h4>
+<p class="content">
+        前言：之前在暑假留校期间，简单的学习了线程池的实现，经过里半年的学习，我对线程池，和对线程池在网络编程中的重要性有了更深的一层理解。在用c++写之前先巩固一下环境编程的基础知识，毕竟这些知识点都是相通的，只是换了套API罢了。为什么要使用线程池？在进行网络编程的时候，一个服务器往往会需要服务很多客户端，可以把这个过程抽象成一个生产者消费者模型，服务器充当生产者，客户端充当消费者，在C/S模...
+      </p>
+<div class="info-box d-flex align-content-center">
+<p>
+<span class="date">2020-01-19 21:05:58</span>
+<span class="read-num"><img alt="" src="https://csdnimg.cn/release/blogv2/dist/pc/img/readCountWhite.png"/>514</span>
+<span class="read-num"><img alt="" src="https://csdnimg.cn/release/blogv2/dist/pc/img/commentCountWhite.png"/>7</span>
+</p>
+</div>
+</div>
+<div class="article-item-box csdn-tracking-statistics" data-articleid="103950817">
+<h4 class="">
+<a href="https://blog.csdn.net/weixin_43574962/article/details/103950817" target="_blank">
+<span class="article-type type-1 float-none">原创</span>
+          C++STL库String类实现
+        </a>
+</h4>
+<p class="content">
+        前言：按照源码中String类的设计方式实现简单的写了一个myString，参考C++官网中的标准stringAPI完成几乎所有的String类的方法，尽量与源码实现风格类似，有部分没实现有的功能之间相似度较高，重复工作意义不大就没写，有的是没办法写。亲自在我写的数据结构课设哈弗曼树中使用，没有出现特殊问题，自己测试也没有出问题，如果哪里有错希望大家可以给我指出来。(一) 关于扩容在开始...
+      </p>
+<div class="info-box d-flex align-content-center">
+<p>
+<span class="date">2020-01-13 00:14:54</span>
+<span class="read-num"><img alt="" src="https://csdnimg.cn/release/blogv2/dist/pc/img/readCountWhite.png"/>168</span>
+</p>
+</div>
+</div>
+<div class="article-item-box csdn-tracking-statistics" data-articleid="103444616">
+<h4 class="">
+<a href="https://blog.csdn.net/weixin_43574962/article/details/103444616" target="_blank">
+<span class="article-type type-1 float-none">原创</span>
+          Linux下使用GCC编译时到底进行了什么？
+        </a>
+</h4>
+<p class="content">
+        前言：在Linux下，我们都清楚一段代码要变成一个可执行文件，他需要经历预处理，编译，汇编，链接这四个过程。在这每一步都需要进行很多工作，这里我结合王老师的深入分析gcc和程序员的自我修养这两本书来笼统讲一下单单编译这个过程到底干了什么事情。GCC的逻辑结构-是不是单看这张图感觉有点不知所措？接下来我将每一个步骤来一个一个进行解释。选择高级语言这张图的上半部分的第一大块是选择高级...
+      </p>
+<div class="info-box d-flex align-content-center">
+<p>
+<span class="date">2019-12-08 18:03:12</span>
+<span class="read-num"><img alt="" src="https://csdnimg.cn/release/blogv2/dist/pc/img/readCountWhite.png"/>94</span>
+</p>
+</div>
+</div>
+<div class="article-item-box csdn-tracking-statistics" data-articleid="103375619">
+<h4 class="">
+<a href="https://blog.csdn.net/weixin_43574962/article/details/103375619" target="_blank">
+<span class="article-type type-2 float-none">转载</span>
+          学习网络编程的好文都有啥？
+        </a>
+</h4>
+<p class="content">
+        深入浅出tcp/ip协议栈水一篇，以后可能会在加一些文章的链接
+      </p>
+<div class="info-box d-flex align-content-center">
+<p>
+<span class="date">2019-12-03 20:05:22</span>
+<span class="read-num"><img alt="" src="https://csdnimg.cn/release/blogv2/dist/pc/img/readCountWhite.png"/>91</span>
+<span class="read-num"><img alt="" src="https://csdnimg.cn/release/blogv2/dist/pc/img/commentCountWhite.png"/>2</span>
+</p>
+</div>
+</div>
+<div class="article-item-box csdn-tracking-statistics" data-articleid="102941331">
+<h4 class="">
+<a href="https://blog.csdn.net/weixin_43574962/article/details/102941331" target="_blank">
+<span class="article-type type-1 float-none">原创</span>
+          C++继承多态总结
+        </a>
+</h4>
+<p class="content">
+        #include &amp;lt;iostream&amp;gt;using namespace std;//子类必须重写父类的纯虚函数，不然两个函数都是不可生成对象的，那么这两个类也就没有意义 ////虚析构//解决问题是 当子类空间中有堆区内容，释放的时候导致释放的不干净，内存泄露//virtual ~Animal(){//cout &amp;lt;&amp;lt;"Animal的析构函数调用"&amp;lt;&amp;lt...
+      </p>
+<div class="info-box d-flex align-content-center">
+<p>
+<span class="date">2019-12-01 01:07:23</span>
+<span class="read-num"><img alt="" src="https://csdnimg.cn/release/blogv2/dist/pc/img/readCountWhite.png"/>68</span>
+</p>
+</div>
+</div>
+<div class="article-item-box csdn-tracking-statistics" data-articleid="103190172">
+<h4 class="">
+<a href="https://blog.csdn.net/weixin_43574962/article/details/103190172" target="_blank">
+<span class="article-type type-1 float-none">原创</span>
+          C++智能指针初学常用细节
+        </a>
+</h4>
+<p class="content">
+        前言：智能指针部分的知识实在是太多了，好多东西我也不是很理解，限于篇幅和我个人能力，我这篇文章只能总结部分有关问题，更多知识点还需要去看c++ primer这本书的相关内容，另外auto_ptr由于已经过时，本文也不会提及。在c++中动态内存的管理是用一对运算符完成的：new和deletenew：在动态内存中为对象分配一块空间并返回一个指向该对象的指针。delete：指向一个动态独享的指针...
+      </p>
+<div class="info-box d-flex align-content-center">
+<p>
+<span class="date">2019-11-21 22:49:54</span>
+<span class="read-num"><img alt="" src="https://csdnimg.cn/release/blogv2/dist/pc/img/readCountWhite.png"/>119</span>
+</p>
+</div>
+</div>
+<div class="article-item-box csdn-tracking-statistics" data-articleid="102872736">
+<h4 class="">
+<a href="https://blog.csdn.net/weixin_43574962/article/details/102872736" target="_blank">
+<span class="article-type type-1 float-none">原创</span>
+          C++类模板函数模板总结
+        </a>
+</h4>
+<p class="content">
+        前言：在c++的学习中，模板是一个非常重要的知识点，虽然自己编程时很少去写的函数模板，类模板，但是在以后工作的时候，要经常去使用阅读别人写好的模板，而且要是以后要去看stl源码的话，理解c++经常使用的类是如何实现的，那对模板这一块的知识必须要有足够的了解。函数模板1.函数模板的语法在一个函数之前写上template &amp;lt;typename T&amp;gt;void test1(){}但...
+      </p>
+<div class="info-box d-flex align-content-center">
+<p>
+<span class="date">2019-11-02 16:39:16</span>
+<span class="read-num"><img alt="" src="https://csdnimg.cn/release/blogv2/dist/pc/img/readCountWhite.png"/>66</span>
+</p>
+</div>
+</div>
+<div class="article-item-box csdn-tracking-statistics" data-articleid="102642716">
+<h4 class="">
+<a href="https://blog.csdn.net/weixin_43574962/article/details/102642716" target="_blank">
+<span class="article-type type-1 float-none">原创</span>
+          双连通图强连通图概念解释以及tarjan算法求解该类问题总结
+        </a>
+</h4>
+<p class="content">
+        最近看了看类的相关题，感觉简单的题很简单，但是难题的转化如果对概念不清楚，很难写，我怕我要是不看，过段时间就又模糊了，故总结一下。tarjan老先生是一位大牛，发表了很多算法，名字都叫tarjan名叫Tarjan的三大算法分别为（1）         有向图的强联通分量（2）         无向图的双联通分量（求割点，桥）（3）         最近公共祖先这里前两类问题比较相似，而...
+      </p>
+<div class="info-box d-flex align-content-center">
+<p>
+<span class="date">2019-10-24 15:23:06</span>
+<span class="read-num"><img alt="" src="https://csdnimg.cn/release/blogv2/dist/pc/img/readCountWhite.png"/>363</span>
+</p>
+</div>
+</div>
+<div class="article-item-box csdn-tracking-statistics" data-articleid="102511087">
+<h4 class="">
+<a href="https://blog.csdn.net/weixin_43574962/article/details/102511087" target="_blank">
+<span class="article-type type-1 float-none">原创</span>
+          树状数组入门 区间查询和单点修改洛谷p3347 &amp;&amp; 单点查询和区间修改洛谷p3368
+        </a>
+</h4>
+<p class="content">
+        前言学树状数组只图一乐，真学技术还得看线段树，但是图一乐还得图一乐，树状数组在时间和空间复杂度上还是更加优秀的，而且代码量也小的很多。当然，线段树和树状数组，他们两个都能使对一个区间的数修改以及查询的速度提升许多。而线段树的功能更加完善，对于算法比赛来说，学了树状数组是远远不够的，还是得在回去看看线段树。先来模板吧，对于单点查询和区间修改和区间查询和单点修改这两种，代码模板是一样的，还有一...
+      </p>
+<div class="info-box d-flex align-content-center">
+<p>
+<span class="date">2019-10-16 17:23:09</span>
+<span class="read-num"><img alt="" src="https://csdnimg.cn/release/blogv2/dist/pc/img/readCountWhite.png"/>57</span>
+</p>
+</div>
+</div>
+<div class="article-item-box csdn-tracking-statistics" data-articleid="102468871">
+<h4 class="">
+<a href="https://blog.csdn.net/weixin_43574962/article/details/102468871" target="_blank">
+<span class="article-type type-1 float-none">原创</span>
+          理解manacher马拉车算法 洛谷p3805
+        </a>
+</h4>
+<p class="content">
+        最近学习了马拉车求回文串长度的算法，感觉这个比较难理解，放的时间稍微一长，今天一看，发现就快忘记了，所以写一篇博客总结一下。算法复杂度为o(n)，实际上只是初始化串一遍和走过串一遍，效率比字符串哈希和两层for循环好的多。具体详情请参看注释，适合之前已经了解马拉车算法，现在复习时看看。洛谷p3805题目描述给出一个只由小写英文字符a,b,c…y,z组成的字符串S,求S中最长回文串的长度....
+      </p>
+<div class="info-box d-flex align-content-center">
+<p>
+<span class="date">2019-10-09 20:29:34</span>
+<span class="read-num"><img alt="" src="https://csdnimg.cn/release/blogv2/dist/pc/img/readCountWhite.png"/>116</span>
+<span class="read-num"><img alt="" src="https://csdnimg.cn/release/blogv2/dist/pc/img/commentCountWhite.png"/>1</span>
+</p>
+</div>
+</div>
+<div class="article-item-box csdn-tracking-statistics" data-articleid="97277480">
+<h4 class="">
+<a href="https://blog.csdn.net/weixin_43574962/article/details/97277480" target="_blank">
+<span class="article-type type-1 float-none">原创</span>
+          LinuxC编程实战进程间通信和信号初步总结
+        </a>
+</h4>
+<p class="content">
+        信号:64种killkill ptc c信号非常有先通知好kill -l系统中的信号进程可以忽略大多数信号（也可以被阻塞）出了让他死的内核有标准处理洗好程序信号无优先级管道像io两个进程管道两边管道不能广播数据不能确定便捷无法判断哪一个发数据msg2命名管道是打开之后才会使用...
+      </p>
+<div class="info-box d-flex align-content-center">
+<p>
+<span class="date">2019-08-27 16:26:56</span>
+<span class="read-num"><img alt="" src="https://csdnimg.cn/release/blogv2/dist/pc/img/readCountWhite.png"/>67</span>
+</p>
+</div>
+</div>
+<div class="article-item-box csdn-tracking-statistics" data-articleid="100079960">
+<h4 class="">
+<a href="https://blog.csdn.net/weixin_43574962/article/details/100079960" target="_blank">
+<span class="article-type type-2 float-none">转载</span>
+          UEFI和BIOS的区别和Linux下GPT与MBR分区的区别
+        </a>
+</h4>
+<p class="content">
+        uefi详解如何查看efi分区内容BIOS和UEFI引导区别硬盘分区MBR和GPT选哪个好原来写博客这么简单
+      </p>
+<div class="info-box d-flex align-content-center">
+<p>
+<span class="date">2019-08-26 16:08:05</span>
+<span class="read-num"><img alt="" src="https://csdnimg.cn/release/blogv2/dist/pc/img/readCountWhite.png"/>283</span>
+</p>
+</div>
+</div>
+<div class="article-item-box csdn-tracking-statistics" data-articleid="100069187">
+<h4 class="">
+<a href="https://blog.csdn.net/weixin_43574962/article/details/100069187" target="_blank">
+<span class="article-type type-1 float-none">原创</span>
+          西安邮电大学软件工程大一课设C语言版TTMS
+        </a>
+</h4>
+<p class="content">
+        如果你是西安邮电大学软工的专业大一学生，大一学年年底会写一个项目叫ttms，主要的项目文档，学校会发一本蓝书，200页左右，作为西邮计算机专业大一最难课设，其实看懂那本蓝书在下手写很简单，而且写到后来就是复制粘贴，难点不多，因为框架给了，认真写很好写，而且学校为了让你能好好更好学习了解计算机知识，故意在书里搞出好多错误让你去找去改，很贴心。————————————————————————————...
+      </p>
+<div class="info-box d-flex align-content-center">
+<p>
+<span class="date">2019-08-25 23:24:51</span>
+<span class="read-num"><img alt="" src="https://csdnimg.cn/release/blogv2/dist/pc/img/readCountWhite.png"/>683</span>
+<span class="read-num"><img alt="" src="https://csdnimg.cn/release/blogv2/dist/pc/img/commentCountWhite.png"/>2</span>
+</p>
+</div>
+</div>
+<div class="article-item-box csdn-tracking-statistics" data-articleid="100067263">
+<h4 class="">
+<a href="https://blog.csdn.net/weixin_43574962/article/details/100067263" target="_blank">
+<span class="article-type type-1 float-none">原创</span>
+          暑期留校感悟与大一到现阶段总结
+        </a>
+</h4>
+<p class="content">
+        今天是8月25号，小组留校结束，算法队留校还在继续，粗略算了一下自己已经留校差不多40天了，一个暑假的确学了不少东西，但是还是感觉有点没到之前的预期，可能之前对自己要学的东西错误预估了。暑假里其实有过放松的时候，但是大多时间还是比较认真的在学习，小组的氛围很好，晚上睡得就算在晚，早上就算在累，小组成员也基本上都在，我感觉比较骄傲的是，大一的好像就我和坤坤全勤，没请过一次假。学习内容主要是lin...
+      </p>
+<div class="info-box d-flex align-content-center">
+<p>
+<span class="date">2019-08-25 21:47:59</span>
+<span class="read-num"><img alt="" src="https://csdnimg.cn/release/blogv2/dist/pc/img/readCountWhite.png"/>134</span>
+<span class="read-num"><img alt="" src="https://csdnimg.cn/release/blogv2/dist/pc/img/commentCountWhite.png"/>2</span>
+</p>
+</div>
+</div>
+<div class="article-item-box csdn-tracking-statistics" data-articleid="100026191">
+<h4 class="">
+<a href="https://blog.csdn.net/weixin_43574962/article/details/100026191" target="_blank">
+<span class="article-type type-1 float-none">原创</span>
+          LinuxC编程实战 xunchat聊天室（伪）项目文档
+        </a>
+</h4>
+<p class="content">
+        西邮Linux兴趣小组  暑期项目开发设计文档项目名称：xunchat聊天室项目作者：孙首勋1.项目引言1.1项目综述该项目基本模拟QQ的功能，可以实现群聊，私聊，收发文件，查看聊天消息等基本功能，进行操作优化，对于添加好友，添加群聊有应有的项目交互，支持多个用户接入实时聊天。1.2术语表序号术语或缩略语说明性定义1C/SClient/Server模型...
+      </p>
+<div class="info-box d-flex align-content-center">
+<p>
+<span class="date">2019-08-25 20:29:05</span>
+<span class="read-num"><img alt="" src="https://csdnimg.cn/release/blogv2/dist/pc/img/readCountWhite.png"/>157</span>
+</p>
+</div>
+</div>
+<div class="article-item-box csdn-tracking-statistics" data-articleid="98499695">
+<h4 class="">
+<a href="https://blog.csdn.net/weixin_43574962/article/details/98499695" target="_blank">
+<span class="article-type type-1 float-none">原创</span>
+          Linux下的进程线程经典实验(哲学家吃饭，生产消费者模型等)
+        </a>
+</h4>
+<p class="content">
+        上一周完成是任务不是非常的好，所以总结一下，希望这一周能做好requirement(代码已补全)进程实验#include &amp;lt;stdio.h&amp;gt;#include &amp;lt;sys/types.h&amp;gt;#include &amp;lt;unistd.h&amp;gt;#include &amp;lt;signal.h&amp;gt;#include &amp;lt;ctype.h&amp;gt;#include &amp;l...
+      </p>
+<div class="info-box d-flex align-content-center">
+<p>
+<span class="date">2019-08-05 22:29:52</span>
+<span class="read-num"><img alt="" src="https://csdnimg.cn/release/blogv2/dist/pc/img/readCountWhite.png"/>83</span>
+<span class="read-num"><img alt="" src="https://csdnimg.cn/release/blogv2/dist/pc/img/commentCountWhite.png"/>2</span>
+</p>
+</div>
+</div>
+<div class="article-item-box csdn-tracking-statistics" data-articleid="98316470">
+<h4 class="">
+<a href="https://blog.csdn.net/weixin_43574962/article/details/98316470" target="_blank">
+<span class="article-type type-1 float-none">原创</span>
+          LinuxC简单实现epoll高并发的使用
+        </a>
+</h4>
+<p class="content">
+        epoll的使用实现原理在网上整理了一些博客的内容，百度了一些内容，加了点自己的理解，现在的理解还过于浅显，对于具体的细节还一头雾水，过一段时间在重新过来修改在之前我学习的进行tcp的套接字编程之中，使用的是select进行的多路复用，服务器端大概流程为1.创建一个套接字create2.初始化服务端的套接字地址结构3.进行绑定band4.化被动为主动,进行监听listen5.通过...
+      </p>
+<div class="info-box d-flex align-content-center">
+<p>
+<span class="date">2019-08-03 13:44:55</span>
+<span class="read-num"><img alt="" src="https://csdnimg.cn/release/blogv2/dist/pc/img/readCountWhite.png"/>196</span>
+</p>
+</div>
+</div>
+<div class="article-item-box csdn-tracking-statistics" data-articleid="97761752">
+<h4 class="">
+<a href="https://blog.csdn.net/weixin_43574962/article/details/97761752" target="_blank">
+<span class="article-type type-1 float-none">原创</span>
+          ACM和OI算法常用STL整理
+        </a>
+</h4>
+<p class="content">
+        string类常用操作功能构造函数产生或复制字符串析构函数销毁字符串=，assign赋以新值Swap交换两个字符串的内容+=，append( )，push_back()添加字符insert ()插入字符erase()删除字符clear ()移除全部字符resize ()改变字符数量replace()替换...
+      </p>
+<div class="info-box d-flex align-content-center">
+<p>
+<span class="date">2019-07-30 14:18:38</span>
+<span class="read-num"><img alt="" src="https://csdnimg.cn/release/blogv2/dist/pc/img/readCountWhite.png"/>209</span>
+</p>
+</div>
+</div>
+<div class="article-item-box csdn-tracking-statistics" data-articleid="97511188">
+<h4 class="">
+<a href="https://blog.csdn.net/weixin_43574962/article/details/97511188" target="_blank">
+<span class="article-type type-1 float-none">原创</span>
+          LinuxC实战—myshell（cd内置命令，重定向，管道，屏蔽ctrl+c，自动补全，移动光标，命令切换，ls自带颜色）
+        </a>
+</h4>
+<p class="content">
+        实现屏蔽^c信号，只要这一行代码 signal(SIGINT,SIG_IGN);补全功能和移动光标，命令切换____readline库自动补全这个功能需要用Readline 库 ,没有的话需要安装，至于如何使用readline推荐这篇帖子点一点		sudo apt-get install libreadline6-dev 因为readline 是动态链接库 所以 ,编译的时候 需要加...
+      </p>
+<div class="info-box d-flex align-content-center">
+<p>
+<span class="date">2019-07-27 14:02:21</span>
+<span class="read-num"><img alt="" src="https://csdnimg.cn/release/blogv2/dist/pc/img/readCountWhite.png"/>156</span>
+</p>
+</div>
+</div>
+<div class="article-item-box csdn-tracking-statistics" data-articleid="97496103">
+<h4 class="">
+<a href="https://blog.csdn.net/weixin_43574962/article/details/97496103" target="_blank">
+<span class="article-type type-1 float-none">原创</span>
+          wait()和waitpid()解析
+        </a>
+</h4>
+<p class="content">
+        wait（）函数说明wait（等待子进程中断或结束，相关函数 waitpid，fork）表头文件#include&amp;lt;sys/types.h&amp;gt;#include&amp;lt;sys/wait.h&amp;gt;函数原型pid_t wait (int * status);函数说明参数 status 是一个整形指针。如果status不是一个空指针,则终止进程的终止状态将存储在该指针所指向的内存...
+      </p>
+<div class="info-box d-flex align-content-center">
+<p>
+<span class="date">2019-07-27 12:01:16</span>
+<span class="read-num"><img alt="" src="https://csdnimg.cn/release/blogv2/dist/pc/img/readCountWhite.png"/>236</span>
+</p>
+</div>
+</div>
+<div class="article-item-box csdn-tracking-statistics" data-articleid="96604155">
+<h4 class="">
+<a href="https://blog.csdn.net/weixin_43574962/article/details/96604155" target="_blank">
+<span class="article-type type-1 float-none">原创</span>
+          LinuxC实战—ls命令实现（-R,-a,-l）
+        </a>
+</h4>
+<p class="content">
+        暑假留校前两天实现ls命令基础功能：主要问题：功能实现：实现ls命令基础功能：主要问题：一些玄学问题（改了好久 ）当使用lstat（path，&amp;amp;buf）函数时，如果path路径最后含有 / 符号（例home/)，函数无法正常使用。此处有问题，需要先用一个int数据接一下，不能直接操作因为电脑原因，无法完整实现ls -R类全部功能（某些Windows文件无法访问）拓展知识当...
+      </p>
+<div class="info-box d-flex align-content-center">
+<p>
+<span class="date">2019-07-20 17:57:27</span>
+<span class="read-num"><img alt="" src="https://csdnimg.cn/release/blogv2/dist/pc/img/readCountWhite.png"/>228</span>
+</p>
+</div>
+</div>
+<div class="article-item-box csdn-tracking-statistics" data-articleid="90454126">
+<h4 class="">
+<a href="https://blog.csdn.net/weixin_43574962/article/details/90454126" target="_blank">
+<span class="article-type type-1 float-none">原创</span>
+          LIS类(最长上升子序列)问题,洛谷p1439
+        </a>
+</h4>
+<p class="content">
+        县复制别人的解释，ubuntu大字有问题，啥时候用widows在写我的理解怎么O(nlogn)搞一个最长上升子序列吧。考虑一个数列5 2 3 1 4首先，把5加入答案序列中，然后加2，发现2&amp;lt;5所以显然2替换5不会使结果更差，那么答案序列就是{2},然后加3，发现3&amp;gt;2，所以直接把3加到答案序列中：{2,3}然后加1，我们发现1&amp;lt;3，于是我们找到一个最小的但是比1大的数...
+      </p>
+<div class="info-box d-flex align-content-center">
+<p>
+<span class="date">2019-05-22 23:04:36</span>
+<span class="read-num"><img alt="" src="https://csdnimg.cn/release/blogv2/dist/pc/img/readCountWhite.png"/>87</span>
+<span class="read-num"><img alt="" src="https://csdnimg.cn/release/blogv2/dist/pc/img/commentCountWhite.png"/>5</span>
+</p>
+</div>
+</div>
+<div class="article-item-box csdn-tracking-statistics" data-articleid="90445172">
+<h4 class="">
+<a href="https://blog.csdn.net/weixin_43574962/article/details/90445172" target="_blank">
+<span class="article-type type-1 float-none">原创</span>
+          codeforces 994C Two Squares暴力
+        </a>
+</h4>
+<p class="content">
+        C. Two Squarestime limit per test1 secondmemory limit per test256 megabytesinputstandard inputoutputstandard outputYou are given two squares, one with sides parallel to the coordinate axes, a...
+      </p>
+<div class="info-box d-flex align-content-center">
+<p>
+<span class="date">2019-05-22 15:37:46</span>
+<span class="read-num"><img alt="" src="https://csdnimg.cn/release/blogv2/dist/pc/img/readCountWhite.png"/>78</span>
+</p>
+</div>
+</div>
+<div class="article-item-box csdn-tracking-statistics" data-articleid="90409558">
+<h4 class="">
+<a href="https://blog.csdn.net/weixin_43574962/article/details/90409558" target="_blank">
+<span class="article-type type-2 float-none">转载</span>
+          ACM计算几何问题
+        </a>
+</h4>
+<p class="content">
+        最近看到关于计算几何的东西，总结以下矢量的概念：如果一条线段的端点是有次序之分的，我们把这种线段成为有向线段(directed segment)。如果有向线段p1，p2的起点p1在坐标原点，我们可以把它称为矢量(vector) p2。矢量矢量加减法：设二维矢量P = ( x1, y1 )，Q = ( x2 , y2 )。则矢量加法定义为： P + Q = ( x1 + x2 , y1 ...
+      </p>
+<div class="info-box d-flex align-content-center">
+<p>
+<span class="date">2019-05-21 16:29:42</span>
+<span class="read-num"><img alt="" src="https://csdnimg.cn/release/blogv2/dist/pc/img/readCountWhite.png"/>224</span>
+<span class="read-num"><img alt="" src="https://csdnimg.cn/release/blogv2/dist/pc/img/commentCountWhite.png"/>3</span>
+</p>
+</div>
+</div>
+<div class="article-item-box csdn-tracking-statistics" data-articleid="90348996">
+<h4 class="">
+<a href="https://blog.csdn.net/weixin_43574962/article/details/90348996" target="_blank">
+<span class="article-type type-1 float-none">原创</span>
+          XiyouLinuxgroup 2015 2017 2018面试题
+        </a>
+</h4>
+<p class="content">
+        先从2017年写
+      </p>
+<div class="info-box d-flex align-content-center">
+<p>
+<span class="date">2019-05-20 01:25:06</span>
+<span class="read-num"><img alt="" src="https://csdnimg.cn/release/blogv2/dist/pc/img/readCountWhite.png"/>157</span>
+</p>
+</div>
+</div>
+<div class="article-item-box csdn-tracking-statistics" data-articleid="89974993">
+<h4 class="">
+<a href="https://blog.csdn.net/weixin_43574962/article/details/89974993" target="_blank">
+<span class="article-type type-1 float-none">原创</span>
+          POJ 1730 Perfect Pth Powers（最暴力   pow枚举）
+        </a>
+</h4>
+<p class="content">
+        Perfect Pth PowersTime Limit: 1000MS				Memory Limit: 10000KDescriptionWe say that x is a perfect square if, for some integer b, x = b2. Similarly, x is a perfect cube if, for some integer b, x = b...
+      </p>
+<div class="info-box d-flex align-content-center">
+<p>
+<span class="date">2019-05-08 21:12:26</span>
+<span class="read-num"><img alt="" src="https://csdnimg.cn/release/blogv2/dist/pc/img/readCountWhite.png"/>59</span>
+<span class="read-num"><img alt="" src="https://csdnimg.cn/release/blogv2/dist/pc/img/commentCountWhite.png"/>1</span>
+</p>
+</div>
+</div>
+<div class="article-item-box csdn-tracking-statistics" data-articleid="89887675">
+<h4 class="">
+<a href="https://blog.csdn.net/weixin_43574962/article/details/89887675" target="_blank">
+<span class="article-type type-1 float-none">原创</span>
+          LightOj 1197 数论基础（求素数打表进阶）Help Hanzo
+        </a>
+</h4>
+<p class="content">
+        代码如下欢迎使用Markdown编辑器新的改变功能快捷键合理的创建标题，有助于目录的生成如何改变文本的样式插入链接与图片如何插入一段漂亮的代码片生成一个适合你的列表创建一个表格设定内容居中、居左、居右SmartyPants创建一个自定义列表如何创建一个注脚注释也是必不可少的KaTeX数学公式新的甘特图功能，丰富你的文章UML 图表FLowchart流程图导出与导入导出导入|改的时间太久了心态爆...
+      </p>
+<div class="info-box d-flex align-content-center">
+<p>
+<span class="date">2019-05-06 17:36:22</span>
+<span class="read-num"><img alt="" src="https://csdnimg.cn/release/blogv2/dist/pc/img/readCountWhite.png"/>96</span>
+<span class="read-num"><img alt="" src="https://csdnimg.cn/release/blogv2/dist/pc/img/commentCountWhite.png"/>3</span>
+</p>
+</div>
+</div>
+</div>
+</div>
+<div class="articleMeList-integration">
+<div class="no-data d-flex flex-column justify-content-center align-items-center">
+<p>
+<img class="monkey-blank" src="https://csdnimg.cn/release/blogv2/dist/pc/img/monkeyWhite.png"/>
+</p>
+<h6>空空如也</h6>
+</div>
+</div>
+<div class="articleMeList-integration">
+<div class="no-data d-flex flex-column justify-content-center align-items-center">
+<p>
+<img class="monkey-blank" src="https://csdnimg.cn/release/blogv2/dist/pc/img/monkeyWhite.png"/>
+</p>
+<h6>空空如也</h6>
+</div>
+</div>
+<div class="articleMeList-integration">
+<div class="no-data d-flex flex-column justify-content-center align-items-center">
+<p>
+<img class="monkey-blank" src="https://csdnimg.cn/release/blogv2/dist/pc/img/monkeyWhite.png"/>
+</p>
+<h6>空空如也</h6>
+</div>
+</div>
+</main>
+<aside class="blog_container_aside">
+<div class="aside-box" id="asideProfile">
+<div class="profile-intro d-flex">
+<div class="avatar-box d-flex justify-content-center flex-column">
+<a data-report-click='{"mod":"popu_379","spm":"1001.2101.3001.4121","dest":"https://blog.csdn.net/weixin_43574962","ab":"new"}' href="https://blog.csdn.net/weixin_43574962">
+<img class="avatar_pic" src="https://profile.csdnimg.cn/6/6/4/3_weixin_43574962" username="weixin_43574962"/>
+</a>
+</div>
+<div class="user-info d-flex flex-column profile-intro-name-box">
+<div class="profile-intro-name-boxTop">
+<a class="" data-report-click='{"mod":"popu_379","spm":"1001.2101.3001.4122","dest":"https://blog.csdn.net/weixin_43574962","ab":"new"}' href="https://blog.csdn.net/weixin_43574962" id="uid" title="Randy__Lambert">
+<span class="name " username="Randy__Lambert">Randy__Lambert</span>
+</a>
+<span>
+</span>
+<span class="flag expert-blog">
+<span class="bubble">CSDN认证博客专家</span>
+</span>
+<span class="flag company-blog">
+<span class="bubble">CSDN认证企业博客</span>
+</span>
+</div>
+<div class="profile-intro-name-boxFooter">
+<span class="personal-home-page personal-home-years">码龄2年</span>
+<span class="personal-home-page">
+<a class="personal-home-certification" href="https://me.csdn.net/weixin_43574962?utm_source=14998968" target="_blank" title="暂无认证">
+<img alt="" src="https://csdnimg.cn/identity/nocErtification.png"/>
+                    暂无认证
+                    </a>
+</span>
+</div>
+</div>
+</div>
+<div class="data-info d-flex item-tiling">
+<dl class="text-center" title="29">
+<a data-report-click='{"mod":"1598321000_001","spm":"1001.2101.3001.4310"}' data-report-query="t=1" href="https://blog.csdn.net/weixin_43574962">
+<dt><span class="count">29</span></dt>
+<dd class="font">原创</dd>
+</a>
+</dl>
+<dl class="text-center" data-report-click='{"mod":"1598321000_002","spm":"1001.2101.3001.4311"}' title="80216">
+<a href="https://blog.csdn.net/rank/writing_rank" target="_blank">
+<dt><span class="count">8万+</span></dt>
+<dd class="font">周排名</dd>
+</a>
+</dl>
+<dl class="text-center" title="178149">
+<a data-report-click='{"mod":"1598321000_003","spm":"1001.2101.3001.4312"}' href="https://blog.csdn.net/rank/writing_rank_total" target="_blank">
+<dt><span class="count">17万+</span></dt>
+<dd class="font">总排名</dd>
+</a>
+</dl>
+<dl class="text-center" style="min-width:58px" title="6529">
+<dt><span class="count">6529</span></dt>
+<dd>访问</dd>
+</dl>
+<dl class="text-center" title="3级,点击查看等级说明">
+<dt><a href="https://blog.csdn.net/home/help.html#level" target="_blank">
+<img class="level" src="https://csdnimg.cn/identity/blog3.png"/></a>
+</dt>
+<dd>等级</dd>
+</dl>
+</div>
+<div class="item-rank"></div>
+<div class="data-info d-flex item-tiling">
+<dl class="text-center" title="497">
+<dt><span class="count">497</span></dt>
+<dd>积分</dd>
+</dl>
+<dl class="text-center" id="fanBox" title="33">
+<dt><span class="count" id="fan">33</span></dt>
+<dd>粉丝</dd>
+</dl>
+<dl class="text-center" title="100">
+<dt><span class="count">100</span></dt>
+<dd>获赞</dd>
+</dl>
+<dl class="text-center" title="31">
+<dt><span class="count">31</span></dt>
+<dd>评论</dd>
+</dl>
+<dl class="text-center" title="39">
+<dt><span class="count">39</span></dt>
+<dd>收藏</dd>
+</dl>
+</div>
+<div class="aside-box-footer" data-report-view='{"spm":"3001.4296"}'>
+<div class="badge-box d-flex">
+<div class="badge d-flex">
+<div class="icon-badge" title="GitHub">
+<div class="mouse-box">
+<img alt="GitHub" class="medal-img" data-report-click='{"spm":"3001.4296"}' src="https://csdnimg.cn/medal/github@240.png"/>
+</div>
+</div>
+<div class="icon-badge" title="签到新秀">
+<div class="mouse-box">
+<img alt="签到新秀" class="medal-img" data-report-click='{"spm":"3001.4296"}' src="https://csdnimg.cn/medal/qiandao5@240.png"/>
+</div>
+</div>
+<div class="icon-badge" title="技术圈认证">
+<div class="mouse-box">
+<img alt="技术圈认证" class="medal-img" data-report-click='{"spm":"3001.4296"}' src="https://csdnimg.cn/medal/blog_normal_medal@240.png"/>
+</div>
+</div>
+<div class="icon-badge" title="持之以恒">
+<div class="mouse-box">
+<img alt="持之以恒" class="medal-img" data-report-click='{"spm":"3001.4296"}' src="https://csdnimg.cn/medal/chizhiyiheng@240.png"/>
+</div>
+</div>
+<div class="icon-badge" title="1024勋章">
+<div class="mouse-box">
+<img alt="1024勋章" class="medal-img" data-report-click='{"spm":"3001.4296"}' src="https://csdnimg.cn/medal/1024@240.png"/>
+</div>
+</div>
+<div class="icon-badge" title="勤写标兵Lv1">
+<div class="mouse-box">
+<img alt="勤写标兵Lv1" class="medal-img" data-report-click='{"spm":"3001.4296"}' src="https://csdnimg.cn/medal/qixiebiaobing1@240.png"/>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="profile-intro-name-boxOpration">
+<div class="opt-letter-watch-box">
+<a class="bt-button personal-letter" href="https://me.csdn.net/weixin_43574962" rel="noopener" target="_blank">TA的主页</a>
+</div>
+<div class="opt-letter-watch-box">
+<a class="bt-button personal-letter" href="https://im.csdn.net/chat/weixin_43574962" rel="noopener" target="_blank">私信</a>
+</div>
+<div class="opt-letter-watch-box">
+<a class="personal-watch bt-button" id="btnAttent">关注</a>
+</div>
+</div>
+</div>
+<div class="aside-box" id="asideSearchArticle">
+<div class="aside-content search-comter">
+<div class="aside-search aside-search-blog">
+<input autocomplete="off" class="input-serch-blog" id="search-blog-words" name="" placeholder="搜博主文章" type="text" value=""/>
+<a class="btn-search-blog">
+<img src="//csdnimg.cn/cdn/content-toolbar/csdn-sou.png?v=1587021042"/>
+</a>
+</div>
+</div>
+</div>
+<div class="aside-box" id="asideHotArticle">
+<h3 class="aside-title">热门文章</h3>
+<div class="aside-content">
+<ul class="hotArticle-list">
+<li>
+<a data-report-click='{"mod":"popu_541","spm":"1001.2101.3001.4139","dest":"https://blog.csdn.net/weixin_43574962/article/details/100069187","ab":"new"}' href="https://blog.csdn.net/weixin_43574962/article/details/100069187" target="_blank">
+				西安邮电大学软件工程大一课设C语言版TTMS
+					<img alt="" src="https://csdnimg.cn/release/blogv2/dist/pc/img/readCountWhite.png"/>
+<span class="read">682</span>
+</a>
+</li>
+<li>
+<a data-report-click='{"mod":"popu_541","spm":"1001.2101.3001.4139","dest":"https://blog.csdn.net/weixin_43574962/article/details/104012163","ab":"new"}' href="https://blog.csdn.net/weixin_43574962/article/details/104012163" target="_blank">
+				高性能线程池C语言版(简单实现动态扩容和销毁)
+					<img alt="" src="https://csdnimg.cn/release/blogv2/dist/pc/img/readCountWhite.png"/>
+<span class="read">513</span>
+</a>
+</li>
+<li>
+<a data-report-click='{"mod":"popu_541","spm":"1001.2101.3001.4139","dest":"https://blog.csdn.net/weixin_43574962/article/details/102642716","ab":"new"}' href="https://blog.csdn.net/weixin_43574962/article/details/102642716" target="_blank">
+				双连通图强连通图概念解释以及tarjan算法求解该类问题总结
+					<img alt="" src="https://csdnimg.cn/release/blogv2/dist/pc/img/readCountWhite.png"/>
+<span class="read">361</span>
+</a>
+</li>
+<li>
+<a data-report-click='{"mod":"popu_541","spm":"1001.2101.3001.4139","dest":"https://blog.csdn.net/weixin_43574962/article/details/100079960","ab":"new"}' href="https://blog.csdn.net/weixin_43574962/article/details/100079960" target="_blank">
+				UEFI和BIOS的区别和Linux下GPT与MBR分区的区别
+					<img alt="" src="https://csdnimg.cn/release/blogv2/dist/pc/img/readCountWhite.png"/>
+<span class="read">278</span>
+</a>
+</li>
+<li>
+<a data-report-click='{"mod":"popu_541","spm":"1001.2101.3001.4139","dest":"https://blog.csdn.net/weixin_43574962/article/details/97496103","ab":"new"}' href="https://blog.csdn.net/weixin_43574962/article/details/97496103" target="_blank">
+				wait()和waitpid()解析
+					<img alt="" src="https://csdnimg.cn/release/blogv2/dist/pc/img/readCountWhite.png"/>
+<span class="read">236</span>
+</a>
+</li>
+</ul>
+</div>
+</div>
+<div class="aside-box flexible-box" id="asideCategory" style="display:block!important;">
+<h3 class="aside-title">分类专栏</h3>
+<div class="aside-content">
+<ul>
+<li class="">
+<a class="clearfix" data-report-click='{"mod":"popu_537","spm":"1001.2101.3001.4137","strategy":"pc付费专栏左侧入口","dest":"https://blog.csdn.net/weixin_43574962/category_10271825.html","ab":"new"}' href="https://blog.csdn.net/weixin_43574962/category_10271825.html" target="_blank">
+<img alt="" onerror="this.src='https://img-blog.csdnimg.cn/20190918135101160.png?x-oss-process=image/resize,m_fixed,h_64,w_64'" src="https://img-blog.csdnimg.cn/20190918135101160.png?x-oss-process=image/resize,m_fixed,h_64,w_64"/>
+<span class="title oneline">
+<span class="text">踩坑</span>
+</span>
+<span class="count float-right">2篇</span>
+</a>
+</li>
+<li class="">
+<a class="clearfix" data-report-click='{"mod":"popu_537","spm":"1001.2101.3001.4137","strategy":"pc付费专栏左侧入口","dest":"https://blog.csdn.net/weixin_43574962/category_9479811.html","ab":"new"}' href="https://blog.csdn.net/weixin_43574962/category_9479811.html" target="_blank">
+<img alt="" onerror="this.src='https://img-blog.csdnimg.cn/20190918135101160.png?x-oss-process=image/resize,m_fixed,h_64,w_64'" src="https://img-blog.csdnimg.cn/20190927151132530.png?x-oss-process=image/resize,m_fixed,h_64,w_64"/>
+<span class="title oneline">
+<span class="text">C++相关</span>
+</span>
+<span class="count float-right">6篇</span>
+</a>
+</li>
+<li class="">
+<a class="clearfix" data-report-click='{"mod":"popu_537","spm":"1001.2101.3001.4137","strategy":"pc付费专栏左侧入口","dest":"https://blog.csdn.net/weixin_43574962/category_9564072.html","ab":"new"}' href="https://blog.csdn.net/weixin_43574962/category_9564072.html" target="_blank">
+<img alt="" onerror="this.src='https://img-blog.csdnimg.cn/20190918135101160.png?x-oss-process=image/resize,m_fixed,h_64,w_64'" src="https://img-blog.csdnimg.cn/20190918140053667.png?x-oss-process=image/resize,m_fixed,h_64,w_64"/>
+<span class="title oneline">
+<span class="text">Unix网络编程相关</span>
+</span>
+<span class="count float-right">4篇</span>
+</a>
+</li>
+<li class="">
+<a class="clearfix" data-report-click='{"mod":"popu_537","spm":"1001.2101.3001.4137","strategy":"pc付费专栏左侧入口","dest":"https://blog.csdn.net/weixin_43574962/category_8922591.html","ab":"new"}' href="https://blog.csdn.net/weixin_43574962/category_8922591.html" target="_blank">
+<img alt="" onerror="this.src='https://img-blog.csdnimg.cn/20190918135101160.png?x-oss-process=image/resize,m_fixed,h_64,w_64'" src="https://img-blog.csdnimg.cn/20190918140129601.png?x-oss-process=image/resize,m_fixed,h_64,w_64"/>
+<span class="title oneline">
+<span class="text">ACM算法讲解</span>
+</span>
+<span class="count float-right">7篇</span>
+</a>
+</li>
+<li class="">
+<a class="clearfix" data-report-click='{"mod":"popu_537","spm":"1001.2101.3001.4137","strategy":"pc付费专栏左侧入口","dest":"https://blog.csdn.net/weixin_43574962/category_9557655.html","ab":"new"}' href="https://blog.csdn.net/weixin_43574962/category_9557655.html" target="_blank">
+<img alt="" onerror="this.src='https://img-blog.csdnimg.cn/20190918135101160.png?x-oss-process=image/resize,m_fixed,h_64,w_64'" src="https://img-blog.csdnimg.cn/20190918135101160.png?x-oss-process=image/resize,m_fixed,h_64,w_64"/>
+<span class="title oneline">
+<span class="text">GCC编译器相关</span>
+</span>
+<span class="count float-right">2篇</span>
+</a>
+</li>
+<li class="">
+<a class="clearfix" data-report-click='{"mod":"popu_537","spm":"1001.2101.3001.4137","strategy":"pc付费专栏左侧入口","dest":"https://blog.csdn.net/weixin_43574962/category_9297112.html","ab":"new"}' href="https://blog.csdn.net/weixin_43574962/category_9297112.html" target="_blank">
+<img alt="" onerror="this.src='https://img-blog.csdnimg.cn/20190918135101160.png?x-oss-process=image/resize,m_fixed,h_64,w_64'" src="https://img-blog.csdnimg.cn/20190927151132530.png?x-oss-process=image/resize,m_fixed,h_64,w_64"/>
+<span class="title oneline">
+<span class="text">Linux操作系统相关</span>
+</span>
+<span class="count float-right">7篇</span>
+</a>
+</li>
+<li class="">
+<a class="clearfix" data-report-click='{"mod":"popu_537","spm":"1001.2101.3001.4137","strategy":"pc付费专栏左侧入口","dest":"https://blog.csdn.net/weixin_43574962/category_8930682.html","ab":"new"}' href="https://blog.csdn.net/weixin_43574962/category_8930682.html" target="_blank">
+<img alt="" onerror="this.src='https://img-blog.csdnimg.cn/20190918135101160.png?x-oss-process=image/resize,m_fixed,h_64,w_64'" src="https://img-blog.csdnimg.cn/20190918140053667.png?x-oss-process=image/resize,m_fixed,h_64,w_64"/>
+<span class="title oneline">
+<span class="text">ACM算法题解</span>
+</span>
+<span class="count float-right">3篇</span>
+</a>
+</li>
+<li class="">
+<a class="clearfix" data-report-click='{"mod":"popu_537","spm":"1001.2101.3001.4137","strategy":"pc付费专栏左侧入口","dest":"https://blog.csdn.net/weixin_43574962/category_8963614.html","ab":"new"}' href="https://blog.csdn.net/weixin_43574962/category_8963614.html" target="_blank">
+<img alt="" onerror="this.src='https://img-blog.csdnimg.cn/20190918135101160.png?x-oss-process=image/resize,m_fixed,h_64,w_64'" src="https://img-blog.csdnimg.cn/20190918140158853.png?x-oss-process=image/resize,m_fixed,h_64,w_64"/>
+<span class="title oneline">
+<span class="text">C语言相关</span>
+</span>
+<span class="count float-right">10篇</span>
+</a>
+</li>
+<li class="">
+<a class="clearfix" data-report-click='{"mod":"popu_537","spm":"1001.2101.3001.4137","strategy":"pc付费专栏左侧入口","dest":"https://blog.csdn.net/weixin_43574962/category_9260321.html","ab":"new"}' href="https://blog.csdn.net/weixin_43574962/category_9260321.html" target="_blank">
+<img alt="" onerror="this.src='https://img-blog.csdnimg.cn/20190918135101160.png?x-oss-process=image/resize,m_fixed,h_64,w_64'" src="https://img-blog.csdnimg.cn/2019092715111047.png?x-oss-process=image/resize,m_fixed,h_64,w_64"/>
+<span class="title oneline">
+<span class="text">杂谈</span>
+</span>
+<span class="count float-right">1篇</span>
+</a>
+</li>
+</ul>
+</div>
+<p class="text-center">
+<a class="flexible-btn" data-fbox="aside-archive"><img alt="" class="look-more" src="https://csdnimg.cn/release/blogv2/dist/pc/img/arrowDownWhite.png"/></a>
+</p>
+</div>
+<div class="aside-box" id="asideNewComments">
+<h3 class="aside-title">最新评论</h3>
+<div class="aside-content">
+<ul class="newcomment-list">
+<li>
+<a class="title text-truncate" data-report-click='{"mod":"popu_542","spm":"1001.2101.3001.4231","dest":"https://blog.csdn.net/weixin_43574962/article/details/100069187#comments_12477446","ab":"new"}' data-report-view='{"mod":"popu_542","spm":"1001.2101.3001.4231","dest":"https://blog.csdn.net/weixin_43574962/article/details/100069187#comments_12477446","ab":"new"}' href="https://blog.csdn.net/weixin_43574962/article/details/100069187#comments_12477446" target="_blank">西安邮电大学软件工程大一课设C语言版TTMS</a>
+<p class="comment ellipsis">
+<a class="user-name" href="https://my.csdn.net/weixin_43574962" target="_blank">Randy__Lambert</a>
+<span class="reply"> 回复 </span>
+<span class="code-comments">xwl666666: 补全 , 照着框架写 , 有时间的话在框架的基础上在补充功能 , 但是框架里面会有一点小错误 , 写的时候出问题的时候改一下就好</span>
+</p>
+</li>
+<li>
+<a class="title text-truncate" data-report-click='{"mod":"popu_542","spm":"1001.2101.3001.4231","dest":"https://blog.csdn.net/weixin_43574962/article/details/100069187#comments_12476946","ab":"new"}' data-report-view='{"mod":"popu_542","spm":"1001.2101.3001.4231","dest":"https://blog.csdn.net/weixin_43574962/article/details/100069187#comments_12476946","ab":"new"}' href="https://blog.csdn.net/weixin_43574962/article/details/100069187#comments_12476946" target="_blank">西安邮电大学软件工程大一课设C语言版TTMS</a>
+<p class="comment ellipsis">
+<a class="user-name" href="https://my.csdn.net/xwl666666" target="_blank">xwl666666: </a>
+<span class="code-comments">想请问一下大佬，这个老师曾经发的文件的框架是要我们补全还是了解这个框架之后自己重新写</span>
+</p>
+</li>
+<li>
+<a class="title text-truncate" data-report-click='{"mod":"popu_542","spm":"1001.2101.3001.4231","dest":"https://blog.csdn.net/weixin_43574962/article/details/104012163#comments_11680182","ab":"new"}' data-report-view='{"mod":"popu_542","spm":"1001.2101.3001.4231","dest":"https://blog.csdn.net/weixin_43574962/article/details/104012163#comments_11680182","ab":"new"}' href="https://blog.csdn.net/weixin_43574962/article/details/104012163#comments_11680182" target="_blank">高性能线程池C语言版(简单实现动态扩容和销毁)</a>
+<p class="comment ellipsis">
+<a class="user-name" href="https://my.csdn.net/weixin_38331384" target="_blank">ldc__</a>
+<span class="reply"> 回复 </span>
+<span class="code-comments">Randy__Lambert: 对的，我说的就是那一部分，我只是学习而已。用的话肯定用现成的。对于csdn吞回复这个现象，需要多次刷新，不会把回复丢失，很狗。</span>
+</p>
+</li>
+<li>
+<a class="title text-truncate" data-report-click='{"mod":"popu_542","spm":"1001.2101.3001.4231","dest":"https://blog.csdn.net/weixin_43574962/article/details/104012163#comments_11678776","ab":"new"}' data-report-view='{"mod":"popu_542","spm":"1001.2101.3001.4231","dest":"https://blog.csdn.net/weixin_43574962/article/details/104012163#comments_11678776","ab":"new"}' href="https://blog.csdn.net/weixin_43574962/article/details/104012163#comments_11678776" target="_blank">高性能线程池C语言版(简单实现动态扩容和销毁)</a>
+<p class="comment ellipsis">
+<a class="user-name" href="https://my.csdn.net/weixin_43574962" target="_blank">Randy__Lambert</a>
+<span class="reply"> 回复 </span>
+<span class="code-comments">ldc__: csdn吞回复？为啥我刚回复了怎么刷新后就没了？</span>
+</p>
+</li>
+<li>
+<a class="title text-truncate" data-report-click='{"mod":"popu_542","spm":"1001.2101.3001.4231","dest":"https://blog.csdn.net/weixin_43574962/article/details/104012163#comments_11678744","ab":"new"}' data-report-view='{"mod":"popu_542","spm":"1001.2101.3001.4231","dest":"https://blog.csdn.net/weixin_43574962/article/details/104012163#comments_11678744","ab":"new"}' href="https://blog.csdn.net/weixin_43574962/article/details/104012163#comments_11678744" target="_blank">高性能线程池C语言版(简单实现动态扩容和销毁)</a>
+<p class="comment ellipsis">
+<a class="user-name" href="https://my.csdn.net/weixin_43574962" target="_blank">Randy__Lambert</a>
+<span class="reply"> 回复 </span>
+<span class="code-comments">ldc__: 你指的动态销毁线程是在缩容的时候吗？这里的设计的确不够合理，这里的线程的确没有进行pthread_join()，他是在整个线程池结束的时候进行了pthread_join(),相当于如果在线程池结束的时候，如果当时缩容自杀的线程，他的tid被保存的数组位置没有被后来扩容的新的线程覆盖，那么他就能在这时候被pthread_join()回收，但是如果在扩容的时候，他的tid被保存的数组位置被新的线程覆盖了，那这个线程就变成了僵尸线程，内存没有被释放，除了这一点，刚才又仔细看了下代码，这个线程池的实现一些还有不完善的地方，之后我有时间改一改，如果你是简单学习，可以了解一下思想，但是要在项目使用，其实动态线程池我个人感觉好像没有什么优势，在我了解的开源库里也没有使用过动态线程池，因为线程的创建和销毁都是一个很耗费系统资源的事情，而且当线程的数量到达一定数目的时候，CPU在线程之间切换上下文的时候花费的时间过高反而会导致吞吐量下降，所以个人感觉在开始的时候计算好生成多少个线程比较合适本机情况下，设定固定数量的线程池应该更好，这是我个人的看法</span>
+</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="aside-box" id="asideArchive">
+<h3 class="aside-title">最新文章</h3>
+<div class="aside-content">
+<ul class="inf_list clearfix">
+<li class="clearfix">
+<a data-report-click='{"mod":"popu_382","spm":"1001.2101.3001.4136","dest":"https://blog.csdn.net/weixin_43574962/article/details/108319088","ab":"new"}' data-report-view='{"mod":"popu_382","dest":"https://blog.csdn.net/weixin_43574962/article/details/108319088","ab":"new"}' href="https://blog.csdn.net/weixin_43574962/article/details/108319088" target="_blank">使用scp上传文件到服务器或从服务器下载文件(支持跨越跳板机)</a>
+</li>
+<li class="clearfix">
+<a data-report-click='{"mod":"popu_382","spm":"1001.2101.3001.4136","dest":"https://blog.csdn.net/weixin_43574962/article/details/107834273","ab":"new"}' data-report-view='{"mod":"popu_382","dest":"https://blog.csdn.net/weixin_43574962/article/details/107834273","ab":"new"}' href="https://blog.csdn.net/weixin_43574962/article/details/107834273" target="_blank">deepin v20安装git导致设置被删除（DDE被卸载）解决方案</a>
+</li>
+<li class="clearfix">
+<a data-report-click='{"mod":"popu_382","spm":"1001.2101.3001.4136","dest":"https://blog.csdn.net/weixin_43574962/article/details/104861569","ab":"new"}' data-report-view='{"mod":"popu_382","dest":"https://blog.csdn.net/weixin_43574962/article/details/104861569","ab":"new"}' href="https://blog.csdn.net/weixin_43574962/article/details/104861569" target="_blank">多线程服务器编程之muduo中base库与net库详细注释</a>
+</li>
+</ul>
+<div class="archive-bar"></div>
+<div class="archive-box">
+<div class="archive-list-item"><a data-report-click='{"mod":"popu_538","spm":"1001.2101.3001.4138","ab":"new","dest":""}' href="https://blog.csdn.net/weixin_43574962/article/month/2020/08" target="_blank"><span class="year">2020年</span><span class="num">8篇</span></a></div>
+<div class="archive-list-item"><a data-report-click='{"mod":"popu_538","spm":"1001.2101.3001.4138","ab":"new","dest":""}' href="https://blog.csdn.net/weixin_43574962/article/month/2019/12" target="_blank"><span class="year">2019年</span><span class="num">26篇</span></a></div>
+</div>
+</div>
+</div>
+<div class="" id="footerRightAds">
+<div class="aside-box">
+<div data-pid="57" id="kp_box_57"><div id="protag-banner-2"></div>
+<script data-cfasync="false" src="https://protagcdn.com/s/csdn.net/bbs/protag-banner-2.js" type="text/javascript"></script><img class="pre-img-lasy" data-src="https://kunyu.csdn.net/1.png?p=57&amp;a=2234&amp;c=0&amp;k=&amp;d=1&amp;t=3&amp;u=809e1c24b92640c7bc48d73591929fb7"/></div>
+</div>
+</div>
+<!-- 详情页显示目录 -->
+</aside>
+<script>
+	$("a.flexible-btn").click(function(){
+		$(this).parents('div.aside-box').removeClass('flexible-box');
+		$(this).parents("p.text-center").remove();
+	})
+</script>
+<script src="https://g.csdnimg.cn/user-tooltip/2.1/user-tooltip.js" type="text/javascript"></script>
+<script src="https://g.csdnimg.cn/user-medal/1.0.5/user-medal.js" type="text/javascript"></script></div>
+<div class="mask"></div>
+<div class="promptBox clearfix">
+<div class="title clearfix bottom-dis-16">
+<span class="float-left">提示</span>
+<a class="float-right Boxclose">
+<svg aria-hidden="true" class="icon">
+<use xlink:href="#csdnc-times"></use>
+</svg>
+</a>
+</div>
+<div class="text">确定要删除当前文章？</div>
+<div class="pro-btn float-right">
+<a class="clickNo">取消</a>
+<a class="clickYes">删除</a>
+</div>
+</div>
+<script type="text/javascript">
+    var currentPage = 1;
+    var baseUrl = 'https://blog.csdn.net/weixin_43574962/article/list';
+    var pageSize =40;
+    var listTotal = 34;
+    var pageQueryStr = '';
+    function getAllUrl(page) {
+        return baseUrl + "/" + page + pageQueryStr;
+    }
+</script>
+<script data-isfootertrack="false" src="https://csdnimg.cn/pubfooter/js/publib_footer-1.0.4.js" type="text/javascript"></script>
+<script src="https://csdnimg.cn/release/blogv2/dist/pc/js/common-b286f966c8.min.js" type="text/javascript"></script>
+<script src="https://csdnimg.cn/release/blogv2/dist/pc/js/list-4cc18a36e7.min.js" type="text/javascript"></script>
+<script src="https://g.csdnimg.cn/side-toolbar/2.6/side-toolbar.js" type="text/javascript"></script>
+</body>
+</html>

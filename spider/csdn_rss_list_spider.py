@@ -51,8 +51,9 @@ def getArticle(url):
         print(e)
         return None
     for sibling in bs.find_all('article'):
-        print(sibling.get_text())
-
+        fd=open('sp.html',"a+")
+        fd.write(str(sibling))
+        fd.close()
 # https://blog.csdn.net/adlatereturn/article/details/109037551
 urls = getUrls('https://blog.csdn.net/adlatereturn/rss/list')
 if urls:

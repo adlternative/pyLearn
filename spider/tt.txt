@@ -1,0 +1,1746 @@
+
+<!DOCTYPE html>
+
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8"/>
+<link href="https://blog.csdn.net/qq_41683065/article/details/108702408" rel="canonical"/>
+<meta content="text/html; charset=utf-8" http-equiv="content-type"/>
+<meta content="webkit" name="renderer">
+<meta content="webkit" name="force-rendering">
+<meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible"/>
+<meta content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport"/>
+<meta content='{"pid": "blog", "spm":"1001.2101"}' name="report"/>
+<meta content="always" name="referrer"/>
+<meta content="no-siteapp" http-equiv="Cache-Control"><link href="#" media="handheld" rel="alternate"/>
+<meta content="5a59773ab8077d4a62bf469ab966a63b_1497598848" name="shenma-site-verification"/>
+<meta content="pc" name="applicable-device"/>
+<link href="https://csdnimg.cn/public/favicon.ico" rel="SHORTCUT ICON"/>
+<title>[TensorFlow] 运行报错：W tensorflowstream_executorplatformdefaultdso_loader.cc59]_真理无穷，进一步有进一步的欢喜-CSDN博客</title>
+<meta content="[TensorFlow] 运行报错：W tensorflowstream_executorplatformdefaultdso_loader.cc59]" name="keywords"/>
+<meta content='{"autorun":true,"install":true,"keyword":"[TensorFlow] 运行报错：W tensorflowstream_executorplatformdefaultdso_loader.cc59]"}' name="csdn-baidu-search"/>
+<meta content="[TensorFlow] 运行报错：W tensorflow/stream_executor/platform/default/dso_loader.cc:59]问题描述使用官网的命令下载TensorFlow没有出现问题pip install tensorflow但是运行时出现报错信息：2020-09-20 21:31:45.455714: W tensorflow/stream_executor/platform/default/dso_loader.cc:59] Could not load" name="description"/>
+<script src="//g.csdnimg.cn/tingyun/1.8.3/blog.js" type="text/javascript"></script>
+<link href="https://csdnimg.cn/release/blogv2/dist/pc/css/detail_enter-a25072eae3.min.css" rel="stylesheet" type="text/css"/>
+<script type="application/ld+json">{"@context":"https://ziyuan.baidu.com/contexts/cambrian.jsonld","@id":"https://blog.csdn.net/qq_41683065/article/details/108702408","appid":"1638831770136827","pubDate":"2020-09-21T09:02:11","title":"[TensorFlow] 运行报错：W tensorflowstream_executorplatformdefaultdso_loader.cc59]_真理无穷，进一步有进一步的欢喜-CSDN博客","upDate":"2020-09-21T09:02:11"}</script>
+<link href="https://csdnimg.cn/release/blogv2/dist/pc/themesSkin/skin-clickmove/skin-clickmove-becbfaeed7.min.css" rel="stylesheet" type="text/css"/>
+<script src="https://csdnimg.cn/public/common/libs/jquery/jquery-1.9.1.min.js" type="text/javascript"></script>
+<script type="text/javascript">
+        var isCorporate = false;//注释删除enterprise
+        var username =  "qq_41683065";
+        var skinImg = "white";
+        var blog_address = "https://blog.csdn.net/qq_41683065";
+        var currentUserName = "";
+        var isOwner = false;
+        var loginUrl = "http://passport.csdn.net/account/login?from=https://blog.csdn.net/qq_41683065/article/details/108702408";
+        var blogUrl = "https://blog.csdn.net/";
+        var avatar = "https://profile.csdnimg.cn/3/E/9/3_qq_41683065";
+        var articleTitle = "[TensorFlow] 运行报错：W tensorflowstream_executorplatformdefaultdso_loader.cc59]";
+        var articleDesc = "[TensorFlow] 运行报错：W tensorflow/stream_executor/platform/default/dso_loader.cc:59]问题描述使用官网的命令下载TensorFlow没有出现问题pip install tensorflow但是运行时出现报错信息：2020-09-20 21:31:45.455714: W tensorflow/stream_executor/platform/default/dso_loader.cc:59] Could not load";
+        var articleTitles = "[TensorFlow] 运行报错：W tensorflowstream_executorplatformdefaultdso_loader.cc59]_真理无穷，进一步有进一步的欢喜-CSDN博客";
+        var nickName = "Harry嗷";
+        var articleDetailUrl = "https://blog.csdn.net/qq_41683065/article/details/108702408";
+        var skinStatus = "Black";
+        var blogStaticHost = "https://csdnimg.cn/release/blogv2/"
+    </script>
+<meta content='{"type":"1"}' name="toolbar"/>
+<script>
+            window.csdn = window.csdn ? window.csdn : {};
+            window.csdn.toolbarIsBlack = true;
+            window.csdn.sideToolbar = {
+                options: {
+                    theme : "black"
+                }
+            }
+        </script>
+<script src="https://g.csdnimg.cn/??fixed-sidebar/1.1.6/fixed-sidebar.js,report/1.5.8/report.js" type="text/javascript"></script>
+<link href="https://csdnimg.cn/public/sandalstrap/1.4/css/sandalstrap.min.css" rel="stylesheet" type="text/css"/>
+<style>
+        .MathJax, .MathJax_Message, .MathJax_Preview{
+            display: none
+        }
+    </style>
+<script src="https://dup.baidustatic.com/js/ds.js"></script>
+</meta></meta></meta></head>
+<body class="nodata " style="">
+<script src="https://g.csdnimg.cn/common/csdn-toolbar/csdn-toolbar.js" type="text/javascript"></script>
+<script>
+    (function(){
+        var bp = document.createElement('script');
+        var curProtocol = window.location.protocol.split(':')[0];
+        if (curProtocol === 'https') {
+            bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+        }
+        else {
+            bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+        }
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(bp, s);
+    })();
+    </script>
+<link href="https://csdnimg.cn/release/blogv2/dist/pc/css/blog_code-01256533b5.min.css" rel="stylesheet"/>
+<link href="https://csdnimg.cn/release/blogv2/dist/mdeditor/css/editerView/chart-3456820cac.css" rel="stylesheet">
+<div class="main_father clearfix d-flex justify-content-center" style="height:100%;">
+<div class="container clearfix" id="mainBox">
+<main>
+<script type="text/javascript">
+    var blogSensitiveWords = "";
+</script>
+<div class="blog-content-box">
+<div class="article-header-box">
+<div class="article-header">
+<div class="article-title-box">
+<h1 class="title-article" id="articleContentId">[TensorFlow] 运行报错：W tensorflowstream_executorplatformdefaultdso_loader.cc59]</h1>
+</div>
+<div class="article-info-box">
+<div class="article-bar-top">
+<img alt="" class="article-type-img" src="https://csdnimg.cn/release/blogv2/dist/pc/img/original.png"/>
+<div class="bar-content">
+<a class="follow-nickName" href="https://me.csdn.net/qq_41683065" rel="noopener" target="_blank">Harry嗷</a>
+<span class="time">2020-09-21 09:02:11</span>
+<img alt="" class="article-read-img article-heard-img" src="https://csdnimg.cn/release/blogv2/dist/pc/img/articleReadEyes.png"/>
+<span class="read-count">806</span>
+<a class="un-collection" data-report-click='{"mod":"popu_823","spm":"1001.2101.3001.4232","ab":"new"}' id="blog_detail_zk_collection">
+<img alt="" class="article-collect-img article-heard-img un-collect-status" src="https://csdnimg.cn/release/blogv2/dist/pc/img/tobarCollect.png" style="display:inline-block"/>
+<img alt="" class="article-collect-img article-heard-img collect-status" src="https://csdnimg.cn/release/blogv2/dist/pc/img/tobarCollectionActive.png" style="display:none"/>
+<span class="name">收藏</span>
+<span class="get-collection">
+                            1
+                        </span>
+</a>
+</div>
+</div>
+<div class="blog-tags-box">
+<div class="tags-box artic-tag-box">
+<span class="label">分类专栏：</span>
+<a class="tag-link" href="https://blog.csdn.net/qq_41683065/category_9721842.html" rel="noopener" target="_blank">BUG解决</a>
+<span class="label">文章标签：</span>
+<a class="tag-link" data-report-click='{"mod":"popu_626","spm":"1001.2101.3001.4223","strategy":"tensorflow","ab":"new"}' href="https://www.csdn.net/gather_2b/MtjaIgzsOTg5MzYtYmxvZwO0O0OO0O0O.html" rel="noopener" target="_blank">tensorflow</a>
+<a class="tag-link" data-report-click='{"mod":"popu_626","spm":"1001.2101.3001.4223","strategy":"python","ab":"new"}' href="https://www.csdn.net/gather_24/MtjaQg4sNDk0LWJsb2cO0O0O.html" rel="noopener" target="_blank">python</a>
+<a class="tag-link" data-report-click='{"mod":"popu_626","spm":"1001.2101.3001.4223","strategy":"深度学习","ab":"new"}' href="https://www.csdn.net/gather_2d/MtTaggxsNzMxNC1ibG9n.html" rel="noopener" target="_blank">深度学习</a>
+<a class="tag-link" data-report-click='{"mod":"popu_626","spm":"1001.2101.3001.4223","strategy":"cuda","ab":"new"}' href="https://www.csdn.net/gather_2c/MtTaEg0sMzc4NzMtYmxvZwO0O0OO0O0O.html" rel="noopener" target="_blank">cuda</a>
+<a class="tag-link" data-report-click='{"mod":"popu_626","spm":"1001.2101.3001.4223","strategy":"java","ab":"new"}' href="https://www.csdn.net/gather_24/NtTaIg5sMzYyLWJsb2cO0O0O.html" rel="noopener" target="_blank">java</a>
+</div>
+</div>
+<div class="up-time"><span>最后发布:2020-09-21 09:02:11</span><span>首次发布:2020-09-21 09:02:11</span></div>
+<div class="slide-content-box">
+<div class="article-copyright">
+<div class="creativecommons">
+                            版权声明：本文为博主原创文章，遵循<a href="http://creativecommons.org/licenses/by-sa/4.0/" rel="noopener" target="_blank"> CC 4.0 BY-SA </a>版权协议，转载请附上原文出处链接和本声明。
+                        </div>
+<div class="article-source-link">
+                            本文链接：<a href="https://blog.csdn.net/qq_41683065/article/details/108702408" target="_blank">https://blog.csdn.net/qq_41683065/article/details/108702408</a>
+</div>
+</div>
+</div>
+<div class="operating">
+<a class="href-article-edit slide-toggle">版权</a>
+</div>
+</div>
+</div>
+</div>
+<article class="baidu_pl">
+<div class="article_content clearfix" id="article_content">
+<link href="https://csdnimg.cn/release/blogv2/dist/mdeditor/css/editerView/ck_htmledit_views-a405391f94.css" rel="stylesheet"/>
+<div class="markdown_views prism-tomorrow-night" id="content_views">
+<svg style="display: none;" xmlns="http://www.w3.org/2000/svg">
+<path d="M5,0 0,2.5 5,5z" id="raphael-marker-block" stroke-linecap="round" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);"></path>
+</svg>
+<h1><a id="TensorFlow_W_tensorflowstream_executorplatformdefaultdso_loadercc59_0"></a>[TensorFlow] 运行报错：W tensorflow/stream_executor/platform/default/dso_loader.cc:59]</h1>
+<h3><a id="_2"></a>问题描述</h3>
+<p>使用官网的命令下载TensorFlow没有出现问题</p>
+<pre><code class="prism language-bash">pip <span class="token function">install</span> tensorflow
+</code></pre>
+<p>但是运行时出现报错信息：</p>
+<pre><code>2020-09-20 21:31:45.455714: W tensorflow/stream_executor/platform/default/dso_loader.cc:59] Could not load dynamic library 'libcudart.so.10.1'; dlerror: libcudart.so.10.1: cannot open shared object file: No such file or directory
+2020-09-20 21:31:45.455738: I tensorflow/stream_executor/cuda/cudart_stub.cc:29] Ignore above cudart dlerror if you do not have a GPU set up on your machine.
+</code></pre>
+<h3><a id="_17"></a>问题分析</h3>
+<p>看报错信息也能看出来时GPU的问题。</p>
+<p>查阅资料后时GPU的版本与TensorFlow的版本不一致。</p>
+<p>对应关系参见：https://tensorflow.google.cn/install/source#gpu</p>
+<table><thead><tr><th>版本</th><th>Python 版本</th><th>编译器</th><th>构建工具</th><th>cuDNN</th><th>CUDA</th></tr></thead><tbody><tr><td>tensorflow-2.1.0</td><td>2.7、3.5-3.7</td><td>GCC 7.3.1</td><td>Bazel 0.27.1</td><td>7.6</td><td>10.1</td></tr><tr><td>tensorflow-2.0.0</td><td>2.7、3.3-3.7</td><td>GCC 7.3.1</td><td>Bazel 0.26.1</td><td>7.4</td><td>10.0</td></tr><tr><td>tensorflow_gpu-1.14.0</td><td>2.7、3.3-3.7</td><td>GCC 4.8</td><td>Bazel 0.24.1</td><td>7.4</td><td>10.0</td></tr><tr><td>tensorflow_gpu-1.13.1</td><td>2.7、3.3-3.7</td><td>GCC 4.8</td><td>Bazel 0.19.2</td><td>7.4</td><td>10.0</td></tr><tr><td>tensorflow_gpu-1.12.0</td><td>2.7、3.3-3.6</td><td>GCC 4.8</td><td>Bazel 0.15.0</td><td>7</td><td>9</td></tr><tr><td>tensorflow_gpu-1.11.0</td><td>2.7、3.3-3.6</td><td>GCC 4.8</td><td>Bazel 0.15.0</td><td>7</td><td>9</td></tr><tr><td>tensorflow_gpu-1.10.0</td><td>2.7、3.3-3.6</td><td>GCC 4.8</td><td>Bazel 0.15.0</td><td>7</td><td>9</td></tr><tr><td>tensorflow_gpu-1.9.0</td><td>2.7、3.3-3.6</td><td>GCC 4.8</td><td>Bazel 0.11.0</td><td>7</td><td>9</td></tr><tr><td>tensorflow_gpu-1.8.0</td><td>2.7、3.3-3.6</td><td>GCC 4.8</td><td>Bazel 0.10.0</td><td>7</td><td>9</td></tr><tr><td>tensorflow_gpu-1.7.0</td><td>2.7、3.3-3.6</td><td>GCC 4.8</td><td>Bazel 0.9.0</td><td>7</td><td>9</td></tr><tr><td>tensorflow_gpu-1.6.0</td><td>2.7、3.3-3.6</td><td>GCC 4.8</td><td>Bazel 0.9.0</td><td>7</td><td>9</td></tr><tr><td>tensorflow_gpu-1.5.0</td><td>2.7、3.3-3.6</td><td>GCC 4.8</td><td>Bazel 0.8.0</td><td>7</td><td>9</td></tr><tr><td>tensorflow_gpu-1.4.0</td><td>2.7、3.3-3.6</td><td>GCC 4.8</td><td>Bazel 0.5.4</td><td>6</td><td>8</td></tr><tr><td>tensorflow_gpu-1.3.0</td><td>2.7、3.3-3.6</td><td>GCC 4.8</td><td>Bazel 0.4.5</td><td>6</td><td>8</td></tr><tr><td>tensorflow_gpu-1.2.0</td><td>2.7、3.3-3.6</td><td>GCC 4.8</td><td>Bazel 0.4.5</td><td>5.1</td><td>8</td></tr><tr><td>tensorflow_gpu-1.1.0</td><td>2.7、3.3-3.6</td><td>GCC 4.8</td><td>Bazel 0.4.2</td><td>5.1</td><td>8</td></tr><tr><td>tensorflow_gpu-1.0.0</td><td>2.7、3.3-3.6</td><td>GCC 4.8</td><td>Bazel 0.4.2</td><td>5.1</td><td>8</td></tr></tbody></table>
+<p>我用的是<strong>CUDA 10.0</strong>，对应TensorFlow版本应为 <strong>tensorflow-2.0.0</strong></p>
+<h3><a id="_47"></a>解决方案</h3>
+<p>下载对应的TensorFlow版本</p>
+<pre><code class="prism language-bash">pip <span class="token function">install</span> tensorflow<span class="token operator">==</span>2.0.0 -i https://pypi.tuna.tsinghua.edu.cn/simple
+</code></pre>
+<p>下载后正常！</p>
+<p><img alt="在这里插入图片描述" src="https://img-blog.csdnimg.cn/20200921090156262.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQxNjgzMDY1,size_16,color_FFFFFF,t_70#pic_center"/></p>
+</div>
+<link href="https://csdnimg.cn/release/blogv2/dist/mdeditor/css/editerView/markdown_views-10218d227c.css" rel="stylesheet"/>
+<link href="https://csdnimg.cn/release/blogv2/dist/mdeditor/css/style-57471a2b6e.css" rel="stylesheet"/>
+</div>
+</article>
+</div>
+<script>
+    // 敏感词替换
+    ~function(blogSensitiveWords){
+        if(blogSensitiveWords){   
+            var getContentViews = document.getElementById("content_views");
+            var getContentTitle = document.getElementById("articleContentId");
+            var contentViewsInnerHTML = getContentViews.innerHTML;
+            var contentTitleInnerHTML = getContentTitle.innerHTML;
+            var keyWordsJsonArr = [];
+            var keyWordsArr = blogSensitiveWords.split(',');
+            function repeatTimes(str, num){
+                return num > 1 ? str += repeatTimes(str, --num): str;
+            }
+            for(var i = 0; i < keyWordsArr.length; i++){
+                var keyWordsJson = {} ;
+                keyWordsJson.key = keyWordsArr[i];
+                keyWordsJson.value = repeatTimes("*",keyWordsArr[i].length);
+                keyWordsJsonArr.push(keyWordsJson);
+            }
+            var reg;
+            for(var i = 0; i < keyWordsJsonArr.length; i++){
+                var item = keyWordsJsonArr[i];
+                reg = new RegExp(item.key+"(?!([^<]*>)|([^<]*<\/a>))","ig");
+                contentViewsInnerHTML = contentViewsInnerHTML.replace(reg,item.value);
+                contentTitleInnerHTML = contentTitleInnerHTML.replace(reg,item.value);
+            }
+            getContentViews.innerHTML=contentViewsInnerHTML;
+            getContentTitle.innerHTML=contentTitleInnerHTML;
+        }
+    }(blogSensitiveWords)
+</script>
+<div class="more-toolbox" id="toolBarBox">
+<span id="fixedBar"></span>
+<div class="left-toolbox">
+<ul class="toolbox-list">
+<li class="tool-item tool-active is-like" id="is-like"><a>
+<img alt="" class="animation-dom active-animation" id="is-like-imgactive-animation-like" src="https://csdnimg.cn/release/blogv2/dist/pc/img/tobarThumbUpactive.png" style="display:none;"/>
+<img alt="" id="is-like-imgactive" src="https://csdnimg.cn/release/blogv2/dist/pc/img/tobarThumbUpactive.png" style="display:none"/>
+<img alt="" id="is-like-img" src="https://csdnimg.cn/release/blogv2/dist/pc/img/tobarThumbUp.png" style="display:block"/>
+<span class="name" id="is-like-span">点赞</span>
+<span class="count" id="spanCount">
+</span>
+</a></li>
+<li class="tool-item tool-active tool-item-comment">
+<a href="#commentBox">
+<img alt="" src="https://csdnimg.cn/release/blogv2/dist/pc/img/tobarComment.png"/>
+<span class="name">评论</span>
+<span class="count">
+</span>
+</a>
+</li>
+<li class="tool-item tool-active tool-QRcode" id="tool-share">
+<a data-report-click='{"mod":"1582594662_002","spm":"1001.2101.3001.4129","ab":"new"}' href="javascript:;">
+<img alt="" src="https://csdnimg.cn/release/blogv2/dist/pc/img/tobarShare.png"/>
+<span class="name">分享</span>
+</a>
+<div class="QRcode" id="tool-QRcode" style="left:-92%;">
+<span id="QRcode-close">x</span>
+<p class="title">
+                    海报分享
+                    </p>
+<div id="shareCode"></div>
+<p>
+                    扫一扫，分享海报
+                    </p>
+</div>
+</li>
+<li class="tool-item tool-active is-collection ">
+<a data-report-click='{"mod":"popu_824","spm":"1001.2101.3001.4130","ab":"new"}' href="javascript:;">
+<img alt="" class="animation-dom active-animation" id="is-collection-img-collection" src="https://csdnimg.cn/release/blogv2/dist/pc/img/tobarCollectionActive.png" style="display:none"/>
+<img alt="" id="is-collection-img" src="https://csdnimg.cn/release/blogv2/dist/pc/img/tobarCollect.png" style="display:block"/>
+<img alt="" id="is-collection-imgactive" src="https://csdnimg.cn/release/blogv2/dist/pc/img/tobarCollectionActive.png" style="display:none"/>
+<span class="name" id="is-collection">收藏</span>
+<span class="count get-collection" id="get-collection">
+                        1
+                    </span>
+</a>
+</li>
+<li class="tool-item tool-active tool-phong" id="tool-phong">
+<a data-report-click='{"mod":"popu_831","spm":"1001.2101.3001.4131","dest":"","ab":"new"}' href="javascript:;">
+<img alt="" src="https://csdnimg.cn/release/blogv2/dist/pc/img/tobarMobile.png"/>
+<span class="name">
+                        手机看
+                    </span>
+</a>
+<div class="QRcode" id="tool-QRcode-phong" style="left:-78%;">
+<p class="title">
+                    分享到微信朋友圈
+                    </p>
+<span id="QRcode-phong-close">x</span>
+<div id="shareQrCode"></div>
+<p>
+                    扫一扫，手机阅读 
+                    </p>
+</div>
+</li>
+<li class="tool-item tool-active tool-reward">
+<a data-report-click='{"mod":"popu_830","spm":"1001.2101. 3001.4237","dest":"","ab":"new"}' id="toolreward">
+<img alt="" src="https://csdnimg.cn/release/blogv2/dist/pc/img/tobarReward.png"/>
+<span class="name">打赏</span>
+</a>
+<div class="reward-box" id="reward">
+<p class="rewad-title">打赏<span class="reward-close"><svg class="icon" height="12" p-id="10924" t="1567152543821" version="1.1" viewbox="0 0 1024 1024" width="12" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><defs><style type="text/css"></style></defs><path d="M512 438.378667L806.506667 143.893333a52.032 52.032 0 1 1 73.6 73.621334L585.621333 512l294.485334 294.485333a52.074667 52.074667 0 0 1-73.6 73.642667L512 585.621333 217.514667 880.128a52.053333 52.053333 0 1 1-73.621334-73.642667L438.378667 512 143.893333 217.514667a52.053333 52.053333 0 1 1 73.621334-73.621334L512 438.378667z" fill="" p-id="10925"></path></svg></span></p>
+<dl>
+<dd>
+<a data-report-click='{"mod":"popu_379","dest":"https://blog.csdn.net/qq_41683065","ab":"new"}' href="https://blog.csdn.net/qq_41683065">
+<img class="avatar_pic" src="https://profile.csdnimg.cn/3/E/9/3_qq_41683065" username="qq_41683065"/>
+</a>
+</dd>
+<dt>
+<p class="blog-name">Harry嗷</p>
+<p class="blog-discript">你的鼓励将是我创作的最大动力</p>
+</dt>
+</dl>
+<div class="change-bt-box">
+<span class="reward-bt reward-bt-coin">C币</span>
+<span class="reward-bt-space"></span>
+<span class="reward-bt reward-bt-money reward-bt-active">余额</span>
+</div>
+<div class="money-box">
+<span class="choose_money choosed" data-id="2">2C币</span>
+<span class="choose_money " data-id="4">4C币</span>
+<span class="choose_money " data-id="6">6C币</span>
+<span class="choose_money " data-id="10">10C币</span>
+<span class="choose_money " data-id="20">20C币</span>
+<span class="choose_money " data-id="50">50C币</span>
+</div>
+<div class="sure-box">
+<p class="is-have-money"><a class="reward-sure">确定</a></p>
+</div>
+</div>
+</li>
+<li class="tool-item tool-active tool-more">
+<a>
+<img alt="" class="tool-more-img" src="https://csdnimg.cn/release/blogv2/dist/pc/img/lookMore.png"/>
+</a>
+<ul class="more-box">
+<li class="item item-report"><a class="article-report">文章举报</a></li>
+</ul>
+</li>
+<li class="tool-item">
+<a class="tool-attend tool-bt-button tool-bt-attend" data-report-view='{"mod":"1592215036_002","spm":"1001.2101.3001.4232","extend1":"关注"}' href="javascript:;">关注</a>
+<a class="tool-item-follow active-animation" style="display:none;">关注</a>
+</li>
+<li class="tool-item">
+<p class="company active" href="javascript:;" id="health-companies">一键三连</p>
+</li>
+</ul>
+<div style="display:flex">
+</div>
+</div>
+</div>
+<script crossorigin="" src="https://csdnimg.cn/release/phoenix/production/qrcode-7c90a92189.min.js" type="text/javascript"></script>
+<script src="//g.csdnimg.cn/??sharewx/1.2.1/sharewx.js" type="text/javascript"></script>
+<script crossorigin="" src="https://g.csdnimg.cn/collection-box/2.0.0/collection-box.js" type="text/javascript"></script>
+<div class="first-recommend-box recommend-box">
+<div class="recommend-item-box type_blog clearfix" data-report-view='{"ab":"new","mod":"popu_871","extra":"{\"utm_medium\":\"distribute.pc_relevant_t0.none-task-blog-BlogCommendFromMachineLearnPai2-1.edu_weight\"}","index":"1","strategy":"BlogCommendFromMachineLearnPai2","dest":"https://blog.csdn.net/huangcong159/article/details/106770693"}' data-url="https://blog.csdn.net/huangcong159/article/details/106770693">
+<div class="content-box">
+<div class="content-blog display-flex">
+<div class="title-box">
+<a class="tit ellipsis-online ellipsis-online-1" data-report-click='{"ab":"new","mod":"popu_871","extra":"{\"utm_medium\":\"distribute.pc_relevant_t0.none-task-blog-BlogCommendFromMachineLearnPai2-1.edu_weight\"}","index":"1","strategy":"BlogCommendFromMachineLearnPai2","dest":"https://blog.csdn.net/huangcong159/article/details/106770693"}' data-report-query="utm_medium=distribute.pc_relevant_t0.none-task-blog-BlogCommendFromMachineLearnPai2-1.edu_weight&amp;depth_1-utm_source=distribute.pc_relevant_t0.none-task-blog-BlogCommendFromMachineLearnPai2-1.edu_weight" href="https://blog.csdn.net/huangcong159/article/details/106770693" target="_blank">
+<em>tensorflow</em>-gpu版本使用时<em>报错</em>，各种dll文件找不到
+				</a>
+</div>
+<div class="info-box display-flex">
+<div class="info">
+<a href="https://blog.csdn.net/huangcong159" target="_blank"><span class="blog-title">布布汪的博客</span></a>
+</div>
+<div class="info display-flex">
+<span class="info-block time">06-15</span>
+<span class="info-block read"><img alt="" class="read-img" src="https://csdnimg.cn/release/blogv2/dist/pc/img/readCountBlack.png"/>
+					1767
+					</span>
+</div>
+</div>
+</div>
+<div class="desc-box">
+<a data-report-click='{"ab":"new","mod":"popu_871","extra":"{\"utm_medium\":\"distribute.pc_relevant_t0.none-task-blog-BlogCommendFromMachineLearnPai2-1.edu_weight\"}","index":"1","strategy":"BlogCommendFromMachineLearnPai2","dest":"https://blog.csdn.net/huangcong159/article/details/106770693"}' data-report-query="utm_medium=distribute.pc_relevant_t0.none-task-blog-BlogCommendFromMachineLearnPai2-1.edu_weight&amp;depth_1-utm_source=distribute.pc_relevant_t0.none-task-blog-BlogCommendFromMachineLearnPai2-1.edu_weight" href="https://blog.csdn.net/huangcong159/article/details/106770693" target="_blank">
+<div class="desc ellipsis-online ellipsis-online-1">2020-06-15 20:30:54.310396: <em>W</em> <em>tensorflow</em>/stream_executor/platform/default/dso_loader.<em>cc</em>:55] Could not load dynamic library ‘cublas64_10.dll’; dlerror: cublas64_10.dll not found
+2020-06-15 20:30:54.311457: <em>W</em> <em>tensorflow</em>/stream_executor/platform/default/dso_l</div>
+</a>
+</div>
+</div>
+</div>
+</div>
+<div class="second-recommend-box recommend-box">
+<div class="recommend-item-box type_blog clearfix" data-report-view='{"ab":"new","mod":"popu_387","extra":"{\"utm_medium\":\"distribute.pc_relevant.none-task-blog-BlogCommendFromMachineLearnPai2-1.edu_weight\"}","index":"1","strategy":"BlogCommendFromMachineLearnPai2","dest":"https://blog.csdn.net/likeyou1314918273/article/details/107332564"}' data-url="https://blog.csdn.net/likeyou1314918273/article/details/107332564">
+<div class="content-box">
+<div class="content-blog display-flex">
+<div class="title-box">
+<a class="tit ellipsis-online ellipsis-online-1" data-report-click='{"ab":"new","mod":"popu_387","extra":"{\"utm_medium\":\"distribute.pc_relevant.none-task-blog-BlogCommendFromMachineLearnPai2-1.edu_weight\"}","index":"1","strategy":"BlogCommendFromMachineLearnPai2","dest":"https://blog.csdn.net/likeyou1314918273/article/details/107332564"}' data-report-query="utm_medium=distribute.pc_relevant.none-task-blog-BlogCommendFromMachineLearnPai2-1.edu_weight&amp;depth_1-utm_source=distribute.pc_relevant.none-task-blog-BlogCommendFromMachineLearnPai2-1.edu_weight" href="https://blog.csdn.net/likeyou1314918273/article/details/107332564" target="_blank">
+					学习<em>Tensorflow</em>的安装过程
+				</a>
+</div>
+<div class="info-box display-flex">
+<div class="info">
+<a href="https://blog.csdn.net/likeyou1314918273" target="_blank"><span class="blog-title">lili安的博客</span></a>
+</div>
+<div class="info display-flex">
+<span class="info-block time">07-15</span>
+<span class="info-block read"><img alt="" class="read-img" src="https://csdnimg.cn/release/blogv2/dist/pc/img/readCountBlack.png"/>
+					590
+					</span>
+</div>
+</div>
+</div>
+<div class="desc-box">
+<a data-report-click='{"ab":"new","mod":"popu_387","extra":"{\"utm_medium\":\"distribute.pc_relevant.none-task-blog-BlogCommendFromMachineLearnPai2-1.edu_weight\"}","index":"1","strategy":"BlogCommendFromMachineLearnPai2","dest":"https://blog.csdn.net/likeyou1314918273/article/details/107332564"}' data-report-query="utm_medium=distribute.pc_relevant.none-task-blog-BlogCommendFromMachineLearnPai2-1.edu_weight&amp;depth_1-utm_source=distribute.pc_relevant.none-task-blog-BlogCommendFromMachineLearnPai2-1.edu_weight" href="https://blog.csdn.net/likeyou1314918273/article/details/107332564" target="_blank">
+<div class="desc ellipsis-online ellipsis-online-1">一、命令行pip install <em>tensorflow</em>
+
+安装成功，但是import <em>tensorflow</em> as tf <em>报错</em>ImportError: DLL load failed: 找不到指定的模块
+
+解决：
+
+（1）打开https://visualstudio.microsoft.com/zh-hans/do<em>w</em>nloads/?rr=https%3A%2F%2Fsocial.msdn.microsoft.com%2FForums%2Fvstudio%2Fen-US%2Fe653a57a-bc32-413.</div>
+</a>
+</div>
+</div>
+</div>
+</div>
+<a id="commentBox" name="commentBox"></a>
+<div class="comment-box">
+<div class="comment-edit-box d-flex">
+<a id="commentsedit"></a>
+<div class="user-img">
+<a href="javascript:void(0);">
+<img class="show_loginbox" src="https://g.csdnimg.cn/static/user-img/anonymous-User-img.png"/>
+</a>
+</div>
+<form id="commentform">
+<img class="comment-sofa-flag" src="https://csdnimg.cn/release/blogv2/dist/pc/img/commentFlag@2x.png"/>
+<textarea class="comment-content" id="comment_content" maxlength="1000" name="comment_content" placeholder="优质评论可以帮助作者获得更高权重"></textarea>
+<div class="opt-box">
+<div class="add_code" id="ubbtools">
+<a code="code" href="#insertcode" target="_self"><i class="icon iconfont icon-daima"></i></a>
+</div>
+<input id="comment_replyId" name="comment_replyId" type="hidden"/>
+<input id="article_id" name="article_id" type="hidden" value="108702408"/>
+<input id="comment_userId" name="comment_userId" type="hidden" value=""/>
+<input id="commentId" name="commentId" type="hidden" value=""/>
+<div class="dropdown" id="myDrap">
+<a aria-expanded="false" aria-haspopup="true" class="dropdown-face d-flex align-items-center" data-toggle="dropdown" role="button">
+<div class="txt-selected text-truncate">添加代码片</div>
+<svg class="icon d-block" height="100.00px" version="1.1" viewbox="0 0 2048 1024" width="200px" xmlns="http://www.w3.org/2000/svg"><path d="M597.33333292 298.666667h853.333334L1023.99999992 725.333333 597.33333292 298.666667z"></path></svg>
+</a>
+<ul aria-labelledby="drop4" class="dropdown-menu" id="commentCode">
+<li><a data-code="html">HTML/XML</a></li>
+<li><a data-code="objc">objective-c</a></li>
+<li><a data-code="ruby">Ruby</a></li>
+<li><a data-code="php">PHP</a></li>
+<li><a data-code="csharp">C</a></li>
+<li><a data-code="cpp">C++</a></li>
+<li><a data-code="javascript">JavaScript</a></li>
+<li><a data-code="python">Python</a></li>
+<li><a data-code="java">Java</a></li>
+<li><a data-code="css">CSS</a></li>
+<li><a data-code="sql">SQL</a></li>
+<li><a data-code="plain">其它</a></li>
+</ul>
+</div>
+<div class="right-box" data-type="2" id="rightBox">
+<span class="tip" id="tip_comment">还能输入<em>1000</em>个字符</span>
+<a class="btn btn-sm btn-quick-comment" data-report-click='{"spm":"3001.4374"}' data-report-view='{"spm":"3001.4374"}' id="quickComment">“速评一下”</a>
+<a data-report-click='{"mod":"1582594662_003","spm":"1001.2101.3001.4227","ab":"new"}'><input class="btn btn-sm btn-comment" type="submit" value="发表评论"/></a>
+</div>
+</div>
+</form>
+<input class="bt-comment-show" type="button" value="评论"/>
+</div>
+<div class="comment-list-container">
+<a id="comments"></a>
+<div class="comment-list-box">
+</div>
+<div class="pagination-box d-none" id="commentPage"></div>
+<div class="opt-box text-center">
+<div class="btn btn-sm btn-link-blue" id="btnMoreComment"></div>
+</div>
+</div>
+</div> <div class="recommend-box insert-baidu-box">
+<div class="recommend-item-box type_blog clearfix" data-report-view='{"ab":"new","mod":"popu_387","extra":"{\"utm_medium\":\"distribute.pc_relevant.none-task-blog-BlogCommendFromMachineLearnPai2-2.edu_weight\"}","index":"2","strategy":"BlogCommendFromMachineLearnPai2","dest":"https://blog.csdn.net/weixin_42167172/article/details/102950125"}' data-url="https://blog.csdn.net/weixin_42167172/article/details/102950125">
+<div class="content-box">
+<div class="content-blog display-flex">
+<div class="title-box">
+<a class="tit ellipsis-online ellipsis-online-1" data-report-click='{"ab":"new","mod":"popu_387","extra":"{\"utm_medium\":\"distribute.pc_relevant.none-task-blog-BlogCommendFromMachineLearnPai2-2.edu_weight\"}","index":"2","strategy":"BlogCommendFromMachineLearnPai2","dest":"https://blog.csdn.net/weixin_42167172/article/details/102950125"}' data-report-query="utm_medium=distribute.pc_relevant.none-task-blog-BlogCommendFromMachineLearnPai2-2.edu_weight&amp;depth_1-utm_source=distribute.pc_relevant.none-task-blog-BlogCommendFromMachineLearnPai2-2.edu_weight" href="https://blog.csdn.net/weixin_42167172/article/details/102950125" target="_blank">
+					AttributeError: module '<em>tensorflow</em>_core._api.v2.train' has no attribute 'Optimizer'，<em>tensorflow</em><em>报错</em>
+</a>
+</div>
+<div class="info-box display-flex">
+<div class="info">
+<a href="https://blog.csdn.net/weixin_42167172" target="_blank"><span class="blog-title">weixin_42167172的博客</span></a>
+</div>
+<div class="info display-flex">
+<span class="info-block time">11-07</span>
+<span class="info-block read"><img alt="" class="read-img" src="https://csdnimg.cn/release/blogv2/dist/pc/img/readCountBlack.png"/>
+					1万+
+					</span>
+</div>
+</div>
+</div>
+<div class="desc-box">
+<a data-report-click='{"ab":"new","mod":"popu_387","extra":"{\"utm_medium\":\"distribute.pc_relevant.none-task-blog-BlogCommendFromMachineLearnPai2-2.edu_weight\"}","index":"2","strategy":"BlogCommendFromMachineLearnPai2","dest":"https://blog.csdn.net/weixin_42167172/article/details/102950125"}' data-report-query="utm_medium=distribute.pc_relevant.none-task-blog-BlogCommendFromMachineLearnPai2-2.edu_weight&amp;depth_1-utm_source=distribute.pc_relevant.none-task-blog-BlogCommendFromMachineLearnPai2-2.edu_weight" href="https://blog.csdn.net/weixin_42167172/article/details/102950125" target="_blank">
+<div class="desc ellipsis-online ellipsis-online-1"><em>tensorflow</em>版本不对卸载重新安装
+
+
+pip uninstall <em>tensorflow</em>
+
+我之前是2.0.0的版本，然后重装的1.5.0，没有再报这个错误
+
+
+pip install <em>tensorflow</em>==1.5.0
+
+
+</div>
+</a>
+</div>
+</div>
+</div>
+<div class="recommend-item-box type_blog clearfix" data-report-view='{"ab":"new","mod":"popu_387","extra":"{\"utm_medium\":\"distribute.pc_relevant.none-task-blog-BlogCommendFromMachineLearnPai2-3.edu_weight\"}","index":"3","strategy":"BlogCommendFromMachineLearnPai2","dest":"https://blog.csdn.net/WILDCHAP_/article/details/107594939"}' data-url="https://blog.csdn.net/WILDCHAP_/article/details/107594939">
+<div class="content-box">
+<div class="content-blog display-flex">
+<div class="title-box">
+<a class="tit ellipsis-online ellipsis-online-1" data-report-click='{"ab":"new","mod":"popu_387","extra":"{\"utm_medium\":\"distribute.pc_relevant.none-task-blog-BlogCommendFromMachineLearnPai2-3.edu_weight\"}","index":"3","strategy":"BlogCommendFromMachineLearnPai2","dest":"https://blog.csdn.net/WILDCHAP_/article/details/107594939"}' data-report-query="utm_medium=distribute.pc_relevant.none-task-blog-BlogCommendFromMachineLearnPai2-3.edu_weight&amp;depth_1-utm_source=distribute.pc_relevant.none-task-blog-BlogCommendFromMachineLearnPai2-3.edu_weight" href="https://blog.csdn.net/WILDCHAP_/article/details/107594939" target="_blank">
+<em>TensorFlow</em><em>运行</em><em>报错</em>：<em>tensorflow</em>/stream_executor/cuda/cuda_driver.<em>cc</em>:313] failed call to cuInit: UNKNO<em>W</em>N303
+				</a>
+</div>
+<div class="info-box display-flex">
+<div class="info">
+<a href="https://blog.csdn.net/WILDCHAP_" target="_blank"><span class="blog-title">WILDCHAP_的博客</span></a>
+</div>
+<div class="info display-flex">
+<span class="info-block time">09-02</span>
+<span class="info-block read"><img alt="" class="read-img" src="https://csdnimg.cn/release/blogv2/dist/pc/img/readCountBlack.png"/>
+					383
+					</span>
+</div>
+</div>
+</div>
+<div class="desc-box">
+<a data-report-click='{"ab":"new","mod":"popu_387","extra":"{\"utm_medium\":\"distribute.pc_relevant.none-task-blog-BlogCommendFromMachineLearnPai2-3.edu_weight\"}","index":"3","strategy":"BlogCommendFromMachineLearnPai2","dest":"https://blog.csdn.net/WILDCHAP_/article/details/107594939"}' data-report-query="utm_medium=distribute.pc_relevant.none-task-blog-BlogCommendFromMachineLearnPai2-3.edu_weight&amp;depth_1-utm_source=distribute.pc_relevant.none-task-blog-BlogCommendFromMachineLearnPai2-3.edu_weight" href="https://blog.csdn.net/WILDCHAP_/article/details/107594939" target="_blank">
+<div class="desc ellipsis-online ellipsis-online-1">当我在虚拟机上安装好Keras+<em>tensorflow</em>+theano环境时，以<em>tensorflow</em>作为keras的后端<em>运行</em>会出现如下问题：
+
+最大的问题是，我安装的是CPU版本，并没有也安装不了支持GPU的CUDA，通过pip3 list命令，我也没看到我安装了GPU版本。
+
+最后解决方法是，更换成theano后端，输入cat .keras/keras.json，查看当前后端。
+
+如果安装了theano，那就用gedit .keras/keras.json编辑文件，修改成theano
+
+
+...</div>
+</a>
+</div>
+</div>
+</div>
+<div class="recommend-item-box type_blog clearfix" data-report-view='{"ab":"new","mod":"popu_387","extra":"{\"utm_medium\":\"distribute.pc_relevant.none-task-blog-BlogCommendFromMachineLearnPai2-4.edu_weight\"}","index":"4","strategy":"BlogCommendFromMachineLearnPai2","dest":"https://blog.csdn.net/weixin_42720673/article/details/103066349"}' data-url="https://blog.csdn.net/weixin_42720673/article/details/103066349">
+<div class="content-box">
+<div class="content-blog display-flex">
+<div class="title-box">
+<a class="tit ellipsis-online ellipsis-online-1" data-report-click='{"ab":"new","mod":"popu_387","extra":"{\"utm_medium\":\"distribute.pc_relevant.none-task-blog-BlogCommendFromMachineLearnPai2-4.edu_weight\"}","index":"4","strategy":"BlogCommendFromMachineLearnPai2","dest":"https://blog.csdn.net/weixin_42720673/article/details/103066349"}' data-report-query="utm_medium=distribute.pc_relevant.none-task-blog-BlogCommendFromMachineLearnPai2-4.edu_weight&amp;depth_1-utm_source=distribute.pc_relevant.none-task-blog-BlogCommendFromMachineLearnPai2-4.edu_weight" href="https://blog.csdn.net/weixin_42720673/article/details/103066349" target="_blank">
+<em>TensorFlow</em><em>报错</em>：AttributeError: module '<em>tensorflow</em>_core._api.v2.train' has no attribute 'Optimizer‘
+				</a>
+</div>
+<div class="info-box display-flex">
+<div class="info">
+<a href="https://blog.csdn.net/weixin_42720673" target="_blank"><span class="blog-title">weixin_42720673的博客</span></a>
+</div>
+<div class="info display-flex">
+<span class="info-block time">11-14</span>
+<span class="info-block read"><img alt="" class="read-img" src="https://csdnimg.cn/release/blogv2/dist/pc/img/readCountBlack.png"/>
+					3564
+					</span>
+</div>
+</div>
+</div>
+<div class="desc-box">
+<a data-report-click='{"ab":"new","mod":"popu_387","extra":"{\"utm_medium\":\"distribute.pc_relevant.none-task-blog-BlogCommendFromMachineLearnPai2-4.edu_weight\"}","index":"4","strategy":"BlogCommendFromMachineLearnPai2","dest":"https://blog.csdn.net/weixin_42720673/article/details/103066349"}' data-report-query="utm_medium=distribute.pc_relevant.none-task-blog-BlogCommendFromMachineLearnPai2-4.edu_weight&amp;depth_1-utm_source=distribute.pc_relevant.none-task-blog-BlogCommendFromMachineLearnPai2-4.edu_weight" href="https://blog.csdn.net/weixin_42720673/article/details/103066349" target="_blank">
+<div class="desc ellipsis-online ellipsis-online-1"><em>TensorFlow</em><em>报错</em>：AttributeError: module ‘<em>tensorflow</em>_core._api.v2.train’ has no attribute 'Optimizer‘
+原因：
+<em>TensorFlow</em>版本更新到2.0，Optimizer方法调用方式改变 。
+将tf.train.Optimizer，更改为tf.optimizers.Optimizer即可。
+
+...</div>
+</a>
+</div>
+</div>
+</div>
+<div class="recommend-item-box type_course clearfix" data-report-view='{"ab":"new","mod":"popu_387","extra":"{\"utm_medium\":\"distribute.pc_relevant.none-task-course-BlogCommendFromMachineLearnPai2-5.edu_weight\"}","index":"5","strategy":"BlogCommendFromMachineLearnPai2","dest":"https://edu.csdn.net/course/detail/2271"}' data-url="https://edu.csdn.net/course/detail/2271">
+<div class="content-box">
+<div class="content-blog display-flex">
+<div class="title-box">
+<a class="tit ellipsis-online ellipsis-online-1" data-report-click='{"ab":"new","mod":"popu_387","extra":"{\"utm_medium\":\"distribute.pc_relevant.none-task-course-BlogCommendFromMachineLearnPai2-5.edu_weight\"}","index":"5","strategy":"BlogCommendFromMachineLearnPai2","dest":"https://edu.csdn.net/course/detail/2271"}' data-report-query="utm_medium=distribute.pc_relevant.none-task-course-BlogCommendFromMachineLearnPai2-5.edu_weight&amp;depth_1-utm_source=distribute.pc_relevant.none-task-course-BlogCommendFromMachineLearnPai2-5.edu_weight" href="https://edu.csdn.net/course/detail/2271" target="_blank">
+					《从零开始学S<em>w</em>ift》同步练习题解析
+				</a>
+</div>
+<div class="info-box display-flex">
+<div class="info display-flex">
+<span class="info-block">04-27</span>
+</div>
+</div>
+</div>
+<div class="desc-box">
+<a data-report-click='{"ab":"new","mod":"popu_387","extra":"{\"utm_medium\":\"distribute.pc_relevant.none-task-course-BlogCommendFromMachineLearnPai2-5.edu_weight\"}","index":"5","strategy":"BlogCommendFromMachineLearnPai2","dest":"https://edu.csdn.net/course/detail/2271"}' data-report-query="utm_medium=distribute.pc_relevant.none-task-course-BlogCommendFromMachineLearnPai2-5.edu_weight&amp;depth_1-utm_source=distribute.pc_relevant.none-task-course-BlogCommendFromMachineLearnPai2-5.edu_weight" href="https://edu.csdn.net/course/detail/2271" target="_blank">
+<div class="desc ellipsis-online ellipsis-online-1">本视频是基于S<em>w</em>ift2.x版本录制，与图书《从零开始学S<em>w</em>ift》同步练习题讲解。是学习S<em>w</em>ift视频，巩固S<em>w</em>ift知识习题。
+
+同步练习是为了帮助消化吸收图书《从零开始学S<em>w</em>ift》和“读书看视频——《从零开始学S<em>w</em>ift》视频”的内容，在本书语法篇后面都安排了数量不等的练习题。</div>
+</a>
+</div>
+</div>
+</div>
+<div class="recommend-item-box type_blog clearfix" data-report-view='{"ab":"new","mod":"popu_387","extra":"{\"utm_medium\":\"distribute.pc_relevant.none-task-blog-BlogCommendFromMachineLearnPai2-6.edu_weight\"}","index":"6","strategy":"BlogCommendFromMachineLearnPai2","dest":"https://blog.csdn.net/qq_31215157/article/details/75210377"}' data-url="https://blog.csdn.net/qq_31215157/article/details/75210377">
+<div class="content-box">
+<div class="content-blog display-flex">
+<div class="title-box">
+<a class="tit ellipsis-online ellipsis-online-1" data-report-click='{"ab":"new","mod":"popu_387","extra":"{\"utm_medium\":\"distribute.pc_relevant.none-task-blog-BlogCommendFromMachineLearnPai2-6.edu_weight\"}","index":"6","strategy":"BlogCommendFromMachineLearnPai2","dest":"https://blog.csdn.net/qq_31215157/article/details/75210377"}' data-report-query="utm_medium=distribute.pc_relevant.none-task-blog-BlogCommendFromMachineLearnPai2-6.edu_weight&amp;depth_1-utm_source=distribute.pc_relevant.none-task-blog-BlogCommendFromMachineLearnPai2-6.edu_weight" href="https://blog.csdn.net/qq_31215157/article/details/75210377" target="_blank">
+<em>tensorflow</em>安装测试<em>运行</em>常见问题
+				</a>
+</div>
+<div class="info-box display-flex">
+<div class="info">
+<a href="https://blog.csdn.net/qq_31215157" target="_blank"><span class="blog-title">qq_31215157的博客</span></a>
+</div>
+<div class="info display-flex">
+<span class="info-block time">07-16</span>
+<span class="info-block read"><img alt="" class="read-img" src="https://csdnimg.cn/release/blogv2/dist/pc/img/readCountBlack.png"/>
+					1万+
+					</span>
+</div>
+</div>
+</div>
+<div class="desc-box">
+<a data-report-click='{"ab":"new","mod":"popu_387","extra":"{\"utm_medium\":\"distribute.pc_relevant.none-task-blog-BlogCommendFromMachineLearnPai2-6.edu_weight\"}","index":"6","strategy":"BlogCommendFromMachineLearnPai2","dest":"https://blog.csdn.net/qq_31215157/article/details/75210377"}' data-report-query="utm_medium=distribute.pc_relevant.none-task-blog-BlogCommendFromMachineLearnPai2-6.edu_weight&amp;depth_1-utm_source=distribute.pc_relevant.none-task-blog-BlogCommendFromMachineLearnPai2-6.edu_weight" href="https://blog.csdn.net/qq_31215157/article/details/75210377" target="_blank">
+<div class="desc ellipsis-online ellipsis-online-1"><em>tensorflow</em>安装测试<em>运行</em>常见问题
+
+
+1.源码安装<em>tensorflow</em>执行配置时，Cudnn版本选择：
+
+默认6.0，此时选择5.0会重复请求，假设版本是5.1Cudnn，应该选择5.
+
+2.GPU版本的警告问题：
+
+2017-07-16 19:51:37.361838: <em>W</em> <em>tensorflow</em>/core/platform/cpu_feature_guard.<em>cc</em>:45</div>
+</a>
+</div>
+</div>
+</div>
+<div class="recommend-item-box type_blog clearfix" data-report-view='{"ab":"new","mod":"popu_387","extra":"{\"utm_medium\":\"distribute.pc_relevant.none-task-blog-BlogCommendFromMachineLearnPai2-7.edu_weight\"}","index":"7","strategy":"BlogCommendFromMachineLearnPai2","dest":"https://blog.csdn.net/zhuhaotian/article/details/100379996"}' data-url="https://blog.csdn.net/zhuhaotian/article/details/100379996">
+<div class="content-box">
+<div class="content-blog display-flex">
+<div class="title-box">
+<a class="tit ellipsis-online ellipsis-online-1" data-report-click='{"ab":"new","mod":"popu_387","extra":"{\"utm_medium\":\"distribute.pc_relevant.none-task-blog-BlogCommendFromMachineLearnPai2-7.edu_weight\"}","index":"7","strategy":"BlogCommendFromMachineLearnPai2","dest":"https://blog.csdn.net/zhuhaotian/article/details/100379996"}' data-report-query="utm_medium=distribute.pc_relevant.none-task-blog-BlogCommendFromMachineLearnPai2-7.edu_weight&amp;depth_1-utm_source=distribute.pc_relevant.none-task-blog-BlogCommendFromMachineLearnPai2-7.edu_weight" href="https://blog.csdn.net/zhuhaotian/article/details/100379996" target="_blank">
+<em>tensorflow</em>-gpu的一个问题
+				</a>
+</div>
+<div class="info-box display-flex">
+<div class="info">
+<a href="https://blog.csdn.net/zhuhaotian" target="_blank"><span class="blog-title">zhuhaotian的博客</span></a>
+</div>
+<div class="info display-flex">
+<span class="info-block time">09-02</span>
+<span class="info-block read"><img alt="" class="read-img" src="https://csdnimg.cn/release/blogv2/dist/pc/img/readCountBlack.png"/>
+					2万+
+					</span>
+</div>
+</div>
+</div>
+<div class="desc-box">
+<a data-report-click='{"ab":"new","mod":"popu_387","extra":"{\"utm_medium\":\"distribute.pc_relevant.none-task-blog-BlogCommendFromMachineLearnPai2-7.edu_weight\"}","index":"7","strategy":"BlogCommendFromMachineLearnPai2","dest":"https://blog.csdn.net/zhuhaotian/article/details/100379996"}' data-report-query="utm_medium=distribute.pc_relevant.none-task-blog-BlogCommendFromMachineLearnPai2-7.edu_weight&amp;depth_1-utm_source=distribute.pc_relevant.none-task-blog-BlogCommendFromMachineLearnPai2-7.edu_weight" href="https://blog.csdn.net/zhuhaotian/article/details/100379996" target="_blank">
+<div class="desc ellipsis-online ellipsis-online-1"><em>报错</em>
+
+2019-09-02 20:18:10.206659: I <em>tensorflow</em>/stream_executor/platform/default/dso_loader.<em>cc</em>:53] Could not dlopen library 'libcudart.so.10.0'; dlerror: libcudart.so.10.0: cannot open shared object file...</div>
+</a>
+</div>
+</div>
+</div>
+<div class="recommend-item-box type_blog clearfix" data-report-view='{"ab":"new","mod":"popu_387","extra":"{\"utm_medium\":\"distribute.pc_relevant.none-task-blog-BlogCommendFromMachineLearnPai2-8.edu_weight\"}","index":"8","strategy":"BlogCommendFromMachineLearnPai2","dest":"https://blog.csdn.net/keda8997110/article/details/8767606"}' data-url="https://blog.csdn.net/keda8997110/article/details/8767606">
+<div class="content-box">
+<div class="content-blog display-flex">
+<div class="title-box">
+<a class="tit ellipsis-online ellipsis-online-1" data-report-click='{"ab":"new","mod":"popu_387","extra":"{\"utm_medium\":\"distribute.pc_relevant.none-task-blog-BlogCommendFromMachineLearnPai2-8.edu_weight\"}","index":"8","strategy":"BlogCommendFromMachineLearnPai2","dest":"https://blog.csdn.net/keda8997110/article/details/8767606"}' data-report-query="utm_medium=distribute.pc_relevant.none-task-blog-BlogCommendFromMachineLearnPai2-8.edu_weight&amp;depth_1-utm_source=distribute.pc_relevant.none-task-blog-BlogCommendFromMachineLearnPai2-8.edu_weight" href="https://blog.csdn.net/keda8997110/article/details/8767606" target="_blank">
+					memcached: error <em>w</em>hile loading shared libraries: libevent-2.0.so.5: cannot o
+				</a>
+</div>
+<div class="info-box display-flex">
+<div class="info">
+<a href="https://blog.csdn.net/keda8997110" target="_blank"><span class="blog-title">我喂自己袋盐</span></a>
+</div>
+<div class="info display-flex">
+<span class="info-block time">04-07</span>
+<span class="info-block read"><img alt="" class="read-img" src="https://csdnimg.cn/release/blogv2/dist/pc/img/readCountBlack.png"/>
+					1万+
+					</span>
+</div>
+</div>
+</div>
+<div class="desc-box">
+<a data-report-click='{"ab":"new","mod":"popu_387","extra":"{\"utm_medium\":\"distribute.pc_relevant.none-task-blog-BlogCommendFromMachineLearnPai2-8.edu_weight\"}","index":"8","strategy":"BlogCommendFromMachineLearnPai2","dest":"https://blog.csdn.net/keda8997110/article/details/8767606"}' data-report-query="utm_medium=distribute.pc_relevant.none-task-blog-BlogCommendFromMachineLearnPai2-8.edu_weight&amp;depth_1-utm_source=distribute.pc_relevant.none-task-blog-BlogCommendFromMachineLearnPai2-8.edu_weight" href="https://blog.csdn.net/keda8997110/article/details/8767606" target="_blank">
+<div class="desc ellipsis-online ellipsis-online-1">memcached基本选项
+
+-p 端口   监听tcp端口
+-d    以守护进程方式<em>运行</em>memcached
+-u username  以username<em>运行</em>
+-m 《num》  最大的内存使用，单位是MB ，缺省是64MB
+-c   软连接数量，缺省是1024
+-v    输出警告和错误信息
+-vv   打印客户端的请求和返回信息
+
+检查memcached是否正常<em>运行</em>
+#</div>
+</a>
+</div>
+</div>
+</div>
+<div class="recommend-item-box type_blog clearfix" data-report-view='{"ab":"new","mod":"popu_387","extra":"{\"utm_medium\":\"distribute.pc_relevant.none-task-blog-BlogCommendFromMachineLearnPai2-9.edu_weight\"}","index":"9","strategy":"BlogCommendFromMachineLearnPai2","dest":"https://blog.csdn.net/weixin_30606461/article/details/99807852"}' data-url="https://blog.csdn.net/weixin_30606461/article/details/99807852">
+<div class="content-box">
+<div class="content-blog display-flex">
+<div class="title-box">
+<a class="tit ellipsis-online ellipsis-online-1" data-report-click='{"ab":"new","mod":"popu_387","extra":"{\"utm_medium\":\"distribute.pc_relevant.none-task-blog-BlogCommendFromMachineLearnPai2-9.edu_weight\"}","index":"9","strategy":"BlogCommendFromMachineLearnPai2","dest":"https://blog.csdn.net/weixin_30606461/article/details/99807852"}' data-report-query="utm_medium=distribute.pc_relevant.none-task-blog-BlogCommendFromMachineLearnPai2-9.edu_weight&amp;depth_1-utm_source=distribute.pc_relevant.none-task-blog-BlogCommendFromMachineLearnPai2-9.edu_weight" href="https://blog.csdn.net/weixin_30606461/article/details/99807852" target="_blank">
+<em>TensorFlow</em>中的并行执行引擎——StreamExecutor框架
+				</a>
+</div>
+<div class="info-box display-flex">
+<div class="info">
+<a href="https://blog.csdn.net/weixin_30606461" target="_blank"><span class="blog-title">weixin_30606461的博客</span></a>
+</div>
+<div class="info display-flex">
+<span class="info-block time">11-25</span>
+<span class="info-block read"><img alt="" class="read-img" src="https://csdnimg.cn/release/blogv2/dist/pc/img/readCountBlack.png"/>
+					91
+					</span>
+</div>
+</div>
+</div>
+<div class="desc-box">
+<a data-report-click='{"ab":"new","mod":"popu_387","extra":"{\"utm_medium\":\"distribute.pc_relevant.none-task-blog-BlogCommendFromMachineLearnPai2-9.edu_weight\"}","index":"9","strategy":"BlogCommendFromMachineLearnPai2","dest":"https://blog.csdn.net/weixin_30606461/article/details/99807852"}' data-report-query="utm_medium=distribute.pc_relevant.none-task-blog-BlogCommendFromMachineLearnPai2-9.edu_weight&amp;depth_1-utm_source=distribute.pc_relevant.none-task-blog-BlogCommendFromMachineLearnPai2-9.edu_weight" href="https://blog.csdn.net/weixin_30606461/article/details/99807852" target="_blank">
+<div class="desc ellipsis-online ellipsis-online-1">背景
+[作者：DeepLearningStack，阿里巴巴算法工程师，开源<em>TensorFlow</em> Contributor]
+在前一篇文章中，我们梳理了<em>TensorFlow</em>中各种异构Device的添加和注册机制，通过使用预先定义好的宏，各种自定义好的Device能够将自己注册到全局表中。<em>TensorFlow</em>期望通过这种模式，能够让Device的添加和注册于系统本身更好的解耦，从而体现了较...</div>
+</a>
+</div>
+</div>
+</div>
+</div>
+<div class="template-box">
+<span>©️2020 CSDN</span>
+<span>皮肤主题: 点我我会动</span>
+<span> 设计师:上身试试</span>
+<span>
+<a class="back-home c-blue c-blue-hover c-blue-focus" href="https://blog.csdn.net/">返回首页</a>
+</span>
+</div>
+<script data-isfootertrack="false" src="https://csdnimg.cn/pubfooter/js/publib_footer-1.0.4.js" type="text/javascript"></script>
+</main>
+<aside class="blog_container_aside">
+<div class="aside-box" id="asideProfile">
+<div class="profile-intro d-flex">
+<div class="avatar-box d-flex justify-content-center flex-column">
+<a data-report-click='{"mod":"popu_379","spm":"1001.2101.3001.4121","dest":"https://blog.csdn.net/qq_41683065","ab":"new"}' href="https://blog.csdn.net/qq_41683065">
+<img class="avatar_pic" src="https://profile.csdnimg.cn/3/E/9/3_qq_41683065" username="qq_41683065"/>
+</a>
+</div>
+<div class="user-info d-flex flex-column profile-intro-name-box">
+<div class="profile-intro-name-boxTop">
+<a class="" data-report-click='{"mod":"popu_379","spm":"1001.2101.3001.4122","dest":"https://blog.csdn.net/qq_41683065","ab":"new"}' href="https://blog.csdn.net/qq_41683065" id="uid" title="Harry嗷">
+<span class="name " username="Harry嗷">Harry嗷</span>
+</a>
+<span>
+</span>
+<span class="flag expert-blog">
+<span class="bubble">CSDN认证博客专家</span>
+</span>
+<span class="flag company-blog">
+<span class="bubble">CSDN认证企业博客</span>
+</span>
+</div>
+<div class="profile-intro-name-boxFooter">
+<span class="personal-home-page personal-home-years">码龄3年</span>
+<span class="personal-home-page">
+<a class="personal-home-certification" href="https://me.csdn.net/qq_41683065?utm_source=14998968" target="_blank" title="高校学生">
+<img alt="" src="https://csdnimg.cn/identity/colleges.png"/>
+                    高校学生
+                    </a>
+</span>
+</div>
+</div>
+</div>
+<div class="data-info d-flex item-tiling">
+<dl class="text-center" title="162">
+<a data-report-click='{"mod":"1598321000_001","spm":"1001.2101.3001.4310"}' data-report-query="t=1" href="https://blog.csdn.net/qq_41683065">
+<dt><span class="count">162</span></dt>
+<dd class="font">原创</dd>
+</a>
+</dl>
+<dl class="text-center" data-report-click='{"mod":"1598321000_002","spm":"1001.2101.3001.4311"}' title="3395">
+<a href="https://blog.csdn.net/rank/writing_rank" target="_blank">
+<dt><span class="count">3395</span></dt>
+<dd class="font">周排名</dd>
+</a>
+</dl>
+<dl class="text-center" title="26219">
+<a data-report-click='{"mod":"1598321000_003","spm":"1001.2101.3001.4312"}' href="https://blog.csdn.net/rank/writing_rank_total" target="_blank">
+<dt><span class="count">2万+</span></dt>
+<dd class="font">总排名</dd>
+</a>
+</dl>
+<dl class="text-center" style="min-width:58px" title="123501">
+<dt><span class="count">12万+</span></dt>
+<dd>访问</dd>
+</dl>
+<dl class="text-center" title="5级,点击查看等级说明">
+<dt><a href="https://blog.csdn.net/home/help.html#level" target="_blank">
+<img class="level" src="https://csdnimg.cn/identity/blog5.png"/></a>
+</dt>
+<dd>等级</dd>
+</dl>
+</div>
+<div class="item-rank"></div>
+<div class="data-info d-flex item-tiling">
+<dl class="text-center" title="3006">
+<dt><span class="count">3006</span></dt>
+<dd>积分</dd>
+</dl>
+<dl class="text-center" id="fanBox" title="156">
+<dt><span class="count" id="fan">156</span></dt>
+<dd>粉丝</dd>
+</dl>
+<dl class="text-center" title="151">
+<dt><span class="count">151</span></dt>
+<dd>获赞</dd>
+</dl>
+<dl class="text-center" title="244">
+<dt><span class="count">244</span></dt>
+<dd>评论</dd>
+</dl>
+<dl class="text-center" title="503">
+<dt><span class="count">503</span></dt>
+<dd>收藏</dd>
+</dl>
+</div>
+<div class="aside-box-footer" data-report-view='{"spm":"3001.4296"}'>
+<div class="badge-box d-flex">
+<div class="badge d-flex">
+<div class="icon-badge" title="GitHub">
+<div class="mouse-box">
+<img alt="GitHub" class="medal-img" data-report-click='{"spm":"3001.4296"}' src="https://csdnimg.cn/medal/github@240.png"/>
+</div>
+</div>
+<div class="icon-badge" title="签到新秀">
+<div class="mouse-box">
+<img alt="签到新秀" class="medal-img" data-report-click='{"spm":"3001.4296"}' src="https://csdnimg.cn/medal/qiandao1@240.png"/>
+</div>
+</div>
+<div class="icon-badge" title="技术圈认证">
+<div class="mouse-box">
+<img alt="技术圈认证" class="medal-img" data-report-click='{"spm":"3001.4296"}' src="https://csdnimg.cn/medal/blog_normal_medal@240.png"/>
+</div>
+</div>
+<div class="icon-badge" title="持之以恒">
+<div class="mouse-box">
+<img alt="持之以恒" class="medal-img" data-report-click='{"spm":"3001.4296"}' src="https://csdnimg.cn/medal/chizhiyiheng@240.png"/>
+</div>
+</div>
+<div class="icon-badge" title="勤写标兵Lv3">
+<div class="mouse-box">
+<img alt="勤写标兵Lv3" class="medal-img" data-report-click='{"spm":"3001.4296"}' src="https://csdnimg.cn/medal/qixiebiaobing3@240.png"/>
+</div>
+</div>
+<div class="icon-badge" title="学习力">
+<div class="mouse-box">
+<img alt="学习力" class="medal-img" data-report-click='{"spm":"3001.4296"}' src="https://csdnimg.cn/medal/yuanli_xuexili@240.png"/>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="profile-intro-name-boxOpration">
+<div class="opt-letter-watch-box">
+<a class="bt-button personal-letter" href="https://me.csdn.net/qq_41683065" rel="noopener" target="_blank">TA的主页</a>
+</div>
+<div class="opt-letter-watch-box">
+<a class="bt-button personal-letter" href="https://im.csdn.net/chat/qq_41683065" rel="noopener" target="_blank">私信</a>
+</div>
+<div class="opt-letter-watch-box">
+<a class="personal-watch bt-button" id="btnAttent">关注</a>
+</div>
+</div>
+</div>
+<div class="aside-box" id="asideSearchArticle">
+<div class="aside-content search-comter">
+<div class="aside-search aside-search-blog">
+<input autocomplete="off" class="input-serch-blog" id="search-blog-words" name="" placeholder="搜博主文章" type="text" value=""/>
+<a class="btn-search-blog">
+<img src="//csdnimg.cn/cdn/content-toolbar/csdn-white-search.png?v=1587006908"/>
+</a>
+</div>
+</div>
+</div>
+<div class="aside-box" id="asideHotArticle">
+<h3 class="aside-title">热门文章</h3>
+<div class="aside-content">
+<ul class="hotArticle-list">
+<li>
+<a data-report-click='{"mod":"popu_541","spm":"1001.2101.3001.4139","dest":"https://blog.csdn.net/qq_41683065/article/details/99710373","ab":"new"}' href="https://blog.csdn.net/qq_41683065/article/details/99710373" target="_blank">
+				[debug] “ImportError DLL load failed 找不到指定的程序”的解析和解决办法。
+					<img alt="" src="https://csdnimg.cn/release/blogv2/dist/pc/img/readCountBlack.png"/>
+<span class="read">15695</span>
+</a>
+</li>
+<li>
+<a data-report-click='{"mod":"popu_541","spm":"1001.2101.3001.4139","dest":"https://blog.csdn.net/qq_41683065/article/details/94645628","ab":"new"}' href="https://blog.csdn.net/qq_41683065/article/details/94645628" target="_blank">
+				[Verilog] 实现数字钟（自动计时+手动校准+倒计时+设置闹钟）附完整源代码
+					<img alt="" src="https://csdnimg.cn/release/blogv2/dist/pc/img/readCountBlack.png"/>
+<span class="read">9653</span>
+</a>
+</li>
+<li>
+<a data-report-click='{"mod":"popu_541","spm":"1001.2101.3001.4139","dest":"https://blog.csdn.net/qq_41683065/article/details/99776506","ab":"new"}' href="https://blog.csdn.net/qq_41683065/article/details/99776506" target="_blank">
+				[Python+sklearn] 计算混淆矩阵 confusion_matrix()函数
+					<img alt="" src="https://csdnimg.cn/release/blogv2/dist/pc/img/readCountBlack.png"/>
+<span class="read">9297</span>
+</a>
+</li>
+<li>
+<a data-report-click='{"mod":"popu_541","spm":"1001.2101.3001.4139","dest":"https://blog.csdn.net/qq_41683065/article/details/93972084","ab":"new"}' href="https://blog.csdn.net/qq_41683065/article/details/93972084" target="_blank">
+				[PyTorch] 拼接多个tensor：torch.cat((A,B),axis)
+					<img alt="" src="https://csdnimg.cn/release/blogv2/dist/pc/img/readCountBlack.png"/>
+<span class="read">6493</span>
+</a>
+</li>
+<li>
+<a data-report-click='{"mod":"popu_541","spm":"1001.2101.3001.4139","dest":"https://blog.csdn.net/qq_41683065/article/details/100164010","ab":"new"}' href="https://blog.csdn.net/qq_41683065/article/details/100164010" target="_blank">
+				[Python] np.nonzero(ndarray)  返回数组中不为0的元素的索引
+					<img alt="" src="https://csdnimg.cn/release/blogv2/dist/pc/img/readCountBlack.png"/>
+<span class="read">4507</span>
+</a>
+</li>
+</ul>
+</div>
+</div>
+<div class="aside-box flexible-box" id="asideCategory" style="display:block!important;">
+<h3 class="aside-title">分类专栏</h3>
+<div class="aside-content">
+<ul>
+<li class="">
+<a class="clearfix" data-report-click='{"mod":"popu_537","spm":"1001.2101.3001.4137","strategy":"pc付费专栏左侧入口","dest":"https://blog.csdn.net/qq_41683065/category_10452323.html","ab":"new"}' href="https://blog.csdn.net/qq_41683065/category_10452323.html" target="_blank">
+<img alt="" onerror="this.src='https://img-blog.csdnimg.cn/20190918135101160.png?x-oss-process=image/resize,m_fixed,h_64,w_64'" src="https://img-blog.csdnimg.cn/20190927151026427.png?x-oss-process=image/resize,m_fixed,h_64,w_64"/>
+<span class="title oneline">
+<span class="text">backbone</span>
+</span>
+<span class="count float-right">1篇</span>
+</a>
+</li>
+<li class="">
+<a class="clearfix" data-report-click='{"mod":"popu_537","spm":"1001.2101.3001.4137","strategy":"pc付费专栏左侧入口","dest":"https://blog.csdn.net/qq_41683065/category_10201739.html","ab":"new"}' href="https://blog.csdn.net/qq_41683065/category_10201739.html" target="_blank">
+<img alt="" onerror="this.src='https://img-blog.csdnimg.cn/20190918135101160.png?x-oss-process=image/resize,m_fixed,h_64,w_64'" src="https://img-blog.csdnimg.cn/20190918140129601.png?x-oss-process=image/resize,m_fixed,h_64,w_64"/>
+<span class="title oneline">
+<span class="text">UFLDL</span>
+</span>
+<span class="count float-right">1篇</span>
+</a>
+</li>
+<li class="">
+<a class="clearfix" data-report-click='{"mod":"popu_537","spm":"1001.2101.3001.4137","strategy":"pc付费专栏左侧入口","dest":"https://blog.csdn.net/qq_41683065/category_9689413.html","ab":"new"}' href="https://blog.csdn.net/qq_41683065/category_9689413.html" target="_blank">
+<img alt="" onerror="this.src='https://img-blog.csdnimg.cn/20190918135101160.png?x-oss-process=image/resize,m_fixed,h_64,w_64'" src="https://img-blog.csdnimg.cn/20190918140213434.png?x-oss-process=image/resize,m_fixed,h_64,w_64"/>
+<span class="title oneline">
+<span class="text">paper reading</span>
+</span>
+<span class="count float-right">8篇</span>
+</a>
+</li>
+<li class="">
+<a class="clearfix" data-report-click='{"mod":"popu_537","spm":"1001.2101.3001.4137","strategy":"pc付费专栏左侧入口","dest":"https://blog.csdn.net/qq_41683065/category_10197814.html","ab":"new"}' href="https://blog.csdn.net/qq_41683065/category_10197814.html" target="_blank">
+<img alt="" onerror="this.src='https://img-blog.csdnimg.cn/20190918135101160.png?x-oss-process=image/resize,m_fixed,h_64,w_64'" src="https://img-blog.csdnimg.cn/20190918140158853.png?x-oss-process=image/resize,m_fixed,h_64,w_64"/>
+<span class="title oneline">
+<span class="text">课程作业</span>
+</span>
+<span class="count float-right">1篇</span>
+</a>
+</li>
+<li class="">
+<a class="clearfix" data-report-click='{"mod":"popu_537","spm":"1001.2101.3001.4137","strategy":"pc付费专栏左侧入口","dest":"https://blog.csdn.net/qq_41683065/category_10089806.html","ab":"new"}' href="https://blog.csdn.net/qq_41683065/category_10089806.html" target="_blank">
+<img alt="" onerror="this.src='https://img-blog.csdnimg.cn/20190918135101160.png?x-oss-process=image/resize,m_fixed,h_64,w_64'" src="https://img-blog.csdnimg.cn/20190918135101160.png?x-oss-process=image/resize,m_fixed,h_64,w_64"/>
+<span class="title oneline">
+<span class="text">MATLAB</span>
+</span>
+<span class="count float-right">1篇</span>
+</a>
+</li>
+<li class="">
+<a class="clearfix" data-report-click='{"mod":"popu_537","spm":"1001.2101.3001.4137","strategy":"pc付费专栏左侧入口","dest":"https://blog.csdn.net/qq_41683065/category_9729782.html","ab":"new"}' href="https://blog.csdn.net/qq_41683065/category_9729782.html" target="_blank">
+<img alt="" onerror="this.src='https://img-blog.csdnimg.cn/20190918135101160.png?x-oss-process=image/resize,m_fixed,h_64,w_64'" src="https://img-blog.csdnimg.cn/20190918140012416.png?x-oss-process=image/resize,m_fixed,h_64,w_64"/>
+<span class="title oneline">
+<span class="text">高光谱图像分类</span>
+</span>
+<span class="count float-right">8篇</span>
+</a>
+</li>
+<li class="">
+<a class="clearfix" data-report-click='{"mod":"popu_537","spm":"1001.2101.3001.4137","strategy":"pc付费专栏左侧入口","dest":"https://blog.csdn.net/qq_41683065/category_9761403.html","ab":"new"}' href="https://blog.csdn.net/qq_41683065/category_9761403.html" target="_blank">
+<img alt="" onerror="this.src='https://img-blog.csdnimg.cn/20190918135101160.png?x-oss-process=image/resize,m_fixed,h_64,w_64'" src="https://img-blog.csdnimg.cn/20190918140037908.png?x-oss-process=image/resize,m_fixed,h_64,w_64"/>
+<span class="title oneline">
+<span class="text">数据预处理</span>
+</span>
+<span class="count float-right">1篇</span>
+</a>
+</li>
+<li class="">
+<a class="clearfix" data-report-click='{"mod":"popu_537","spm":"1001.2101.3001.4137","strategy":"pc付费专栏左侧入口","dest":"https://blog.csdn.net/qq_41683065/category_9689494.html","ab":"new"}' href="https://blog.csdn.net/qq_41683065/category_9689494.html" target="_blank">
+<img alt="" onerror="this.src='https://img-blog.csdnimg.cn/20190918135101160.png?x-oss-process=image/resize,m_fixed,h_64,w_64'" src="https://img-blog.csdnimg.cn/20190918140053667.png?x-oss-process=image/resize,m_fixed,h_64,w_64"/>
+<span class="title oneline">
+<span class="text">工具</span>
+</span>
+<span class="count float-right">10篇</span>
+</a>
+</li>
+<li class="">
+<a class="clearfix" data-report-click='{"mod":"popu_537","spm":"1001.2101.3001.4137","strategy":"pc付费专栏左侧入口","dest":"https://blog.csdn.net/qq_41683065/category_9721842.html","ab":"new"}' href="https://blog.csdn.net/qq_41683065/category_9721842.html" target="_blank">
+<img alt="" onerror="this.src='https://img-blog.csdnimg.cn/20190918135101160.png?x-oss-process=image/resize,m_fixed,h_64,w_64'" src="https://img-blog.csdnimg.cn/2019091813595558.png?x-oss-process=image/resize,m_fixed,h_64,w_64"/>
+<span class="title oneline">
+<span class="text">BUG解决</span>
+</span>
+<span class="count float-right">19篇</span>
+</a>
+</li>
+<li class="">
+<a class="clearfix" data-report-click='{"mod":"popu_537","spm":"1001.2101.3001.4137","strategy":"pc付费专栏左侧入口","dest":"https://blog.csdn.net/qq_41683065/category_9698113.html","ab":"new"}' href="https://blog.csdn.net/qq_41683065/category_9698113.html" target="_blank">
+<img alt="" onerror="this.src='https://img-blog.csdnimg.cn/20190918135101160.png?x-oss-process=image/resize,m_fixed,h_64,w_64'" src="https://img-blog.csdnimg.cn/20190918140053667.png?x-oss-process=image/resize,m_fixed,h_64,w_64"/>
+<span class="title oneline">
+<span class="text">图卷积神经网络</span>
+</span>
+<span class="count float-right">10篇</span>
+</a>
+</li>
+<li class="">
+<a class="clearfix" data-report-click='{"mod":"popu_537","spm":"1001.2101.3001.4137","strategy":"pc付费专栏左侧入口","dest":"https://blog.csdn.net/qq_41683065/category_9663793.html","ab":"new"}' href="https://blog.csdn.net/qq_41683065/category_9663793.html" target="_blank">
+<img alt="" onerror="this.src='https://img-blog.csdnimg.cn/20190918135101160.png?x-oss-process=image/resize,m_fixed,h_64,w_64'" src="https://img-blog.csdnimg.cn/20190918140158853.png?x-oss-process=image/resize,m_fixed,h_64,w_64"/>
+<span class="title oneline">
+<span class="text">汇编语言</span>
+</span>
+<span class="count float-right">1篇</span>
+</a>
+</li>
+<li class="">
+<a class="clearfix" data-report-click='{"mod":"popu_537","spm":"1001.2101.3001.4137","strategy":"pc付费专栏左侧入口","dest":"https://blog.csdn.net/qq_41683065/category_9066195.html","ab":"new"}' href="https://blog.csdn.net/qq_41683065/category_9066195.html" target="_blank">
+<img alt="" onerror="this.src='https://img-blog.csdnimg.cn/20190918135101160.png?x-oss-process=image/resize,m_fixed,h_64,w_64'" src="https://img-blog.csdnimg.cn/20190927151043371.png?x-oss-process=image/resize,m_fixed,h_64,w_64"/>
+<span class="title oneline">
+<span class="text">PyTorch</span>
+</span>
+<span class="count float-right">15篇</span>
+</a>
+</li>
+<li class="">
+<a class="clearfix" data-report-click='{"mod":"popu_537","spm":"1001.2101.3001.4137","strategy":"pc付费专栏左侧入口","dest":"https://blog.csdn.net/qq_41683065/category_9066168.html","ab":"new"}' href="https://blog.csdn.net/qq_41683065/category_9066168.html" target="_blank">
+<img alt="" onerror="this.src='https://img-blog.csdnimg.cn/20190918135101160.png?x-oss-process=image/resize,m_fixed,h_64,w_64'" src="https://img-blog.csdnimg.cn/20190918135101160.png?x-oss-process=image/resize,m_fixed,h_64,w_64"/>
+<span class="title oneline">
+<span class="text">Python</span>
+</span>
+<span class="count float-right">59篇</span>
+</a>
+</li>
+<li class="">
+<a class="clearfix" data-report-click='{"mod":"popu_537","spm":"1001.2101.3001.4137","strategy":"pc付费专栏左侧入口","dest":"https://blog.csdn.net/qq_41683065/category_9071881.html","ab":"new"}' href="https://blog.csdn.net/qq_41683065/category_9071881.html" target="_blank">
+<img alt="" onerror="this.src='https://img-blog.csdnimg.cn/20190918135101160.png?x-oss-process=image/resize,m_fixed,h_64,w_64'" src="https://img-blog.csdnimg.cn/20190918140213434.png?x-oss-process=image/resize,m_fixed,h_64,w_64"/>
+<span class="title oneline">
+<span class="text">机器学习</span>
+</span>
+<span class="count float-right">8篇</span>
+</a>
+</li>
+<li class="">
+<a class="clearfix" data-report-click='{"mod":"popu_537","spm":"1001.2101.3001.4137","strategy":"pc付费专栏左侧入口","dest":"https://blog.csdn.net/qq_41683065/category_9089348.html","ab":"new"}' href="https://blog.csdn.net/qq_41683065/category_9089348.html" target="_blank">
+<img alt="" onerror="this.src='https://img-blog.csdnimg.cn/20190918135101160.png?x-oss-process=image/resize,m_fixed,h_64,w_64'" src="https://img-blog.csdnimg.cn/20190927151026427.png?x-oss-process=image/resize,m_fixed,h_64,w_64"/>
+<span class="title oneline">
+<span class="text">Verilog</span>
+</span>
+<span class="count float-right">1篇</span>
+</a>
+</li>
+<li class="">
+<a class="clearfix" data-report-click='{"mod":"popu_537","spm":"1001.2101.3001.4137","strategy":"pc付费专栏左侧入口","dest":"https://blog.csdn.net/qq_41683065/category_9121618.html","ab":"new"}' href="https://blog.csdn.net/qq_41683065/category_9121618.html" target="_blank">
+<img alt="" onerror="this.src='https://img-blog.csdnimg.cn/20190918135101160.png?x-oss-process=image/resize,m_fixed,h_64,w_64'" src="https://img-blog.csdnimg.cn/2019092715111047.png?x-oss-process=image/resize,m_fixed,h_64,w_64"/>
+<span class="title oneline">
+<span class="text">崇天老师Python课程-学习笔记</span>
+</span>
+<span class="count float-right">8篇</span>
+</a>
+</li>
+<li class="">
+<a class="clearfix" data-report-click='{"mod":"popu_537","spm":"1001.2101.3001.4137","strategy":"pc付费专栏左侧入口","dest":"https://blog.csdn.net/qq_41683065/category_9122926.html","ab":"new"}' href="https://blog.csdn.net/qq_41683065/category_9122926.html" target="_blank">
+<img alt="" onerror="this.src='https://img-blog.csdnimg.cn/20190918135101160.png?x-oss-process=image/resize,m_fixed,h_64,w_64'" src="https://img-blog.csdnimg.cn/20190927151101105.png?x-oss-process=image/resize,m_fixed,h_64,w_64"/>
+<span class="title oneline">
+<span class="text">吴恩达神经网络和深度学习-学习笔记</span>
+</span>
+<span class="count float-right">46篇</span>
+</a>
+</li>
+<li class="">
+<a class="clearfix" data-report-click='{"mod":"popu_537","spm":"1001.2101.3001.4137","strategy":"pc付费专栏左侧入口","dest":"https://blog.csdn.net/qq_41683065/category_9187308.html","ab":"new"}' href="https://blog.csdn.net/qq_41683065/category_9187308.html" target="_blank">
+<img alt="" onerror="this.src='https://img-blog.csdnimg.cn/20190918135101160.png?x-oss-process=image/resize,m_fixed,h_64,w_64'" src="https://img-blog.csdnimg.cn/20190927151124774.png?x-oss-process=image/resize,m_fixed,h_64,w_64"/>
+<span class="title oneline">
+<span class="text">开源项目使用</span>
+</span>
+<span class="count float-right">14篇</span>
+</a>
+</li>
+<li class="">
+<a class="clearfix" data-report-click='{"mod":"popu_537","spm":"1001.2101.3001.4137","strategy":"pc付费专栏左侧入口","dest":"https://blog.csdn.net/qq_41683065/category_9207996.html","ab":"new"}' href="https://blog.csdn.net/qq_41683065/category_9207996.html" target="_blank">
+<img alt="" onerror="this.src='https://img-blog.csdnimg.cn/20190918135101160.png?x-oss-process=image/resize,m_fixed,h_64,w_64'" src="https://img-blog.csdnimg.cn/20190927151117521.png?x-oss-process=image/resize,m_fixed,h_64,w_64"/>
+<span class="title oneline">
+<span class="text">面向对象编程</span>
+</span>
+<span class="count float-right">7篇</span>
+</a>
+</li>
+<li class="">
+<a class="clearfix" data-report-click='{"mod":"popu_537","spm":"1001.2101.3001.4137","strategy":"pc付费专栏左侧入口","dest":"https://blog.csdn.net/qq_41683065/category_9243402.html","ab":"new"}' href="https://blog.csdn.net/qq_41683065/category_9243402.html" target="_blank">
+<img alt="" onerror="this.src='https://img-blog.csdnimg.cn/20190918135101160.png?x-oss-process=image/resize,m_fixed,h_64,w_64'" src="https://img-blog.csdnimg.cn/20190927151026427.png?x-oss-process=image/resize,m_fixed,h_64,w_64"/>
+<span class="title oneline">
+<span class="text">sklearn</span>
+</span>
+<span class="count float-right">1篇</span>
+</a>
+</li>
+</ul>
+</div>
+<p class="text-center">
+<a class="flexible-btn" data-fbox="aside-archive"><img alt="" class="look-more" src="https://csdnimg.cn/release/blogv2/dist/pc/img/arrowDownBlack.png"/></a>
+</p>
+</div>
+<div class="aside-box" id="asideNewComments">
+<h3 class="aside-title">最新评论</h3>
+<div class="aside-content">
+<ul class="newcomment-list">
+<li>
+<a class="title text-truncate" data-report-click='{"mod":"popu_542","spm":"1001.2101.3001.4231","dest":"https://blog.csdn.net/qq_41683065/article/details/104627989#comments_13387744","ab":"new"}' data-report-view='{"mod":"popu_542","spm":"1001.2101.3001.4231","dest":"https://blog.csdn.net/qq_41683065/article/details/104627989#comments_13387744","ab":"new"}' href="https://blog.csdn.net/qq_41683065/article/details/104627989#comments_13387744" target="_blank">[GCN] 代码解析 of GitHub：Semi-supervised classification with graph convolutional networks</a>
+<p class="comment ellipsis">
+<a class="user-name" href="https://my.csdn.net/qq_41683065" target="_blank">Harry嗷: </a>
+<span class="code-comments">我觉得在Cora数据集中，引用关系（边）其实代表了节点的相似性（在最后也测试了使用单向图的方法，结果变差了，我认为是可以说明Cora数据集的边在一定程度上体现了节点的相似性）。当然在不同的图数据集中，边的解释性也不同。我已经不做这个方向了。</span>
+</p>
+</li>
+<li>
+<a class="title text-truncate" data-report-click='{"mod":"popu_542","spm":"1001.2101.3001.4231","dest":"https://blog.csdn.net/qq_41683065/article/details/104627989#comments_13384724","ab":"new"}' data-report-view='{"mod":"popu_542","spm":"1001.2101.3001.4231","dest":"https://blog.csdn.net/qq_41683065/article/details/104627989#comments_13384724","ab":"new"}' href="https://blog.csdn.net/qq_41683065/article/details/104627989#comments_13384724" target="_blank">[GCN] 代码解析 of GitHub：Semi-supervised classification with graph convolutional networks</a>
+<p class="comment ellipsis">
+<a class="user-name" href="https://my.csdn.net/weixin_44874402" target="_blank">Excuse ？: </a>
+<span class="code-comments">博主 您好  祝您国庆节快乐  我这里还有一个问题  为什么利用这种论文之间的引用关系可以提高性能？</span>
+</p>
+</li>
+<li>
+<a class="title text-truncate" data-report-click='{"mod":"popu_542","spm":"1001.2101.3001.4231","dest":"https://blog.csdn.net/qq_41683065/article/details/104627989#comments_13348485","ab":"new"}' data-report-view='{"mod":"popu_542","spm":"1001.2101.3001.4231","dest":"https://blog.csdn.net/qq_41683065/article/details/104627989#comments_13348485","ab":"new"}' href="https://blog.csdn.net/qq_41683065/article/details/104627989#comments_13348485" target="_blank">[GCN] 代码解析 of GitHub：Semi-supervised classification with graph convolutional networks</a>
+<p class="comment ellipsis">
+<a class="user-name" href="https://my.csdn.net/qq_41683065" target="_blank">Harry嗷: </a>
+<span class="code-comments">整个数据集都是知道标签的，包括测试集。。。建议你先仔细看看数据集，在这个代码里onehot编码没用到，我博客里说了。。。</span>
+</p>
+</li>
+<li>
+<a class="title text-truncate" data-report-click='{"mod":"popu_542","spm":"1001.2101.3001.4231","dest":"https://blog.csdn.net/qq_41683065/article/details/104627989#comments_13347967","ab":"new"}' data-report-view='{"mod":"popu_542","spm":"1001.2101.3001.4231","dest":"https://blog.csdn.net/qq_41683065/article/details/104627989#comments_13347967","ab":"new"}' href="https://blog.csdn.net/qq_41683065/article/details/104627989#comments_13347967" target="_blank">[GCN] 代码解析 of GitHub：Semi-supervised classification with graph convolutional networks</a>
+<p class="comment ellipsis">
+<a class="user-name" href="https://my.csdn.net/weixin_44874402" target="_blank">Excuse ？: </a>
+<span class="code-comments">博主  你好  训练集中我们输出 [0.01，0.01，0.01，0.01，0.01，0.01，0.94]， 可以和classes的one-hot编码中的[0,0,0,0,0,0,1]匹配  从而进行正确分类   而测试集中对Cora中无标签的样本点  我们只知道输出的矩阵[0.01，0.01，0.01，0.01，0.01，0.01，0.94]   不知其标签  那我们是怎么判定其属于哪一个class呢  又如何计算其test_acc呢？</span>
+</p>
+</li>
+<li>
+<a class="title text-truncate" data-report-click='{"mod":"popu_542","spm":"1001.2101.3001.4231","dest":"https://blog.csdn.net/qq_41683065/article/details/104627989#comments_13322668","ab":"new"}' data-report-view='{"mod":"popu_542","spm":"1001.2101.3001.4231","dest":"https://blog.csdn.net/qq_41683065/article/details/104627989#comments_13322668","ab":"new"}' href="https://blog.csdn.net/qq_41683065/article/details/104627989#comments_13322668" target="_blank">[GCN] 代码解析 of GitHub：Semi-supervised classification with graph convolutional networks</a>
+<p class="comment ellipsis">
+<a class="user-name" href="https://my.csdn.net/qq_41683065" target="_blank">Harry嗷: </a>
+<span class="code-comments">祝贺祝贺！！！</span>
+</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="aside-box" id="asideArchive">
+<h3 class="aside-title">最新文章</h3>
+<div class="aside-content">
+<ul class="inf_list clearfix">
+<li class="clearfix">
+<a data-report-click='{"mod":"popu_382","spm":"1001.2101.3001.4136","dest":"https://blog.csdn.net/qq_41683065/article/details/108953794","ab":"new"}' data-report-view='{"mod":"popu_382","dest":"https://blog.csdn.net/qq_41683065/article/details/108953794","ab":"new"}' href="https://blog.csdn.net/qq_41683065/article/details/108953794" target="_blank">[paper reading] GoogLeNet</a>
+</li>
+<li class="clearfix">
+<a data-report-click='{"mod":"popu_382","spm":"1001.2101.3001.4136","dest":"https://blog.csdn.net/qq_41683065/article/details/108855135","ab":"new"}' data-report-view='{"mod":"popu_382","dest":"https://blog.csdn.net/qq_41683065/article/details/108855135","ab":"new"}' href="https://blog.csdn.net/qq_41683065/article/details/108855135" target="_blank">[Ubantu+ssh] Ubantu18.04 实现ssh远程连接</a>
+</li>
+<li class="clearfix">
+<a data-report-click='{"mod":"popu_382","spm":"1001.2101.3001.4136","dest":"https://blog.csdn.net/qq_41683065/article/details/108854129","ab":"new"}' data-report-view='{"mod":"popu_382","dest":"https://blog.csdn.net/qq_41683065/article/details/108854129","ab":"new"}' href="https://blog.csdn.net/qq_41683065/article/details/108854129" target="_blank">[bug解决] Ubantu打不开Typora：typora error while loading shared libraries libXss.so.1</a>
+</li>
+</ul>
+<div class="archive-bar"></div>
+<div class="archive-box">
+<div class="archive-title">2020</div>
+<div class="archive-content">
+<div class="archive-item">
+<a data-report-click='{"mod":"popu_538","spm":"1001.2101.3001.4138","ab":"new","dest":"https://blog.csdn.net/qq_41683065/article/month/2020/10"}' href="https://blog.csdn.net/qq_41683065/article/month/2020/10" target="_blank">
+<span class="time">10月</span>
+<span class="count">1篇</span>
+</a>
+</div>
+<div class="archive-item">
+<a data-report-click='{"mod":"popu_538","spm":"1001.2101.3001.4138","ab":"new","dest":"https://blog.csdn.net/qq_41683065/article/month/2020/09"}' href="https://blog.csdn.net/qq_41683065/article/month/2020/09" target="_blank">
+<span class="time">09月</span>
+<span class="count">7篇</span>
+</a>
+</div>
+<div class="archive-item">
+<a data-report-click='{"mod":"popu_538","spm":"1001.2101.3001.4138","ab":"new","dest":"https://blog.csdn.net/qq_41683065/article/month/2020/07"}' href="https://blog.csdn.net/qq_41683065/article/month/2020/07" target="_blank">
+<span class="time">07月</span>
+<span class="count">3篇</span>
+</a>
+</div>
+<div class="archive-item">
+<a data-report-click='{"mod":"popu_538","spm":"1001.2101.3001.4138","ab":"new","dest":"https://blog.csdn.net/qq_41683065/article/month/2020/06"}' href="https://blog.csdn.net/qq_41683065/article/month/2020/06" target="_blank">
+<span class="time">06月</span>
+<span class="count">2篇</span>
+</a>
+</div>
+<div class="archive-item">
+<a data-report-click='{"mod":"popu_538","spm":"1001.2101.3001.4138","ab":"new","dest":"https://blog.csdn.net/qq_41683065/article/month/2020/05"}' href="https://blog.csdn.net/qq_41683065/article/month/2020/05" target="_blank">
+<span class="time">05月</span>
+<span class="count">2篇</span>
+</a>
+</div>
+<div class="archive-item">
+<a data-report-click='{"mod":"popu_538","spm":"1001.2101.3001.4138","ab":"new","dest":"https://blog.csdn.net/qq_41683065/article/month/2020/04"}' href="https://blog.csdn.net/qq_41683065/article/month/2020/04" target="_blank">
+<span class="time">04月</span>
+<span class="count">1篇</span>
+</a>
+</div>
+<div class="archive-item">
+<a data-report-click='{"mod":"popu_538","spm":"1001.2101.3001.4138","ab":"new","dest":"https://blog.csdn.net/qq_41683065/article/month/2020/03"}' href="https://blog.csdn.net/qq_41683065/article/month/2020/03" target="_blank">
+<span class="time">03月</span>
+<span class="count">17篇</span>
+</a>
+</div>
+<div class="archive-item">
+<a data-report-click='{"mod":"popu_538","spm":"1001.2101.3001.4138","ab":"new","dest":"https://blog.csdn.net/qq_41683065/article/month/2020/02"}' href="https://blog.csdn.net/qq_41683065/article/month/2020/02" target="_blank">
+<span class="time">02月</span>
+<span class="count">13篇</span>
+</a>
+</div>
+<div class="archive-item">
+<a data-report-click='{"mod":"popu_538","spm":"1001.2101.3001.4138","ab":"new","dest":"https://blog.csdn.net/qq_41683065/article/month/2020/01"}' href="https://blog.csdn.net/qq_41683065/article/month/2020/01" target="_blank">
+<span class="time">01月</span>
+<span class="count">7篇</span>
+</a>
+</div>
+</div>
+<div class="archive-list-item"><a data-report-click='{"mod":"popu_538","spm":"1001.2101.3001.4138","ab":"new","dest":""}' href="https://blog.csdn.net/qq_41683065/article/month/2019/10" target="_blank"><span class="year">2019年</span><span class="num">126篇</span></a></div>
+</div>
+</div>
+</div>
+<div class="" id="footerRightAds">
+<div class="aside-box">
+<div data-pid="57" id="kp_box_57"><div id="protag-banner-2"></div>
+<script data-cfasync="false" src="https://protagcdn.com/s/csdn.net/bbs/protag-banner-2.js" type="text/javascript"></script><img class="pre-img-lasy" data-src="https://kunyu.csdn.net/1.png?p=57&amp;a=2234&amp;c=0&amp;k=&amp;d=1&amp;t=3&amp;u=be8beecfb3494c92bcd5dff638472a3b"/></div>
+</div>
+</div>
+<!-- 详情页显示目录 -->
+<!--文章目录-->
+<div class="aside-box" id="asidedirectory">
+<div class="groupfile" id="directory">
+<h3 class="aside-title">目录</h3>
+<div class="align-items-stretch group_item">
+<div class="pos-box">
+<div class="scroll-box">
+<div class="toc-box"></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</aside>
+<script>
+	$("a.flexible-btn").click(function(){
+		$(this).parents('div.aside-box').removeClass('flexible-box');
+		$(this).parents("p.text-center").remove();
+	})
+</script>
+<script src="https://g.csdnimg.cn/user-tooltip/2.1/user-tooltip.js" type="text/javascript"></script>
+<script src="https://g.csdnimg.cn/user-medal/1.0.3/user-medal.js" type="text/javascript"></script> </div>
+<div class="recommend-right align-items-stretch clearfix" data-type="recommend" id="rightAside">
+<aside class="recommend-right_aside">
+<div id="recommend-right">
+<div class="flex-column aside-box groupfile" id="groupfile">
+<div class="groupfile-div">
+<h3 class="aside-title">目录</h3>
+<div class="align-items-stretch group_item">
+<div class="pos-box">
+<div class="scroll-box">
+<div class="toc-box"></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div id="recommendAdBox">
+<div data-pid="479" id="kp_box_479"><script async="" src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- PC-博客详情页-右侧视窗300*600 -->
+<ins class="adsbygoogle" data-ad-client="ca-pub-1076724771190722" data-ad-slot="8441704093" style="display:inline-block;width:300px;height:600px"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script><img class="pre-img-lasy" data-src="https://kunyu.csdn.net/1.png?p=479&amp;a=2487&amp;c=0&amp;k=&amp;d=1&amp;t=3&amp;u=987c80f1a26041e58e9281e4f9ecc540"/></div>
+</div>
+<div class="recommend-list-box d-flex flex-column aside-box" id="recommend-list-box">
+<ul class="recommend-fixed-box align-items-stretch">
+<li class="right-item">
+<a data-report-click='{"ab":"new","mod":"popu_858","extra":"{\"utm_medium\":\"distribute.pc_blog_right_sidebar.none-task-blog-alirec-1.nonecase\"}","index":"1","strategy":"alirec","dest":"https://blog.csdn.net/gao410940747/article/details/109050156"}' data-report-query="utm_medium=distribute.pc_blog_right_sidebar.none-task-blog-alirec-1.nonecase&amp;depth_1-utm_source=distribute.pc_blog_right_sidebar.none-task-blog-alirec-1.nonecase" data-report-view='{"ab":"new","mod":"popu_858","extra":"{\"utm_medium\":\"distribute.pc_blog_right_sidebar.none-task-blog-alirec-1.nonecase\"}","index":"1","strategy":"alirec","dest":"https://blog.csdn.net/gao410940747/article/details/109050156"}' href="https://blog.csdn.net/gao410940747/article/details/109050156" target="_blank">
+<div class="context-box ">
+<div class="content clearfix ">
+<h5>intellij IDEA 如何将多个Maven项目放在同一个工作空间</h5>
+</div>
+</div>
+</a>
+</li>
+<li class="right-item">
+<a data-report-click='{"ab":"new","mod":"popu_858","extra":"{\"utm_medium\":\"distribute.pc_blog_right_sidebar.none-task-blog-alirec-2.nonecase\"}","index":"2","strategy":"alirec","dest":"https://blog.csdn.net/StarfishCu/article/details/109051047"}' data-report-query="utm_medium=distribute.pc_blog_right_sidebar.none-task-blog-alirec-2.nonecase&amp;depth_1-utm_source=distribute.pc_blog_right_sidebar.none-task-blog-alirec-2.nonecase" data-report-view='{"ab":"new","mod":"popu_858","extra":"{\"utm_medium\":\"distribute.pc_blog_right_sidebar.none-task-blog-alirec-2.nonecase\"}","index":"2","strategy":"alirec","dest":"https://blog.csdn.net/StarfishCu/article/details/109051047"}' href="https://blog.csdn.net/StarfishCu/article/details/109051047" target="_blank">
+<div class="context-box ">
+<div class="content clearfix ">
+<h5>MAML学习笔记</h5>
+</div>
+</div>
+</a>
+</li>
+<li class="right-item">
+<a data-report-click='{"ab":"new","mod":"popu_858","extra":"{\"utm_medium\":\"distribute.pc_blog_right_sidebar.none-task-blog-alirec-3.nonecase\"}","index":"3","strategy":"alirec","dest":"https://blog.csdn.net/zss192/article/details/109051215"}' data-report-query="utm_medium=distribute.pc_blog_right_sidebar.none-task-blog-alirec-3.nonecase&amp;depth_1-utm_source=distribute.pc_blog_right_sidebar.none-task-blog-alirec-3.nonecase" data-report-view='{"ab":"new","mod":"popu_858","extra":"{\"utm_medium\":\"distribute.pc_blog_right_sidebar.none-task-blog-alirec-3.nonecase\"}","index":"3","strategy":"alirec","dest":"https://blog.csdn.net/zss192/article/details/109051215"}' href="https://blog.csdn.net/zss192/article/details/109051215" target="_blank">
+<div class="context-box ">
+<div class="content clearfix ">
+<h5>Git使用方法</h5>
+</div>
+</div>
+</a>
+</li>
+<li class="right-item">
+<a data-report-click='{"ab":"new","mod":"popu_858","extra":"{\"utm_medium\":\"distribute.pc_blog_right_sidebar.none-task-download-alirec-4.nonecase\"}","index":"4","strategy":"alirec","dest":"https://download.csdn.net/download/qq_42856778/12921278"}' data-report-query="utm_medium=distribute.pc_blog_right_sidebar.none-task-download-alirec-4.nonecase&amp;depth_1-utm_source=distribute.pc_blog_right_sidebar.none-task-download-alirec-4.nonecase" data-report-view='{"ab":"new","mod":"popu_858","extra":"{\"utm_medium\":\"distribute.pc_blog_right_sidebar.none-task-download-alirec-4.nonecase\"}","index":"4","strategy":"alirec","dest":"https://download.csdn.net/download/qq_42856778/12921278"}' href="https://download.csdn.net/download/qq_42856778/12921278" target="_blank">
+<div class="context-box ">
+<div class="content clearfix ">
+<h5>JPEG压缩视频RTP中文手册</h5>
+</div>
+<span class="download_mark_button ">立即下载 </span>
+</div>
+</a>
+</li>
+<li class="right-item">
+<a data-report-click='{"ab":"new","mod":"popu_858","extra":"{\"utm_medium\":\"distribute.pc_blog_right_sidebar.none-task-download-alirec-5.nonecase\"}","index":"5","strategy":"alirec","dest":"https://download.csdn.net/download/lg31415/12921336"}' data-report-query="utm_medium=distribute.pc_blog_right_sidebar.none-task-download-alirec-5.nonecase&amp;depth_1-utm_source=distribute.pc_blog_right_sidebar.none-task-download-alirec-5.nonecase" data-report-view='{"ab":"new","mod":"popu_858","extra":"{\"utm_medium\":\"distribute.pc_blog_right_sidebar.none-task-download-alirec-5.nonecase\"}","index":"5","strategy":"alirec","dest":"https://download.csdn.net/download/lg31415/12921336"}' href="https://download.csdn.net/download/lg31415/12921336" target="_blank">
+<div class="context-box ">
+<div class="content clearfix ">
+<h5>openssh-8.4p1-1.el7.centos.x86_64.rpm</h5>
+</div>
+<span class="download_mark_button ">立即下载 </span>
+</div>
+</a>
+</li>
+<li class="right-item">
+<a data-report-click='{"ab":"new","mod":"popu_858","extra":"{\"utm_medium\":\"distribute.pc_blog_right_sidebar.none-task-edu_course-alirec-6.nonecase\"}","index":"6","strategy":"alirec","dest":"https://edu.csdn.net/course/detail/30958"}' data-report-query="utm_medium=distribute.pc_blog_right_sidebar.none-task-edu_course-alirec-6.nonecase&amp;depth_1-utm_source=distribute.pc_blog_right_sidebar.none-task-edu_course-alirec-6.nonecase" data-report-view='{"ab":"new","mod":"popu_858","extra":"{\"utm_medium\":\"distribute.pc_blog_right_sidebar.none-task-edu_course-alirec-6.nonecase\"}","index":"6","strategy":"alirec","dest":"https://edu.csdn.net/course/detail/30958"}' href="https://edu.csdn.net/course/detail/30958" target="_blank">
+<div class="context-box ">
+<div class="content clearfix ">
+<h5>成神之路：8小时精通前端HTML5+CSS3</h5>
+</div>
+</div>
+</a>
+</li>
+<li class="right-item">
+<a data-report-click='{"ab":"new","mod":"popu_858","extra":"{\"utm_medium\":\"distribute.pc_blog_right_sidebar.none-task-blog-alirec-7.nonecase\"}","index":"7","strategy":"alirec","dest":"https://blog.csdn.net/qq_16525061/article/details/109033865"}' data-report-query="utm_medium=distribute.pc_blog_right_sidebar.none-task-blog-alirec-7.nonecase&amp;depth_1-utm_source=distribute.pc_blog_right_sidebar.none-task-blog-alirec-7.nonecase" data-report-view='{"ab":"new","mod":"popu_858","extra":"{\"utm_medium\":\"distribute.pc_blog_right_sidebar.none-task-blog-alirec-7.nonecase\"}","index":"7","strategy":"alirec","dest":"https://blog.csdn.net/qq_16525061/article/details/109033865"}' href="https://blog.csdn.net/qq_16525061/article/details/109033865" target="_blank">
+<div class="context-box ">
+<div class="content clearfix ">
+<h5>从0开始搭建开发easyswoole</h5>
+</div>
+</div>
+</a>
+</li>
+<li class="right-item">
+<a data-report-click='{"ab":"new","mod":"popu_858","extra":"{\"utm_medium\":\"distribute.pc_blog_right_sidebar.none-task-blog-alirec-8.nonecase\"}","index":"8","strategy":"alirec","dest":"https://blog.csdn.net/weixin_40571331/article/details/109050329"}' data-report-query="utm_medium=distribute.pc_blog_right_sidebar.none-task-blog-alirec-8.nonecase&amp;depth_1-utm_source=distribute.pc_blog_right_sidebar.none-task-blog-alirec-8.nonecase" data-report-view='{"ab":"new","mod":"popu_858","extra":"{\"utm_medium\":\"distribute.pc_blog_right_sidebar.none-task-blog-alirec-8.nonecase\"}","index":"8","strategy":"alirec","dest":"https://blog.csdn.net/weixin_40571331/article/details/109050329"}' href="https://blog.csdn.net/weixin_40571331/article/details/109050329" target="_blank">
+<div class="context-box ">
+<div class="content clearfix ">
+<h5>小程序 动态更改数组中对象的某个值</h5>
+</div>
+</div>
+</a>
+</li>
+<li class="right-item">
+<a data-report-click='{"ab":"new","mod":"popu_858","extra":"{\"utm_medium\":\"distribute.pc_blog_right_sidebar.none-task-blog-alirec-9.nonecase\"}","index":"9","strategy":"alirec","dest":"https://blog.csdn.net/awayaya1/article/details/109051208"}' data-report-query="utm_medium=distribute.pc_blog_right_sidebar.none-task-blog-alirec-9.nonecase&amp;depth_1-utm_source=distribute.pc_blog_right_sidebar.none-task-blog-alirec-9.nonecase" data-report-view='{"ab":"new","mod":"popu_858","extra":"{\"utm_medium\":\"distribute.pc_blog_right_sidebar.none-task-blog-alirec-9.nonecase\"}","index":"9","strategy":"alirec","dest":"https://blog.csdn.net/awayaya1/article/details/109051208"}' href="https://blog.csdn.net/awayaya1/article/details/109051208" target="_blank">
+<div class="context-box ">
+<div class="content clearfix ">
+<h5>二十四节气插画素材，每一张都带你如感</h5>
+</div>
+</div>
+</a>
+</li>
+<li class="right-item">
+<a data-report-click='{"ab":"new","mod":"popu_858","extra":"{\"utm_medium\":\"distribute.pc_blog_right_sidebar.none-task-edu_course-alirec-10.nonecase\"}","index":"10","strategy":"alirec","dest":"https://edu.csdn.net/combo/detail/1898"}' data-report-query="utm_medium=distribute.pc_blog_right_sidebar.none-task-edu_course-alirec-10.nonecase&amp;depth_1-utm_source=distribute.pc_blog_right_sidebar.none-task-edu_course-alirec-10.nonecase" data-report-view='{"ab":"new","mod":"popu_858","extra":"{\"utm_medium\":\"distribute.pc_blog_right_sidebar.none-task-edu_course-alirec-10.nonecase\"}","index":"10","strategy":"alirec","dest":"https://edu.csdn.net/combo/detail/1898"}' href="https://edu.csdn.net/combo/detail/1898" target="_blank">
+<div class="context-box ">
+<div class="content clearfix ">
+<h5>栗子哥的云计算套餐</h5>
+</div>
+</div>
+</a>
+</li>
+<li class="right-item">
+<a data-report-click='{"ab":"new","mod":"popu_858","extra":"{\"utm_medium\":\"distribute.pc_blog_right_sidebar.none-task-blog-alirec-11.nonecase\"}","index":"11","strategy":"alirec","dest":"https://blog.csdn.net/sinat_28826891/article/details/109049655"}' data-report-query="utm_medium=distribute.pc_blog_right_sidebar.none-task-blog-alirec-11.nonecase&amp;depth_1-utm_source=distribute.pc_blog_right_sidebar.none-task-blog-alirec-11.nonecase" data-report-view='{"ab":"new","mod":"popu_858","extra":"{\"utm_medium\":\"distribute.pc_blog_right_sidebar.none-task-blog-alirec-11.nonecase\"}","index":"11","strategy":"alirec","dest":"https://blog.csdn.net/sinat_28826891/article/details/109049655"}' href="https://blog.csdn.net/sinat_28826891/article/details/109049655" target="_blank">
+<div class="context-box ">
+<div class="content clearfix ">
+<h5>C++多线程交替打印奇数偶数</h5>
+</div>
+</div>
+</a>
+</li>
+<li class="right-item">
+<a data-report-click='{"ab":"new","mod":"popu_858","extra":"{\"utm_medium\":\"distribute.pc_blog_right_sidebar.none-task-download-alirec-12.nonecase\"}","index":"12","strategy":"alirec","dest":"https://download.csdn.net/download/weixin_38607552/12921360"}' data-report-query="utm_medium=distribute.pc_blog_right_sidebar.none-task-download-alirec-12.nonecase&amp;depth_1-utm_source=distribute.pc_blog_right_sidebar.none-task-download-alirec-12.nonecase" data-report-view='{"ab":"new","mod":"popu_858","extra":"{\"utm_medium\":\"distribute.pc_blog_right_sidebar.none-task-download-alirec-12.nonecase\"}","index":"12","strategy":"alirec","dest":"https://download.csdn.net/download/weixin_38607552/12921360"}' href="https://download.csdn.net/download/weixin_38607552/12921360" target="_blank">
+<div class="context-box ">
+<div class="content clearfix ">
+<h5>免虚拟仿红蜻蜓 v4.0</h5>
+</div>
+<span class="download_mark_button ">立即下载 </span>
+</div>
+</a>
+</li>
+<li class="right-item">
+<a data-report-click='{"ab":"new","mod":"popu_858","extra":"{\"utm_medium\":\"distribute.pc_blog_right_sidebar.none-task-download-alirec-13.nonecase\"}","index":"13","strategy":"alirec","dest":"https://download.csdn.net/download/liulyw/12921314"}' data-report-query="utm_medium=distribute.pc_blog_right_sidebar.none-task-download-alirec-13.nonecase&amp;depth_1-utm_source=distribute.pc_blog_right_sidebar.none-task-download-alirec-13.nonecase" data-report-view='{"ab":"new","mod":"popu_858","extra":"{\"utm_medium\":\"distribute.pc_blog_right_sidebar.none-task-download-alirec-13.nonecase\"}","index":"13","strategy":"alirec","dest":"https://download.csdn.net/download/liulyw/12921314"}' href="https://download.csdn.net/download/liulyw/12921314" target="_blank">
+<div class="context-box ">
+<div class="content clearfix ">
+<h5>SMPTE技术标准合集</h5>
+</div>
+<span class="download_mark_button ">立即下载 </span>
+</div>
+</a>
+</li>
+<li class="right-item">
+<a data-report-click='{"ab":"new","mod":"popu_858","extra":"{\"utm_medium\":\"distribute.pc_blog_right_sidebar.none-task-download-alirec-14.nonecase\"}","index":"14","strategy":"alirec","dest":"https://download.csdn.net/download/kongyuanlin4851/12921337"}' data-report-query="utm_medium=distribute.pc_blog_right_sidebar.none-task-download-alirec-14.nonecase&amp;depth_1-utm_source=distribute.pc_blog_right_sidebar.none-task-download-alirec-14.nonecase" data-report-view='{"ab":"new","mod":"popu_858","extra":"{\"utm_medium\":\"distribute.pc_blog_right_sidebar.none-task-download-alirec-14.nonecase\"}","index":"14","strategy":"alirec","dest":"https://download.csdn.net/download/kongyuanlin4851/12921337"}' href="https://download.csdn.net/download/kongyuanlin4851/12921337" target="_blank">
+<div class="context-box ">
+<div class="content clearfix ">
+<h5>中文版Cyclone_4数据手册.zip</h5>
+</div>
+<span class="download_mark_button ">立即下载 </span>
+</div>
+</a>
+</li>
+<li class="right-item">
+<a data-report-click='{"ab":"new","mod":"popu_858","extra":"{\"utm_medium\":\"distribute.pc_blog_right_sidebar.none-task-edu_course-alirec-15.nonecase\"}","index":"15","strategy":"alirec","dest":"https://edu.csdn.net/combo/detail/1900"}' data-report-query="utm_medium=distribute.pc_blog_right_sidebar.none-task-edu_course-alirec-15.nonecase&amp;depth_1-utm_source=distribute.pc_blog_right_sidebar.none-task-edu_course-alirec-15.nonecase" data-report-view='{"ab":"new","mod":"popu_858","extra":"{\"utm_medium\":\"distribute.pc_blog_right_sidebar.none-task-edu_course-alirec-15.nonecase\"}","index":"15","strategy":"alirec","dest":"https://edu.csdn.net/combo/detail/1900"}' href="https://edu.csdn.net/combo/detail/1900" target="_blank">
+<div class="context-box ">
+<div class="content clearfix ">
+<h5>Vue3.0从入门到进阶实战</h5>
+</div>
+</div>
+</a>
+</li>
+<li class="right-item">
+<a data-report-click='{"ab":"new","mod":"popu_858","extra":"{\"utm_medium\":\"distribute.pc_blog_right_sidebar.none-task-edu_course-alirec-16.nonecase\"}","index":"16","strategy":"alirec","dest":"https://edu.csdn.net/course/detail/30793"}' data-report-query="utm_medium=distribute.pc_blog_right_sidebar.none-task-edu_course-alirec-16.nonecase&amp;depth_1-utm_source=distribute.pc_blog_right_sidebar.none-task-edu_course-alirec-16.nonecase" data-report-view='{"ab":"new","mod":"popu_858","extra":"{\"utm_medium\":\"distribute.pc_blog_right_sidebar.none-task-edu_course-alirec-16.nonecase\"}","index":"16","strategy":"alirec","dest":"https://edu.csdn.net/course/detail/30793"}' href="https://edu.csdn.net/course/detail/30793" target="_blank">
+<div class="context-box ">
+<div class="content clearfix ">
+<h5>YOLOv5(PyTorch)实战：训练自己的数据集(Ubuntu)</h5>
+</div>
+</div>
+</a>
+</li>
+<li class="right-item">
+<a data-report-click='{"ab":"new","mod":"popu_858","extra":"{\"utm_medium\":\"distribute.pc_blog_right_sidebar.none-task-edu_course-alirec-17.nonecase\"}","index":"17","strategy":"alirec","dest":"https://edu.csdn.net/course/detail/30189"}' data-report-query="utm_medium=distribute.pc_blog_right_sidebar.none-task-edu_course-alirec-17.nonecase&amp;depth_1-utm_source=distribute.pc_blog_right_sidebar.none-task-edu_course-alirec-17.nonecase" data-report-view='{"ab":"new","mod":"popu_858","extra":"{\"utm_medium\":\"distribute.pc_blog_right_sidebar.none-task-edu_course-alirec-17.nonecase\"}","index":"17","strategy":"alirec","dest":"https://edu.csdn.net/course/detail/30189"}' href="https://edu.csdn.net/course/detail/30189" target="_blank">
+<div class="context-box ">
+<div class="content clearfix ">
+<h5>从零基础开始系统学习软件测试，挑战年薪30w+测试工程师</h5>
+</div>
+</div>
+</a>
+</li>
+<li class="right-item">
+<a data-report-click='{"ab":"new","mod":"popu_858","extra":"{\"utm_medium\":\"distribute.pc_blog_right_sidebar.none-task-blog-alirec-18.nonecase\"}","index":"18","strategy":"alirec","dest":"https://blog.csdn.net/qq_1262330535/article/details/109051207"}' data-report-query="utm_medium=distribute.pc_blog_right_sidebar.none-task-blog-alirec-18.nonecase&amp;depth_1-utm_source=distribute.pc_blog_right_sidebar.none-task-blog-alirec-18.nonecase" data-report-view='{"ab":"new","mod":"popu_858","extra":"{\"utm_medium\":\"distribute.pc_blog_right_sidebar.none-task-blog-alirec-18.nonecase\"}","index":"18","strategy":"alirec","dest":"https://blog.csdn.net/qq_1262330535/article/details/109051207"}' href="https://blog.csdn.net/qq_1262330535/article/details/109051207" target="_blank">
+<div class="context-box ">
+<div class="content clearfix ">
+<h5>jsp362基于web的美食网站系统</h5>
+</div>
+</div>
+</a>
+</li>
+<li class="right-item">
+<a data-report-click='{"ab":"new","mod":"popu_858","extra":"{\"utm_medium\":\"distribute.pc_blog_right_sidebar.none-task-download-alirec-19.nonecase\"}","index":"19","strategy":"alirec","dest":"https://download.csdn.net/download/katatacorp/12921301"}' data-report-query="utm_medium=distribute.pc_blog_right_sidebar.none-task-download-alirec-19.nonecase&amp;depth_1-utm_source=distribute.pc_blog_right_sidebar.none-task-download-alirec-19.nonecase" data-report-view='{"ab":"new","mod":"popu_858","extra":"{\"utm_medium\":\"distribute.pc_blog_right_sidebar.none-task-download-alirec-19.nonecase\"}","index":"19","strategy":"alirec","dest":"https://download.csdn.net/download/katatacorp/12921301"}' href="https://download.csdn.net/download/katatacorp/12921301" target="_blank">
+<div class="context-box ">
+<div class="content clearfix ">
+<h5>OsxAptioFix2Drv-64.zip黑苹果死亡两分钟解决方案。10.15.6</h5>
+</div>
+<span class="download_mark_button ">立即下载 </span>
+</div>
+</a>
+</li>
+<li class="right-item">
+<a data-report-click='{"ab":"new","mod":"popu_858","extra":"{\"utm_medium\":\"distribute.pc_blog_right_sidebar.none-task-edu_course-alirec-20.nonecase\"}","index":"20","strategy":"alirec","dest":"https://edu.csdn.net/course/detail/30227"}' data-report-query="utm_medium=distribute.pc_blog_right_sidebar.none-task-edu_course-alirec-20.nonecase&amp;depth_1-utm_source=distribute.pc_blog_right_sidebar.none-task-edu_course-alirec-20.nonecase" data-report-view='{"ab":"new","mod":"popu_858","extra":"{\"utm_medium\":\"distribute.pc_blog_right_sidebar.none-task-edu_course-alirec-20.nonecase\"}","index":"20","strategy":"alirec","dest":"https://edu.csdn.net/course/detail/30227"}' href="https://edu.csdn.net/course/detail/30227" target="_blank">
+<div class="context-box ">
+<div class="content clearfix ">
+<h5>第2版 软件项目管理实战</h5>
+</div>
+</div>
+</a>
+</li>
+<li class="right-item">
+<a data-report-click='{"ab":"new","mod":"popu_858","extra":"{\"utm_medium\":\"distribute.pc_blog_right_sidebar.none-task-edu_course-alirec-21.nonecase\"}","index":"21","strategy":"alirec","dest":"https://edu.csdn.net/course/detail/30945"}' data-report-query="utm_medium=distribute.pc_blog_right_sidebar.none-task-edu_course-alirec-21.nonecase&amp;depth_1-utm_source=distribute.pc_blog_right_sidebar.none-task-edu_course-alirec-21.nonecase" data-report-view='{"ab":"new","mod":"popu_858","extra":"{\"utm_medium\":\"distribute.pc_blog_right_sidebar.none-task-edu_course-alirec-21.nonecase\"}","index":"21","strategy":"alirec","dest":"https://edu.csdn.net/course/detail/30945"}' href="https://edu.csdn.net/course/detail/30945" target="_blank">
+<div class="context-box ">
+<div class="content clearfix ">
+<h5>宝塔面板新手入门</h5>
+</div>
+</div>
+</a>
+</li>
+<li class="right-item">
+<a data-report-click='{"ab":"new","mod":"popu_858","extra":"{\"utm_medium\":\"distribute.pc_blog_right_sidebar.none-task-blog-alirec-22.nonecase\"}","index":"22","strategy":"alirec","dest":"https://blog.csdn.net/weixin_45911397/article/details/109049684"}' data-report-query="utm_medium=distribute.pc_blog_right_sidebar.none-task-blog-alirec-22.nonecase&amp;depth_1-utm_source=distribute.pc_blog_right_sidebar.none-task-blog-alirec-22.nonecase" data-report-view='{"ab":"new","mod":"popu_858","extra":"{\"utm_medium\":\"distribute.pc_blog_right_sidebar.none-task-blog-alirec-22.nonecase\"}","index":"22","strategy":"alirec","dest":"https://blog.csdn.net/weixin_45911397/article/details/109049684"}' href="https://blog.csdn.net/weixin_45911397/article/details/109049684" target="_blank">
+<div class="context-box ">
+<div class="content clearfix ">
+<h5>Gone Fishing(计算几何)</h5>
+</div>
+</div>
+</a>
+</li>
+<li class="right-item">
+<a data-report-click='{"ab":"new","mod":"popu_858","extra":"{\"utm_medium\":\"distribute.pc_blog_right_sidebar.none-task-edu_course-alirec-23.nonecase\"}","index":"23","strategy":"alirec","dest":"https://edu.csdn.net/course/detail/30910"}' data-report-query="utm_medium=distribute.pc_blog_right_sidebar.none-task-edu_course-alirec-23.nonecase&amp;depth_1-utm_source=distribute.pc_blog_right_sidebar.none-task-edu_course-alirec-23.nonecase" data-report-view='{"ab":"new","mod":"popu_858","extra":"{\"utm_medium\":\"distribute.pc_blog_right_sidebar.none-task-edu_course-alirec-23.nonecase\"}","index":"23","strategy":"alirec","dest":"https://edu.csdn.net/course/detail/30910"}' href="https://edu.csdn.net/course/detail/30910" target="_blank">
+<div class="context-box ">
+<div class="content clearfix ">
+<h5>网络安全工程师教你：如何从Windows过度Kali Linux环境？</h5>
+</div>
+</div>
+</a>
+</li>
+<li class="right-item">
+<a data-report-click='{"ab":"new","mod":"popu_858","extra":"{\"utm_medium\":\"distribute.pc_blog_right_sidebar.none-task-blog-alirec-24.nonecase\"}","index":"24","strategy":"alirec","dest":"https://blog.csdn.net/qq_1262330535/article/details/109051105"}' data-report-query="utm_medium=distribute.pc_blog_right_sidebar.none-task-blog-alirec-24.nonecase&amp;depth_1-utm_source=distribute.pc_blog_right_sidebar.none-task-blog-alirec-24.nonecase" data-report-view='{"ab":"new","mod":"popu_858","extra":"{\"utm_medium\":\"distribute.pc_blog_right_sidebar.none-task-blog-alirec-24.nonecase\"}","index":"24","strategy":"alirec","dest":"https://blog.csdn.net/qq_1262330535/article/details/109051105"}' href="https://blog.csdn.net/qq_1262330535/article/details/109051105" target="_blank">
+<div class="context-box ">
+<div class="content clearfix ">
+<h5>jsp车险报案管理系统</h5>
+</div>
+</div>
+</a>
+</li>
+<li class="right-item">
+<a data-report-click='{"ab":"new","mod":"popu_858","extra":"{\"utm_medium\":\"distribute.pc_blog_right_sidebar.none-task-edu_course-alirec-25.nonecase\"}","index":"25","strategy":"alirec","dest":"https://edu.csdn.net/course/detail/30965"}' data-report-query="utm_medium=distribute.pc_blog_right_sidebar.none-task-edu_course-alirec-25.nonecase&amp;depth_1-utm_source=distribute.pc_blog_right_sidebar.none-task-edu_course-alirec-25.nonecase" data-report-view='{"ab":"new","mod":"popu_858","extra":"{\"utm_medium\":\"distribute.pc_blog_right_sidebar.none-task-edu_course-alirec-25.nonecase\"}","index":"25","strategy":"alirec","dest":"https://edu.csdn.net/course/detail/30965"}' href="https://edu.csdn.net/course/detail/30965" target="_blank">
+<div class="context-box ">
+<div class="content clearfix ">
+<h5>PHP微信小程序母婴用品商城 大学生毕业设计 教学视频</h5>
+</div>
+</div>
+</a>
+</li>
+<li class="right-item">
+<a data-report-click='{"ab":"new","mod":"popu_858","extra":"{\"utm_medium\":\"distribute.pc_blog_right_sidebar.none-task-blog-alirec-26.nonecase\"}","index":"26","strategy":"alirec","dest":"https://blog.csdn.net/vecloud/article/details/109051243"}' data-report-query="utm_medium=distribute.pc_blog_right_sidebar.none-task-blog-alirec-26.nonecase&amp;depth_1-utm_source=distribute.pc_blog_right_sidebar.none-task-blog-alirec-26.nonecase" data-report-view='{"ab":"new","mod":"popu_858","extra":"{\"utm_medium\":\"distribute.pc_blog_right_sidebar.none-task-blog-alirec-26.nonecase\"}","index":"26","strategy":"alirec","dest":"https://blog.csdn.net/vecloud/article/details/109051243"}' href="https://blog.csdn.net/vecloud/article/details/109051243" target="_blank">
+<div class="context-box ">
+<div class="content clearfix ">
+<h5>什么是云计算？—Vecloud 微云</h5>
+</div>
+</div>
+</a>
+</li>
+<li class="right-item">
+<a data-report-click='{"ab":"new","mod":"popu_858","extra":"{\"utm_medium\":\"distribute.pc_blog_right_sidebar.none-task-blog-alirec-27.nonecase\"}","index":"27","strategy":"alirec","dest":"https://blog.csdn.net/qq_42434318/article/details/109050725"}' data-report-query="utm_medium=distribute.pc_blog_right_sidebar.none-task-blog-alirec-27.nonecase&amp;depth_1-utm_source=distribute.pc_blog_right_sidebar.none-task-blog-alirec-27.nonecase" data-report-view='{"ab":"new","mod":"popu_858","extra":"{\"utm_medium\":\"distribute.pc_blog_right_sidebar.none-task-blog-alirec-27.nonecase\"}","index":"27","strategy":"alirec","dest":"https://blog.csdn.net/qq_42434318/article/details/109050725"}' href="https://blog.csdn.net/qq_42434318/article/details/109050725" target="_blank">
+<div class="context-box ">
+<div class="content clearfix ">
+<h5>测试开发工程师成长心路</h5>
+</div>
+</div>
+</a>
+</li>
+<li class="right-item">
+<a data-report-click='{"ab":"new","mod":"popu_858","extra":"{\"utm_medium\":\"distribute.pc_blog_right_sidebar.none-task-blog-alirec-28.nonecase\"}","index":"28","strategy":"alirec","dest":"https://blog.csdn.net/Ciiiiiiindy/article/details/109032171"}' data-report-query="utm_medium=distribute.pc_blog_right_sidebar.none-task-blog-alirec-28.nonecase&amp;depth_1-utm_source=distribute.pc_blog_right_sidebar.none-task-blog-alirec-28.nonecase" data-report-view='{"ab":"new","mod":"popu_858","extra":"{\"utm_medium\":\"distribute.pc_blog_right_sidebar.none-task-blog-alirec-28.nonecase\"}","index":"28","strategy":"alirec","dest":"https://blog.csdn.net/Ciiiiiiindy/article/details/109032171"}' href="https://blog.csdn.net/Ciiiiiiindy/article/details/109032171" target="_blank">
+<div class="context-box ">
+<div class="content clearfix ">
+<h5>实习日记（6）—— Linux出现错误 E138：无法写入 viminfo 文件 /home/root/.viminfo!</h5>
+</div>
+</div>
+</a>
+</li>
+<li class="right-item">
+<a data-report-click='{"ab":"new","mod":"popu_858","extra":"{\"utm_medium\":\"distribute.pc_blog_right_sidebar.none-task-download-alirec-29.nonecase\"}","index":"29","strategy":"alirec","dest":"https://download.csdn.net/download/weixin_38746387/12921350"}' data-report-query="utm_medium=distribute.pc_blog_right_sidebar.none-task-download-alirec-29.nonecase&amp;depth_1-utm_source=distribute.pc_blog_right_sidebar.none-task-download-alirec-29.nonecase" data-report-view='{"ab":"new","mod":"popu_858","extra":"{\"utm_medium\":\"distribute.pc_blog_right_sidebar.none-task-download-alirec-29.nonecase\"}","index":"29","strategy":"alirec","dest":"https://download.csdn.net/download/weixin_38746387/12921350"}' href="https://download.csdn.net/download/weixin_38746387/12921350" target="_blank">
+<div class="context-box ">
+<div class="content clearfix ">
+<h5>传说水吧聊天室 v2.2(完整体验版)</h5>
+</div>
+<span class="download_mark_button ">立即下载 </span>
+</div>
+</a>
+</li>
+<li class="right-item">
+<a data-report-click='{"ab":"new","mod":"popu_858","extra":"{\"utm_medium\":\"distribute.pc_blog_right_sidebar.none-task-download-alirec-30.nonecase\"}","index":"30","strategy":"alirec","dest":"https://download.csdn.net/download/weixin_38636655/12921324"}' data-report-query="utm_medium=distribute.pc_blog_right_sidebar.none-task-download-alirec-30.nonecase&amp;depth_1-utm_source=distribute.pc_blog_right_sidebar.none-task-download-alirec-30.nonecase" data-report-view='{"ab":"new","mod":"popu_858","extra":"{\"utm_medium\":\"distribute.pc_blog_right_sidebar.none-task-download-alirec-30.nonecase\"}","index":"30","strategy":"alirec","dest":"https://download.csdn.net/download/weixin_38636655/12921324"}' href="https://download.csdn.net/download/weixin_38636655/12921324" target="_blank">
+<div class="context-box ">
+<div class="content clearfix ">
+<h5>网展中英外贸网站绿色风格 v4.9</h5>
+</div>
+<span class="download_mark_button ">立即下载 </span>
+</div>
+</a>
+</li>
+<li class="right-item">
+<a data-report-click='{"ab":"new","mod":"popu_858","extra":"{\"utm_medium\":\"distribute.pc_blog_right_sidebar.none-task-blog-alirec-31.nonecase\"}","index":"31","strategy":"alirec","dest":"https://blog.csdn.net/weixin_46162832/article/details/109051273"}' data-report-query="utm_medium=distribute.pc_blog_right_sidebar.none-task-blog-alirec-31.nonecase&amp;depth_1-utm_source=distribute.pc_blog_right_sidebar.none-task-blog-alirec-31.nonecase" data-report-view='{"ab":"new","mod":"popu_858","extra":"{\"utm_medium\":\"distribute.pc_blog_right_sidebar.none-task-blog-alirec-31.nonecase\"}","index":"31","strategy":"alirec","dest":"https://blog.csdn.net/weixin_46162832/article/details/109051273"}' href="https://blog.csdn.net/weixin_46162832/article/details/109051273" target="_blank">
+<div class="context-box ">
+<div class="content clearfix ">
+<h5>e路同行 青春有你 | “麒麟计划”携手六大高校共同开展E青春人才培养</h5>
+</div>
+</div>
+</a>
+</li>
+<li class="right-item">
+<a data-report-click='{"ab":"new","mod":"popu_858","extra":"{\"utm_medium\":\"distribute.pc_blog_right_sidebar.none-task-download-alirec-32.nonecase\"}","index":"32","strategy":"alirec","dest":"https://download.csdn.net/download/Rubinn/12921274"}' data-report-query="utm_medium=distribute.pc_blog_right_sidebar.none-task-download-alirec-32.nonecase&amp;depth_1-utm_source=distribute.pc_blog_right_sidebar.none-task-download-alirec-32.nonecase" data-report-view='{"ab":"new","mod":"popu_858","extra":"{\"utm_medium\":\"distribute.pc_blog_right_sidebar.none-task-download-alirec-32.nonecase\"}","index":"32","strategy":"alirec","dest":"https://download.csdn.net/download/Rubinn/12921274"}' href="https://download.csdn.net/download/Rubinn/12921274" target="_blank">
+<div class="context-box ">
+<div class="content clearfix ">
+<h5>EC-CS 的应用V10.pdf</h5>
+</div>
+<span class="download_mark_button ">立即下载 </span>
+</div>
+</a>
+</li>
+<li class="right-item">
+<a data-report-click='{"ab":"new","mod":"popu_858","extra":"{\"utm_medium\":\"distribute.pc_blog_right_sidebar.none-task-download-alirec-33.nonecase\"}","index":"33","strategy":"alirec","dest":"https://download.csdn.net/download/weixin_38747906/12921341"}' data-report-query="utm_medium=distribute.pc_blog_right_sidebar.none-task-download-alirec-33.nonecase&amp;depth_1-utm_source=distribute.pc_blog_right_sidebar.none-task-download-alirec-33.nonecase" data-report-view='{"ab":"new","mod":"popu_858","extra":"{\"utm_medium\":\"distribute.pc_blog_right_sidebar.none-task-download-alirec-33.nonecase\"}","index":"33","strategy":"alirec","dest":"https://download.csdn.net/download/weixin_38747906/12921341"}' href="https://download.csdn.net/download/weixin_38747906/12921341" target="_blank">
+<div class="context-box ">
+<div class="content clearfix ">
+<h5>Cerberus FTP Server v9.0.5 for x32</h5>
+</div>
+<span class="download_mark_button ">立即下载 </span>
+</div>
+</a>
+</li>
+<li class="right-item">
+<a data-report-click='{"ab":"new","mod":"popu_858","extra":"{\"utm_medium\":\"distribute.pc_blog_right_sidebar.none-task-download-alirec-34.nonecase\"}","index":"34","strategy":"alirec","dest":"https://download.csdn.net/download/UniverseSae/12921282"}' data-report-query="utm_medium=distribute.pc_blog_right_sidebar.none-task-download-alirec-34.nonecase&amp;depth_1-utm_source=distribute.pc_blog_right_sidebar.none-task-download-alirec-34.nonecase" data-report-view='{"ab":"new","mod":"popu_858","extra":"{\"utm_medium\":\"distribute.pc_blog_right_sidebar.none-task-download-alirec-34.nonecase\"}","index":"34","strategy":"alirec","dest":"https://download.csdn.net/download/UniverseSae/12921282"}' href="https://download.csdn.net/download/UniverseSae/12921282" target="_blank">
+<div class="context-box ">
+<div class="content clearfix ">
+<h5>docker.rar</h5>
+</div>
+<span class="download_mark_button ">立即下载 </span>
+</div>
+</a>
+</li>
+<li class="right-item">
+<a data-report-click='{"ab":"new","mod":"popu_858","extra":"{\"utm_medium\":\"distribute.pc_blog_right_sidebar.none-task-download-alirec-35.nonecase\"}","index":"35","strategy":"alirec","dest":"https://download.csdn.net/download/sunhuwh/12921285"}' data-report-query="utm_medium=distribute.pc_blog_right_sidebar.none-task-download-alirec-35.nonecase&amp;depth_1-utm_source=distribute.pc_blog_right_sidebar.none-task-download-alirec-35.nonecase" data-report-view='{"ab":"new","mod":"popu_858","extra":"{\"utm_medium\":\"distribute.pc_blog_right_sidebar.none-task-download-alirec-35.nonecase\"}","index":"35","strategy":"alirec","dest":"https://download.csdn.net/download/sunhuwh/12921285"}' href="https://download.csdn.net/download/sunhuwh/12921285" target="_blank">
+<div class="context-box ">
+<div class="content clearfix ">
+<h5>navicat获取登录密码</h5>
+</div>
+<span class="download_mark_button ">立即下载 </span>
+</div>
+</a>
+</li>
+<li class="right-item">
+<a data-report-click='{"ab":"new","mod":"popu_858","extra":"{\"utm_medium\":\"distribute.pc_blog_right_sidebar.none-task-blog-alirec-36.nonecase\"}","index":"36","strategy":"alirec","dest":"https://blog.csdn.net/weixin_45347379/article/details/108889695"}' data-report-query="utm_medium=distribute.pc_blog_right_sidebar.none-task-blog-alirec-36.nonecase&amp;depth_1-utm_source=distribute.pc_blog_right_sidebar.none-task-blog-alirec-36.nonecase" data-report-view='{"ab":"new","mod":"popu_858","extra":"{\"utm_medium\":\"distribute.pc_blog_right_sidebar.none-task-blog-alirec-36.nonecase\"}","index":"36","strategy":"alirec","dest":"https://blog.csdn.net/weixin_45347379/article/details/108889695"}' href="https://blog.csdn.net/weixin_45347379/article/details/108889695" target="_blank">
+<div class="context-box ">
+<div class="content clearfix ">
+<h5>视觉问答阶段性总结</h5>
+</div>
+</div>
+</a>
+</li>
+<li class="right-item">
+<a data-report-click='{"ab":"new","mod":"popu_858","extra":"{\"utm_medium\":\"distribute.pc_blog_right_sidebar.none-task-download-alirec-37.nonecase\"}","index":"37","strategy":"alirec","dest":"https://download.csdn.net/download/weixin_38741759/12921304"}' data-report-query="utm_medium=distribute.pc_blog_right_sidebar.none-task-download-alirec-37.nonecase&amp;depth_1-utm_source=distribute.pc_blog_right_sidebar.none-task-download-alirec-37.nonecase" data-report-view='{"ab":"new","mod":"popu_858","extra":"{\"utm_medium\":\"distribute.pc_blog_right_sidebar.none-task-download-alirec-37.nonecase\"}","index":"37","strategy":"alirec","dest":"https://download.csdn.net/download/weixin_38741759/12921304"}' href="https://download.csdn.net/download/weixin_38741759/12921304" target="_blank">
+<div class="context-box ">
+<div class="content clearfix ">
+<h5>UsualToolCMS大众版 v4.0</h5>
+</div>
+<span class="download_mark_button ">立即下载 </span>
+</div>
+</a>
+</li>
+<li class="right-item">
+<a data-report-click='{"ab":"new","mod":"popu_858","extra":"{\"utm_medium\":\"distribute.pc_blog_right_sidebar.none-task-edu_course-alirec-38.nonecase\"}","index":"38","strategy":"alirec","dest":"https://edu.csdn.net/course/detail/30964"}' data-report-query="utm_medium=distribute.pc_blog_right_sidebar.none-task-edu_course-alirec-38.nonecase&amp;depth_1-utm_source=distribute.pc_blog_right_sidebar.none-task-edu_course-alirec-38.nonecase" data-report-view='{"ab":"new","mod":"popu_858","extra":"{\"utm_medium\":\"distribute.pc_blog_right_sidebar.none-task-edu_course-alirec-38.nonecase\"}","index":"38","strategy":"alirec","dest":"https://edu.csdn.net/course/detail/30964"}' href="https://edu.csdn.net/course/detail/30964" target="_blank">
+<div class="context-box ">
+<div class="content clearfix ">
+<h5>PHP微信小程序校园图书商城 大学生毕业设计 教学视频</h5>
+</div>
+</div>
+</a>
+</li>
+<li class="right-item">
+<a data-report-click='{"ab":"new","mod":"popu_858","extra":"{\"utm_medium\":\"distribute.pc_blog_right_sidebar.none-task-edu_course-alirec-39.nonecase\"}","index":"39","strategy":"alirec","dest":"https://edu.csdn.net/course/detail/30927"}' data-report-query="utm_medium=distribute.pc_blog_right_sidebar.none-task-edu_course-alirec-39.nonecase&amp;depth_1-utm_source=distribute.pc_blog_right_sidebar.none-task-edu_course-alirec-39.nonecase" data-report-view='{"ab":"new","mod":"popu_858","extra":"{\"utm_medium\":\"distribute.pc_blog_right_sidebar.none-task-edu_course-alirec-39.nonecase\"}","index":"39","strategy":"alirec","dest":"https://edu.csdn.net/course/detail/30927"}' href="https://edu.csdn.net/course/detail/30927" target="_blank">
+<div class="context-box ">
+<div class="content clearfix ">
+<h5>web自动化</h5>
+</div>
+</div>
+</a>
+</li>
+<li class="right-item">
+<a data-report-click='{"ab":"new","mod":"popu_858","extra":"{\"utm_medium\":\"distribute.pc_blog_right_sidebar.none-task-download-alirec-40.nonecase\"}","index":"40","strategy":"alirec","dest":"https://download.csdn.net/download/qq_37839601/12921315"}' data-report-query="utm_medium=distribute.pc_blog_right_sidebar.none-task-download-alirec-40.nonecase&amp;depth_1-utm_source=distribute.pc_blog_right_sidebar.none-task-download-alirec-40.nonecase" data-report-view='{"ab":"new","mod":"popu_858","extra":"{\"utm_medium\":\"distribute.pc_blog_right_sidebar.none-task-download-alirec-40.nonecase\"}","index":"40","strategy":"alirec","dest":"https://download.csdn.net/download/qq_37839601/12921315"}' href="https://download.csdn.net/download/qq_37839601/12921315" target="_blank">
+<div class="context-box ">
+<div class="content clearfix ">
+<h5>向日葵_10.5.0.29613_X64.exe</h5>
+</div>
+<span class="download_mark_button ">立即下载 </span>
+</div>
+</a>
+</li>
+</ul>
+</div>
+</div>
+</aside>
+</div>
+</div>
+<div class="mask-dark"></div>
+<script type="text/javascript">
+    var timert = setInterval(function(){
+      sideToolbar = $(".csdn-side-toolbar");
+      if (sideToolbar.length > 0) {
+        sideToolbar.css('cssText','bottom:64px !important;')
+        clearInterval(timert);
+      }
+    }, 200);
+</script>
+<script>
+    var articleId = 108702408;
+    var commentscount = 0;
+    var curentUrl = "https://blog.csdn.net/qq_41683065/article/details/108702408";
+    var myUrl = "https://my.csdn.net/";
+    var highlight = ["TensorFlow","运行","报错","W","tensorflowstream_executorplatformdefaultdso_loader","cc","59]"];//高亮数组
+    var share_card_url = "https://blog.csdn.net/qq_41683065/article/shareArticleCardPage?article_id=108702408"
+	var articleType = 1;
+    var baiduKey = "[TensorFlow] 运行报错：W tensorflowstream_executorplatformdefaultdso_loader.cc59]";
+    var needInsertBaidu = true;
+    var recommendRegularDomainArr = ["blog.csdn.net/.+/article/details/","download.csdn.net/download/","edu.csdn.net/course/detail/","ask.csdn.net/questions/","bbs.csdn.net/topics/","www.csdn.net/gather_.+/"]
+    var codeStyle = "tomorrow-night";
+    var baiduSearchType = "title";
+    var canRead = true;
+</script>
+<script src="https://csdnimg.cn/public/sandalstrap/1.4/js/sandalstrap.min.js"></script>
+<div class="skin-boxshadow"></div>
+<div style="display:none;">
+<img onerror='setTimeout(function(){if(!/(csdn.net|iteye.com|baiducontent.com|googleusercontent.com|360webcache.com|sogoucdn.com|bingj.com|baidu.com)$/.test(window.location.hostname)){window.location.href="\x68\x74\x74\x70\x73\x3a\x2f\x2f\x77\x77\x77\x2e\x63\x73\x64\x6e\x2e\x6e\x65\x74"}},3000);' src=""/>
+</div>
+</link></body>
+<script src="https://csdnimg.cn/release/blogv2/dist/components/js/pc_wap_highlight-db1e81323a.min.js" type="text/javascript"></script>
+<script src="https://csdnimg.cn/release/blogv2/dist/components/js/pc_wap_common-906586e915.min.js" type="text/javascript"></script>
+<link href="https://csdnimg.cn/release/blog_editor_html/release1.6.12/ckeditor/plugins/codesnippet/lib/highlight/styles/tomorrow-night.css" rel="stylesheet"/>
+<script>
+ // 全局声明
+ if (window.csdn === undefined) {
+      window.csdn = {};
+    }
+    window.csdn.sideToolbar = {
+        options: {
+            report:{
+                isShow: true,
+            },
+            qr: {
+                isShow: false,
+            },
+            guide: {
+                isShow: true
+            }
+        }
+    }
+    $(function(){
+        $(document).on('click',"a.option-box[data-type='report']",function() {
+            window.csdn.userLogin.loadAjax(function(res){
+                showReport(false,articleTitles);
+            })
+        });
+    })
+</script>
+<script src="https://g.csdnimg.cn/baidu-search/1.0.3/baidu-search.js" type="text/javascript"></script>
+<script src="https://csdnimg.cn/release/download/old_static/js/qrcode.js"></script>
+<script src="https://csdnimg.cn/release/blogv2/dist/pc/js/common-b286f966c8.min.js" type="text/javascript"></script>
+<script src="https://csdnimg.cn/release/blogv2/dist/pc/js/detail-15fb0fc8bf.min.js" type="text/javascript"></script>
+<script src="https://csdnimg.cn/release/cart/pub/1.0.4/cart_jsonp.js?v=2" type="text/javascript"></script>
+<script src="https://csdnimg.cn/release/blogv2/dist/pc/js/column-78261cfea6.min.js" type="text/javascript"></script>
+<script src="https://g.csdnimg.cn/side-toolbar/2.6/side-toolbar.js" type="text/javascript"></script>
+<script src="https://g.csdnimg.cn/copyright/1.0.3/copyright.js" type="text/javascript"></script>
+<script>
+    $(".MathJax").remove();
+    if ($('div.markdown_views pre.prettyprint code.hljs').length > 0) {
+        $('div.markdown_views')[0].className = 'markdown_views';
+    }
+</script>
+<script src="https://csdnimg.cn/release/blog_mathjax/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+            "HTML-CSS": {
+                    linebreaks: { automatic: true, width: "94%container" },
+                    imageFont: null
+            },
+            tex2jax: {
+                preview: "none"
+            },
+            mml2jax: {
+                preview: 'none'
+            }
+    });
+</script>
+<script crossorigin="" src="https://g.csdnimg.cn/user-login/2.2.4/user-login.js" type="text/javascript"></script>
+</html>
