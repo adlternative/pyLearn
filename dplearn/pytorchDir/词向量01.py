@@ -43,24 +43,25 @@ def word_tokenize(text):
 
 with open("text8.train.txt", "r") as fin:
     text = fin.read()
-#获得所有单词
+# 获得所有单词
 text = [w for w in word_tokenize(text.lower())]
-#形成一个字典｛word:count｝
+# 形成一个字典｛word:count｝
 vocab = dict(Counter(text).most_common(MAX_VOCAB_SIZE - 1))
-#算出低频率词的数量并赋值给　vocal[unk]
+# 算出低频率词的数量并赋值给　vocal[unk]
 vocab["<unk>"] = len(text) - np.sum(list(vocab.values()))
-#形成一个可根据index索引到word的列表
+# 形成一个可根据index索引到word的列表
 idx_to_word = [word for word in vocab.keys()]
-#形成一个可根据word得到index的字典
+# 形成一个可根据word得到index的字典
 word_to_idx = {word: i for i, word in enumerate(idx_to_word)}
-#计算词总数
+# 计算词总数
 word_counts = np.array([count for count in vocab.values()], dtype=np.float32)
-#计算词每个词的出现的相对比率,并在此算法中增加了高频词的比重
+# 计算词每个词的出现的相对比率,并在此算法中增加了高频词的比重
 word_freqs = word_counts / np.sum(word_counts)
 word_freqs = word_freqs ** (3. / 4.)
 word_freqs = word_freqs / np.sum(word_freqs)  # 用来做 negative sampling
-#30000
+# 30000
 VOCAB_SIZE = len(idx_to_word)
+
 
 class WordEmbeddingDataset(tud.Dataset):
     def __init__(self, text, word_to_idx, idx_to_word, word_freqs, word_counts):
@@ -71,13 +72,13 @@ class WordEmbeddingDataset(tud.Dataset):
             word_counts: the word counts
         '''
         super(WordEmbeddingDataset, self).__init__()
-        #从单词转到index 存放于text_encoded,计算机对数字更加敏感,并转换成整型
+        # 从单词转到index 存放于text_encoded,计算机对数字更加敏感,并转换成整型
         self.text_encoded = [word_to_idx.get(t, VOCAB_SIZE - 1) for t in text]
         self.text_encoded = torch.Tensor(self.text_encoded).long()
         self.word_to_idx = word_to_idx
         self.idx_to_word = idx_to_word
-        self.word_freqs = torch.Tensor(word_freqs)#从np.array转成torch.Tensor
-        self.word_counts = torch.Tensor(word_counts)#从np.array转成torch.Tensor
+        self.word_freqs = torch.Tensor(word_freqs)  # 从np.array转成torch.Tensor
+        self.word_counts = torch.Tensor(word_counts)  # 从np.array转成torch.Tensor
 
     def __len__(self):
         ''' 返回整个数据集（所有单词）的长度：１５３０４６８６
@@ -93,12 +94,24 @@ class WordEmbeddingDataset(tud.Dataset):
         center_word = self.text_encoded[idx]
         pos_indices = list(range(idx - C, idx)) + list(range(idx + 1, idx + C + 1))
         pos_indices = [i % len(self.text_encoded) for i in pos_indices]
-        pos_words = self.text_encoded[pos_indices]
+        pos_words = self.text_encoded[pos_indices]  # 100*6=600
         neg_words = torch.multinomial(self.word_freqs, K * pos_words.shape[0], True)
 
         return center_word, pos_words, neg_words
 
+
 dataset = WordEmbeddingDataset(text, word_to_idx, idx_to_word, word_freqs, word_counts)
+
+# center_word, pos_words, neg_words = dataset[1]
+# for pp in dataset:
+#     print(pp.size(0))
+# center_word=center_word.long()
+# pos_words=pos_words.long()
+# neg_words=neg_words.long()
+# 1          6           600
+# print(center_word,pos_words,neg_words)
+# print(center_word.shape,pos_words.shape,neg_words.shape)
+
 dataloader = tud.DataLoader(dataset, batch_size=BATCH_SIZE, shuffle=True, num_workers=4)
 
 
@@ -107,12 +120,18 @@ class EmbeddingModel(nn.Module):
         ''' 初始化输出和输出embedding
         '''
         super(EmbeddingModel, self).__init__()
-        #30000,100
+        # 30000
         self.vocab_size = vocab_size
+        # 100
         self.embed_size = embed_size
 
-        initrange = 0.5 / self.embed_size#0.005
+        initrange = 0.5 / self.embed_size  # 0.005
+        # 30000词数×100参数,
+        # [30000][100]
         self.out_embed = nn.Embedding(self.vocab_size, self.embed_size, sparse=False)
+        # out_embed = nn.Embedding(vocab_size,embed_size, sparse=False)
+        # in_embed = nn.Embedding(vocab_size,embed_size, sparse=False)
+
         self.out_embed.weight.data.uniform_(-initrange, initrange)
 
         self.in_embed = nn.Embedding(self.vocab_size, self.embed_size, sparse=False)
@@ -127,20 +146,22 @@ class EmbeddingModel(nn.Module):
         return: loss, [batch_size]
         '''
 
-        batch_size = input_labels.size(0)
-
-        input_embedding = self.in_embed(input_labels)  # B * embed_size
+        batch_size = input_labels.size(0)  # 128
+        # [30000][100]取出128 ->[128][100]
+        input_embedding = self.in_embed(input_labels)  # batch_size * embed_size
+        # [30000][100]取出128 再*6 ->[128][6][100]
         pos_embedding = self.out_embed(pos_labels)  # B * (2*C) * embed_size
+        # [30000][100]取出128 再*6*100 ->[128][600][100]
         neg_embedding = self.out_embed(neg_labels)  # B * (2*C * K) * embed_size
 
         log_pos = torch.bmm(pos_embedding, input_embedding.unsqueeze(2)).squeeze()  # B * (2*C)
+        # [128][6][100]*[128, 100, 1]=[128,6,1]->[128,6]
         log_neg = torch.bmm(neg_embedding, -input_embedding.unsqueeze(2)).squeeze()  # B * (2*C*K)
-
-        log_pos = F.logsigmoid(log_pos).sum(1)
+        #算出旁边的词的参数×中间词参数-中间词参数*随机的词，要求这个值越大越好
+        log_pos = F.logsigmoid(log_pos).sum(1)  # batch_size
         log_neg = F.logsigmoid(log_neg).sum(1)  # batch_size
 
-        loss = log_pos + log_neg
-
+        loss = log_pos + log_neg    #-420
         return -loss
 
     def input_embeddings(self):
@@ -150,6 +171,7 @@ class EmbeddingModel(nn.Module):
 model = EmbeddingModel(VOCAB_SIZE, EMBEDDING_SIZE)
 if USE_CUDA:
     model = model.cuda()
+
 
 def evaluate(filename, embedding_weights):
     if filename.endswith(".csv"):
@@ -168,7 +190,8 @@ def evaluate(filename, embedding_weights):
             model_similarity.append(float(sklearn.metrics.pairwise.cosine_similarity(word1_embed, word2_embed)))
             human_similarity.append(float(data.iloc[i, 2]))
 
-    return scipy.stats.spearmanr(human_similarity, model_similarity)# , model_similarity
+    return scipy.stats.spearmanr(human_similarity, model_similarity)  # , model_similarity
+
 
 def find_nearest(word):
     index = word_to_idx[word]
@@ -180,7 +203,6 @@ def find_nearest(word):
 optimizer = torch.optim.SGD(model.parameters(), lr=LEARNING_RATE)
 for e in range(NUM_EPOCHS):
     for i, (input_labels, pos_labels, neg_labels) in enumerate(dataloader):
-
         # TODO
         input_labels = input_labels.long()
         pos_labels = pos_labels.long()
@@ -191,8 +213,11 @@ for e in range(NUM_EPOCHS):
             neg_labels = neg_labels.cuda()
 
         optimizer.zero_grad()
+        #　计算损失,很神奇这个model的参数
         loss = model(input_labels, pos_labels, neg_labels).mean()
+        # 计算对于[100]的各参数梯度
         loss.backward()
+        # 调整[100]的各参数,
         optimizer.step()
 
         if i % 100 == 0:
@@ -200,17 +225,17 @@ for e in range(NUM_EPOCHS):
                 fout.write("epoch: {}, iter: {}, loss: {}\n".format(e, i, loss.item()))
                 print("epoch: {}, iter: {}, loss: {}".format(e, i, loss.item()))
 
-        if i % 2000 == 0:
-            embedding_weights = model.input_embeddings()
-            sim_simlex = evaluate("simlex-999.txt", embedding_weights)
-            sim_men = evaluate("men.txt", embedding_weights)
-            sim_353 = evaluate("wordsim353.csv", embedding_weights)
-            with open(LOG_FILE, "a") as fout:
-                print("epoch: {}, iteration: {}, simlex-999: {}, men: {}, sim353: {}, nearest to monster: {}\n".format(
-                    e, i, sim_simlex, sim_men, sim_353, find_nearest("monster")))
-                fout.write(
-                    "epoch: {}, iteration: {}, simlex-999: {}, men: {}, sim353: {}, nearest to monster: {}\n".format(
-                        e, i, sim_simlex, sim_men, sim_353, find_nearest("monster")))
+        # if i % 2000 == 0:
+        #     embedding_weights = model.input_embeddings()
+        #     sim_simlex = evaluate("simlex-999.txt", embedding_weights)
+        #     sim_men = evaluate("men.txt", embedding_weights)
+        #     sim_353 = evaluate("wordsim353.csv", embedding_weights)
+        #     with open(LOG_FILE, "a") as fout:
+        #         print("epoch: {}, iteration: {}, simlex-999: {}, men: {}, sim353: {}, nearest to monster: {}\n".format(
+        #             e, i, sim_simlex, sim_men, sim_353, find_nearest("monster")))
+        #         fout.write(
+        #             "epoch: {}, iteration: {}, simlex-999: {}, men: {}, sim353: {}, nearest to monster: {}\n".format(
+        #                 e, i, sim_simlex, sim_men, sim_353, find_nearest("monster")))
 
     embedding_weights = model.input_embeddings()
     np.save("embedding-{}".format(EMBEDDING_SIZE), embedding_weights)
