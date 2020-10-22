@@ -1,3 +1,4 @@
+#!/usr/bin/python3.6
 import torch
 import torch.nn.functional as F
 import numpy as np
@@ -24,11 +25,11 @@ def func():
 
 x = torch.unsqueeze(torch.linspace(-1, 1, 100), dim=1)
 # x^2+0.2*0.2*(100)
-y = x.pow(2) + 0.2 * torch.rand(x.size())
+y = x.pow(2) + 0.2 * torch.rand(x.size())#100,1
 x, y = Variable(x), Variable(y)
 
-plt.scatter(x.data.numpy(), y.data.numpy())
-plt.show()
+# plt.scatter(x.data.numpy(), y.data.numpy())
+# plt.show()
 
 
 class Net(torch.nn.Module):
@@ -37,19 +38,31 @@ class Net(torch.nn.Module):
         self.hidden = torch.nn.Linear(n_features, n_hidden)
         self.predict = torch.nn.Linear(n_hidden, n_output)
 
-    def forword(self, x):
+    def forward(self, x):
         # 通过hidden+relu
         x = torch.relu(self.hidden(x))
         # 通过将隐藏层－>输出层
         x = self.predict(x)
         return x
-net = Net(1,10,1)
+
+
+net = Net(1, 10, 1)
 print(net)
-optimizer =torch.optim.SGD(net.parameters(),lr=0.5)
+plt.ion()
+plt.show()
+optimizer = torch.optim.SGD(net.parameters(), lr=0.5)
 loss_func = torch.nn.MSELoss()
 for t in range(100):
-    prediction =net(x)
-    loss = loss_func(prediction,y)
+    prediction = net(x)
+    loss = loss_func(prediction, y)
     optimizer.zero_grad()
     loss.backward()
     optimizer.step()
+    if t % 5 == 0:
+        plt.cla()
+        plt.scatter(x.data.numpy(), y.data.numpy())
+        plt.plot(x.data.numpy(), prediction.data.numpy(), 'r-', lw=5)
+        plt.text(0.5, 0, 'Loss=%.4f' % loss.item(), fontdict={'size': 20, 'color': 'red', })
+        plt.pause(0.1)
+plt.ioff()
+plt.show()
